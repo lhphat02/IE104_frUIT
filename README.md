@@ -29,8 +29,8 @@
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" width="52" alt="nextjs logo"  />
-  <img src="https://gitlab.com/uploads/-/system/project/avatar/33729919/tailwindcss-logo.jpg" height="40" width="52" alt="tailwindcss logo"  />
-  <img src="https://download.logo.wine/logo/Solidity/Solidity-Logo.wine.png" height="40" width="52" alt="solidity logo"  />
+  <img src="https://gitlab.com/uploads/-/system/project/avatar/33729919/tailwindcss-logo.jpg" height="40" width="45" alt="tailwindcss logo"  />
+  <img src="https://www.logosvgpng.com/wp-content/uploads/2018/10/solidity-logo-vector.png" height="40" width="52" alt="solidity logo"  />
   <img src="https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png" height="40" width="52" alt="hardhat logo"  />
 </div>
 
