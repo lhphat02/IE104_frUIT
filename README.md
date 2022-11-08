@@ -42,7 +42,7 @@
   <i>//create local nodes</i> <br>
   - npm hardhat node <br><br>
   <i>//deploy contracts</i> <br>
-  = npx hardhat run scripts/deploy.js --network localhost <br><br>
+  - npx hardhat run scripts/deploy.js --network localhost <br><br>
   <i>//develop</i> <br>
   - npm run dev<br><br>```</p>
 
