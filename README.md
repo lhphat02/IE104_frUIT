@@ -38,7 +38,13 @@
 
 ###
 
-<p align="left">```<br>//create local nodes<br>npm hardhat node <br><br>//deploy contracts<br>npx hardhat run scripts/deploy.js --network localhost<br><br>//develop<br>npm run dev<br><br>```</p>
+<p align="left">```<br>
+  <i>//create local nodes</i> <br>
+  npm hardhat node <br><br>
+  <i>//deploy contracts</i> <br>
+  npx hardhat run scripts/deploy.js --network localhost <br><br>
+  <i>//develop</i> <br>
+  npm run dev<br><br>```</p>
 
 ###
 
