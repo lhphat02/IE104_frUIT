@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="left">IE104 - Final Project</h1>
 
-## Getting Started
+###
 
-First, run the development server:
+<p align="left">A simple NFT Marketplace Web3</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+###
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2 align="left">🏆 Team 5 - IE104.N13 ( Semester I - 2022 )</h2>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+###
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<p align="left">🐧 Phat Luu<br>🐻 Chon Nguyen<br>🐸 Quan Nguyen<br>🦊 Khanh Nguyen<br>🦄 Anh Nguyen</p>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+###
 
-## Learn More
+<h2 align="left">🤖 Instructor</h2>
 
-To learn more about Next.js, take a look at the following resources:
+###
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p align="left">👨🏻‍💻 Mr. Khoa Vo</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+###
 
-## Deploy on Vercel
+<h2 align="left">🚗 Create with</h2>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" width="52" alt="nextjs logo"  />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="40" width="52" alt="tailwindcss logo"  />
+</div>
+
+###
+
+<h2 align="left">🚀 For developing</h2>
+
+###
+
+<p align="left">```<br>//create local nodes<br>npm hardhat node <br><br>//deploy contracts<br>npx hardhat run scripts/deploy.js --network localhost<br><br>//develop<br>npm run dev<br><br>```</p>
+
+###
+
+<h2 align="left">📃 License</h2>
+
+###
+
+<p align="left">Figma source : https://ui8.net/astikayasa/products/cryptoket---nft-marketplace-ui-kit<br> > This repos is use for educational purpose only.</p>
+
+###
+
+<img src="https://raw.githubusercontent.com/lhphat02/lhphat02/blob/output/snake.svg" alt="Snake animation" />
+
+###
