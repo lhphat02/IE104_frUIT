@@ -49,7 +49,3 @@
 <p align="left">Figma source : https://ui8.net/astikayasa/products/cryptoket---nft-marketplace-ui-kit<br> > This repos is use for educational purpose only.</p>
 
 ###
-
-<img src="https://raw.githubusercontent.com/lhphat02/lhphat02/blob/output/snake.svg" alt="Snake animation" />
-
-###
