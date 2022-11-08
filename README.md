@@ -30,7 +30,7 @@
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" width="52" alt="react logo"  />
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" height="40" width="52" alt="nextjs logo"  />
   <img src="https://gitlab.com/uploads/-/system/project/avatar/33729919/tailwindcss-logo.jpg" height="40" width="40" alt="tailwindcss logo"  />
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmj0Al-3abexuJM68ankW91e7kjk-lOe7OPQ&usqp=CAU" height="40" width="52" alt="solidity logo"  />
+  <img src="https://logo-download.com/wp-content/data/images/png/Solidity-logo.png" height="40" width="42" alt="solidity logo"  />
   <img src="https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png" height="40" width="52" alt="hardhat logo"  />
 </div>
 
