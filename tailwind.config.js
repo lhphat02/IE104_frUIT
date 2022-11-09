@@ -17,6 +17,15 @@ module.exports = {
         'prim-black-4': '#24252D',
       },
     },
+    screens: {
+      lg: { max: '1800px' },
+      md: { max: '1080px' },
+      sm: { max: '600px' },
+      xs: { max: '400px' },
+      pc: '1500px',
+      minmd: '1700px',
+      minlg: '2100px',
+    },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
     },
