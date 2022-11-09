@@ -2,7 +2,7 @@
 
 ###
 
-<p align="left">A simple NFT Marketplace Web3</p>
+<p align="left">A simple NFT Marketplace Web3 for my class's project</p>
 
 ###
 
@@ -54,6 +54,6 @@
 
 ###
 
-<p align="left">Figma source : https://ui8.net/astikayasa/products/cryptoket---nft-marketplace-ui-kit<br> > This repos is use for educational purpose only.</p>
+<p align="left">Figma source : https://ui8.net/astikayasa/products/cryptoket---nft-marketplace-ui-kit<br> > This repos is used for educational purpose only.</p>
 
 ###
