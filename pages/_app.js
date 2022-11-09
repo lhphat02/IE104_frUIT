@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Navbar/>
+      <div className='mt-10' />
       <Component {...pageProps} />
       <Footer/>
     </ThemeProvider>
