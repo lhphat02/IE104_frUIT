@@ -10,7 +10,7 @@
 
 ###
 
-<p align="left">🐧 Phat Luu<br>🐻 Chon Nguyen<br>🐸 Quan Nguyen<br>🦊 Khanh Nguyen<br>🦄 Anh Nguyen</p>
+<p align="left">🐧 Phat Luu<br>🐻 Chon Nguyen<br>🐸 Quan Nguyen<br>🦊 Khanh Nguyen<br>🦄 Anh Hoang</p>
 
 ###
 
