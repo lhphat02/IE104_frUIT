@@ -6,12 +6,12 @@ import Button from './Button';
 import assets from '../assets';
 
 // ----------------------------------------------MenuItems-------------------------------------------
-const MenuItems = ({ isMobile, active }) => {
+const MenuItems = () => {
   const generateLink = (i) => {
     switch (i) {
       case 0: return '/';
-      case 1: return '/listed-nfts';
-      case 2: return '/my-nfts';
+      case 1: return '/listed';
+      case 2: return '/collection';
       default: return '/';
     }
   };
@@ -35,30 +35,26 @@ const MenuItems = ({ isMobile, active }) => {
 };
 
 // -----------------------------------------ButtonGroup-------------------------------------------------
-const ButtonGroup = (props) => {
-    const Btn = props.Btn;
-    return(
-      <>
-      {Btn ?
+const ButtonGroup = () => {
+    const accountexist = true;
+    return accountexist ? (
       <Button
         BtnName="Create"
         classStyles="mx-2 rounded-xl"
-      />
-      :
+      /> 
+      ) : (
       <Button
         BtnName="Connect"
         classStyles="mx-2 rounded-xl"
       />
-      }
-    </>   
-  )
+      );
 };
 
 // --------------------------------------------Navbar----------------------------------------------------
 const Navbar = () => {
   return (
 
-    <nav className="flex flex-row flexBetween w-full fixed z-10 p-4 flex-row border-b dark:bg-prim-dark bg-white dark:border-prim-black-1
+    <nav className="flex flex-row flexBetween w-full fixed z-10 p-4 border-b dark:bg-prim-dark bg-white dark:border-prim-black-1
       border-prim-gray-1 "
     >
       <div
@@ -96,7 +92,7 @@ const Navbar = () => {
       </div>
       <div className="flex flex-initial flex-row justify-end">
         <div className="md:hidden flex">
-          <MenuItems  />
+          <MenuItems />
           <div>
             <ButtonGroup  />
           </div>
