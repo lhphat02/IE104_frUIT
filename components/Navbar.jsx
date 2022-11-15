@@ -17,15 +17,11 @@ const MenuItems = () => {
   };
 
   return (
-    <ul className={`list-none flex flex-row ${isMobile && 'flex-col h-full'}`}>
+    <ul className='list-none flex flex-row'>
       {['Explore', 'Listed NFTs', 'Collection'].map((item, i) => (
         <li
           key={i}
-          className={`flex flex-row font-poppins items-center font-semibold text-base dark:hover:text-white hover:text-prim-dark mx-3 
-              ${active === item
-            ? 'dark:text-white text-prim-black-1'
-            : 'dark:text-prim-gray-3 text-prim-gray-2'
-              }`}
+          className='flex flex-row font-poppins items-center font-semibold text-base hover:text-prim-dark mx-3 text-prim-gray-2'
         >
           <Link href={generateLink(i)}>{item}</Link>
         </li>
@@ -36,8 +32,9 @@ const MenuItems = () => {
 
 // -----------------------------------------ButtonGroup-------------------------------------------------
 const ButtonGroup = () => {
-    const accountexist = true;
-    return accountexist ? (
+    const connected = true;
+
+    return connected ? (
       <Button
         BtnName="Create"
         classStyles="mx-2 rounded-xl"
@@ -54,7 +51,7 @@ const ButtonGroup = () => {
 const Navbar = () => {
   return (
 
-    <nav className="flex flex-row flexBetween w-full fixed z-10 p-4 border-b dark:bg-prim-dark bg-white dark:border-prim-black-1
+    <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
       border-prim-gray-1 "
     >
       <div
@@ -62,7 +59,7 @@ const Navbar = () => {
       >
         <Link href="/">
           <div
-            className="flexCenter flex flex-row md:hidden cursor-pointer"
+            className="justify-center items-center flex flex-row md:hidden cursor-pointer"
           >
             <Image
               src={assets.logo}

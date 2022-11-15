@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Navbar/>
-        <p className='pt-60'>
+        <div className='pt-60'>
           <Component {...pageProps} />
-        </p>
+        </div>
       <Footer/>
     </ThemeProvider>
   )
