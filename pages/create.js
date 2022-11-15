@@ -1,8 +1,8 @@
 import React from 'react'
+
 import Input from '../components/Input'
 
-
-const Create_NFT = () => {
+const CreateNFT = () => {
   return (
     <div className='p-12'>
       <div>Create_NFT</div>
@@ -11,4 +11,4 @@ const Create_NFT = () => {
   )
 }
 
-export default Create_NFT
+export default CreateNFT
