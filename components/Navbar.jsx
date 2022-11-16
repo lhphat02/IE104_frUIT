@@ -42,7 +42,7 @@ const ButtonGroup = () => {
     return connected ? (
       <Button
         BtnName="Create"
-        classStyles="mx-2 rounded-xl"
+        classStyles="mx-2 rounded-xl"       
       /> 
       ) : (
       <Button
@@ -71,12 +71,12 @@ const checkActive = (active, setActive, router) => {
 
 // --------------------------------------------Navbar----------------------------------------------------
 const Navbar = () => {
-  const [ active, setActive] = useState('Explore');
+  const [ active, setActive ] = useState('Explore');
   const router = useRouter();
   
   useEffect(() => {
     checkActive(active, setActive, router);
-  }, [router.pathname])
+  }, [router.pathname]);
   return (
     <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
       border-prim-gray-1 "
@@ -118,9 +118,9 @@ const Navbar = () => {
       </div>
       <div className="flex flex-initial flex-row justify-end">
         <div className="md:hidden flex">
-          <MenuItems active={active} setActive={setActive}/>
-          <div>
-            <ButtonGroup  />
+          <MenuItems active={active} setActive={setActive} />
+          <div className='hover:scale-110'>
+            <ButtonGroup />
           </div>
         </div>
       </div>
