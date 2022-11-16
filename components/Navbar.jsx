@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import Button from './Button';
 import assets from '../assets';
+import { useRouter } from 'next/router';
 
 // ----------------------------------------------MenuItems-------------------------------------------
-const MenuItems = () => {
+const MenuItems = ({ active, setActive }) => {
   const generateLink = (i) => {
     switch (i) {
       case 0: return '/';
@@ -18,10 +19,14 @@ const MenuItems = () => {
 
   return (
     <ul className='list-none flex flex-row'>
-      {['Explore', 'Listed NFTs', 'Collection'].map((item, i) => (
+      {['Explore', 'Listed', 'Collection'].map((item, i) => (
         <li
           key={i}
-          className='flex flex-row font-poppins items-center font-semibold text-base hover:text-prim-dark mx-3 text-prim-gray-2'
+          onClick = {() => 
+            setActive(item)
+          }
+          className={`flex flex-row font-poppins items-center font-semibold text-base hover:text-prim-dark mx-3 text-prim-gray-2
+          ${active == item ? 'text-prim-dark' : 'text-prim-gray-2'}`}
         >
           <Link href={generateLink(i)}>{item}</Link>
         </li>
@@ -47,10 +52,32 @@ const ButtonGroup = () => {
       );
 };
 
+const checkActive = (active, setActive, router) => {
+  switch (router.pathname) {
+    case '/':
+      active !== 'Explore' && setActive('Explore')
+      break;    
+    case '/listed':
+      active !== 'Listed' && setActive('Listed')
+      break;
+    case '/collection':
+      active !== 'Collection' && setActive('Collection')
+      break; 
+    default:
+      setActive('')
+      break; 
+  }
+};
+
 // --------------------------------------------Navbar----------------------------------------------------
 const Navbar = () => {
+  const [ active, setActive] = useState('Explore');
+  const router = useRouter();
+  
+  useEffect(() => {
+    checkActive(active, setActive, router);
+  }, [router.pathname])
   return (
-
     <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
       border-prim-gray-1 "
     >
@@ -75,7 +102,9 @@ const Navbar = () => {
         </Link>
         <Link href="/">
           <div className="hidden md:flex cursor-pointer" 
-          onClick={() => {}}
+          onClick={() => {
+            setActive('Explore')
+          }}
           >
             <Image
               src={assets.logo}
@@ -89,7 +118,7 @@ const Navbar = () => {
       </div>
       <div className="flex flex-initial flex-row justify-end">
         <div className="md:hidden flex">
-          <MenuItems />
+          <MenuItems active={active} setActive={setActive}/>
           <div>
             <ButtonGroup  />
           </div>
