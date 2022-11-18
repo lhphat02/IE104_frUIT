@@ -1,12 +1,11 @@
 import React from 'react'
 
-const Input = ({inputType, title}) => {
+const Input = ({inputType, title,  placeholder, handleClick }) => {
   return (
     <div className="mt-10 w-full">
       <div>
         <p className="font-poppins text-xl minlg:text-4xl font-semibold sm:mb-4">
-        test
-        {title}
+          {title}
         </p>
       </div>
 

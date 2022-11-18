@@ -11,10 +11,11 @@ import instagram from './instagram.png';
 import telegram from './telegram.png';
 import twitter from './twitter.png';
 import facebook from './facebook.png';
-import menu from './menu.png'
-import cross from './cross.png'
-import Search from './Search.png'
-import tick from './tick.png'
+import menu from './menu.png';
+import cross from './cross.png';
+import Search from './Search.png';
+import tick from './tick.png';
+import moon from './moon.png';
 
 export default { 
     creator, 
@@ -32,5 +33,6 @@ export default {
     menu,
     cross,
     Search,
-    tick
+    tick,
+    moon
 };

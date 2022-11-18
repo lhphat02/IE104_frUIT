@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -73,19 +74,21 @@ const checkActive = (active, setActive, router) => {
   }
 };
 
-// --------------------------------------------Navbar----------------------------------------------------
-const Navbar = () => {
+  const Navbar = () => {
   const [ active, setActive ] = useState('Explore');
+  const [ IsOpen, setIsOpen ] = useState(false);
+  const { theme, setTheme } = useTheme();
   const router = useRouter();
-  const  [ IsOpen, setIsOpen ] = useState(false);
   
   useEffect(() => {
     checkActive(active, setActive, router);
   }, [router.pathname]);
+
   return (
     <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
       border-prim-gray-1 "
     >
+      {/* ========================BrandName======================== */}
       <div
         className="flex flex-1 justify-start"
       >
@@ -105,6 +108,7 @@ const Navbar = () => {
             </p>
           </div>
         </Link>
+
         <Link href="/">
           <div className="hidden md:flex cursor-pointer" 
           onClick={() => {
@@ -125,15 +129,32 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <div className="flex flex-initial flex-row justify-end">
+
+      {/* ========================MenuItems======================== */}
+
+      {/* =========DarkMode Toggle========= */}
+      <div className={`flex mx-2 hover:cursor-pointer 
+        ${theme === 'light' && 'filter invert'} `} >
+        <Image
+          src={assets.moon}
+          alt='toggle'
+          width={25}
+          height={25}
+          onClick={() => {
+            setTheme(theme === 'light' ? 'dark' : 'light')
+          }}
+        />
+      </div>
+
+      {/* =========Large Devices========= */}
         <div className="md:hidden flex">
           <MenuItems active={active} setActive={setActive} />
           <div className="active:scale-110">
             <ButtonGroup />
           </div>
         </div>
-      </div>
-      
+
+      {/* =========Small Devices========= */}
       <div className="hidden md:flex flex-row justify-end">
         <div className="prim-gradient rounded px-1.5 pt-0.5">
          {IsOpen ? (
@@ -174,6 +195,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      
     </nav>
   );
 };
