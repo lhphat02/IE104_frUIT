@@ -1,6 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
-
 export default function Home() {
   return (
     <div className='prim-gradient h-16 flex justify-center items-center'>
