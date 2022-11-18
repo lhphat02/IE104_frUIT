@@ -138,6 +138,7 @@ const Navbar = () => {
         <div className="prim-gradient rounded px-1.5 pt-0.5">
          {IsOpen ? (
           <Image 
+              className='hover:cursor-pointer'
               src={assets.cross}
               alt="sm-close"
               objectFit="contain"
@@ -149,6 +150,7 @@ const Navbar = () => {
             /> 
           ):(
             <Image 
+            className='hover:cursor-pointer'
             src={assets.menu}
             alt="sm-menu"
             objectFit="contain"
