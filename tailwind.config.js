@@ -16,6 +16,9 @@ module.exports = {
         'prim-black-3': '#2A2D3A',
         'prim-black-4': '#24252D',
       },
+      padding: {
+        '1800': '1800px',
+      }
     },
     screens: {
       lg: { max: '1800px' },
