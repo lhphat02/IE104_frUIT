@@ -5,22 +5,20 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import '../styles/globals.css'
 
-function MyApp({ Component, pageProps }) {
-
-
-  return (
-    <ThemeProvider>
+const MyApp = ({ Component, pageProps }) => (
+    <ThemeProvider attribute='class'>
       <Head>
         <title>frUIT Marketplace</title>
         <link rel='icon' href='/logo.png'/>
       </Head>
-      <Navbar/>
-        <div className='pt-60'>
-          <Component {...pageProps} />
-        </div>
-      <Footer/>
+      <div className="dark:bg-prim-dark bg-white">
+        <Navbar/>
+          <div className='pt-60'>
+            <Component {...pageProps} />
+          </div>
+        <Footer/>
+      </div>
     </ThemeProvider>
-  )
-}
+  );
 
-export default MyApp
+export default MyApp;

@@ -6,6 +6,7 @@ import Link from 'next/link';
 
 import Button from './Button';
 import assets from '../assets';
+import { isMobile } from 'web3modal';
 
 
 // ----------------------------------------------MenuItems-------------------------------------------
@@ -20,7 +21,7 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
   };
 
   return (
-    <ul className={`list-none flex ${isMobile ? ('flex-col'):('flex-row')}`}>
+    <ul className={`list-none flex ${isMobile ? 'flex-col' : 'flex-row'}`}>
       {['Explore', 'Listed', 'Collection'].map((item, i) => (
         <li
           key={i}
@@ -45,12 +46,12 @@ const ButtonGroup = () => {
     return connected ? (
       <Button
         BtnName="Create"
-        classStyles="mx-2 rounded-xl"  
+        classStyles="mx-2 rounded-xl active:scale-110"  
       /> 
       ) : (
       <Button
         BtnName="Connect"
-        classStyles="mx-2 rounded-xl"
+        classStyles="mx-2 rounded-xl active:scale-110"
       />
       );
 };
@@ -75,18 +76,20 @@ const checkActive = (active, setActive, router) => {
 };
 
   const Navbar = () => {
+  const { theme, setTheme } = useTheme();
   const [ active, setActive ] = useState('Explore');
   const [ IsOpen, setIsOpen ] = useState(false);
-  const { theme, setTheme } = useTheme();
   const router = useRouter();
   
   useEffect(() => {
     checkActive(active, setActive, router);
   }, [router.pathname]);
 
+  console.log(theme);
+
   return (
     <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
-      border-prim-gray-1 "
+      border-prim-gray-1 dark:bg-prim-dark "
     >
       {/* ========================BrandName======================== */}
       <div
@@ -133,7 +136,7 @@ const checkActive = (active, setActive, router) => {
       {/* ========================MenuItems======================== */}
 
       {/* =========DarkMode Toggle========= */}
-      <div className='flex mx-2 hover:cursor-pointer p-1 border-2 rounded-full border-' 
+      <div className='flex mx-2 hover:cursor-pointer p-1 toggleborder rounded-full' 
          >
         <Image
           src={assets.moon2}
@@ -149,9 +152,7 @@ const checkActive = (active, setActive, router) => {
       {/* =========Large Devices========= */}
         <div className="md:hidden flex">
           <MenuItems active={active} setActive={setActive} />
-          <div className="active:scale-110">
-            <ButtonGroup />
-          </div>
+          <ButtonGroup />
         </div>
 
       {/* =========Small Devices========= */}
@@ -185,11 +186,11 @@ const checkActive = (active, setActive, router) => {
           }
           {IsOpen &&(
             <div className="fixed inset-x-0 flex flex-col bg-white pb-1800">
-              <div className="active:scale-110  flex justify-center mb-5 mt-5">
+              <div className="flex justify-center mb-5 mt-5">
                 <ButtonGroup />
               </div>
               <div className="flex justify-center">
-                <MenuItems isMobile active={active} setActive={setActive} setIsOpen={setIsOpen}/>
+                <MenuItems isMobile={isMobile} active={active} setActive={setActive} setIsOpen={setIsOpen}/>
               </div>
             </div>
           )}
