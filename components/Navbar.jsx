@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 import Button from './Button';
 import assets from '../assets';
-import { isMobile } from 'web3modal';
 
 
 // ----------------------------------------------MenuItems-------------------------------------------
@@ -190,7 +189,7 @@ const checkActive = (active, setActive, router) => {
                 <ButtonGroup />
               </div>
               <div className="flex justify-center">
-                <MenuItems isMobile={isMobile} active={active} setActive={setActive} setIsOpen={setIsOpen}/>
+                <MenuItems isMobile active={active} setActive={setActive} setIsOpen={setIsOpen}/>
               </div>
             </div>
           )}
