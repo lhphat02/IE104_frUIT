@@ -133,13 +133,13 @@ const checkActive = (active, setActive, router) => {
       {/* ========================MenuItems======================== */}
 
       {/* =========DarkMode Toggle========= */}
-      <div className={`flex mx-2 hover:cursor-pointer 
-        ${theme === 'light' && 'filter invert'} `} >
+      <div className='flex mx-2 hover:cursor-pointer p-1 border-2 rounded-full border-' 
+         >
         <Image
-          src={assets.moon}
+          src={assets.moon2}
           alt='toggle'
-          width={25}
-          height={25}
+          width={20}
+          height={20}
           onClick={() => {
             setTheme(theme === 'light' ? 'dark' : 'light')
           }}
