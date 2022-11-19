@@ -89,7 +89,7 @@ const checkActive = (active, setActive, router) => {
 
   return (
     <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
-      border-prim-gray-1 dark:bg-prim-dark "
+      border-prim-gray-1 dark:border-prim-gray-3 dark:bg-prim-dark shadow-md"
     >
       {/* ========================BrandName======================== */}
       <div
