@@ -13,7 +13,7 @@ const MyApp = ({ Component, pageProps }) => (
       </Head>
       <div className="dark:bg-prim-dark bg-white">
         <Navbar/>
-          <div className='pt-60'>
+          <div className='pt-20 w-full'>
             <Component {...pageProps} />
           </div>
         <Footer/>

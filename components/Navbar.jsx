@@ -30,7 +30,9 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
           }}
           className={`flex justify-center font-poppins items-center font-semibold text-base 
           hover:text-prim-black-4 dark:hover:text-white mx-3 text-prim-gray-2 
-          ${active == item ? 'text-prim-black-4 dark:text-white' : 'text-prim-gray-2'}`}
+          ${active === item ? 'text-prim-black-4 dark:text-white' : 'text-prim-gray-2'}
+          ${isMobile && 'my-3 text-2xl' }
+          `}
         >
           <Link href={generateLink(i)}>{item}</Link>
         </li>
@@ -40,13 +42,13 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
 };
 
 // -----------------------------------------ButtonGroup-------------------------------------------------
-const ButtonGroup = () => {
+const ButtonGroup = ({isMobile}) => {
     const connected = true;
 
     return connected ? (
       <Button
         BtnName="Create"
-        classStyles="mx-2 rounded-xl active:scale-110"  
+        classStyles={`mx-2 rounded-xl active:scale-110 ${isMobile && 'text-2xl px-20 py-4' }`} 
       /> 
       ) : (
       <Button
@@ -88,12 +90,11 @@ const checkActive = (active, setActive, router) => {
   console.log(theme);
 
   return (
-    <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white
-      border-prim-gray-1 dark:border-prim-gray-3 dark:bg-prim-dark shadow-md"
+    <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark shadow-md"
     >
       {/* ========================BrandName======================== */}
       <div
-        className="flex flex-1 justify-start"
+        className="flex flex-1 justify-start ml-2"
       >
         <Link href="/">
           <div
@@ -136,7 +137,7 @@ const checkActive = (active, setActive, router) => {
       {/* ========================MenuItems======================== */}
 
       {/* =========DarkMode Toggle========= */}
-      <div className='flex mx-2 hover:cursor-pointer p-1 bg-gradient-to-br to-prim-blue from-prim-pink rounded-full shadow-md' 
+      <div className='flex mx-4 hover:cursor-pointer p-1 bg-gradient-to-br to-prim-blue from-prim-pink rounded-full shadow-md' 
          >
         <Image
           src={assets.moon}
@@ -157,7 +158,7 @@ const checkActive = (active, setActive, router) => {
 
       {/* =========Small Devices========= */}
       <div className="hidden md:flex flex-row justify-end">
-        <div className="prim-gradient rounded px-1.5 pt-0.5">
+        <div className="prim-gradient rounded px-1.5 pt-0.5 shadow-md">
          {IsOpen ? (
           <Image 
               className='hover:cursor-pointer'
@@ -185,9 +186,9 @@ const checkActive = (active, setActive, router) => {
           )
           }
           {IsOpen &&(
-            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-32 pt-72">
+            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-4 pt-72">
               <div className="flex justify-center mb-5 mt-5">
-                <ButtonGroup />
+                <ButtonGroup isMobile />
               </div>
               <div className="flex justify-center">
                 <MenuItems isMobile active={active} setActive={setActive} setIsOpen={setIsOpen}/>
