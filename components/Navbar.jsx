@@ -28,8 +28,9 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
             setActive(item);
             if (isMobile) setIsOpen(false);
           }}
-          className={`flex justify-center font-poppins items-center font-semibold text-base hover:text-prim-dark mx-3 text-prim-gray-2
-          ${active == item ? 'text-prim-dark' : 'text-prim-gray-2'}`}
+          className={`flex justify-center font-poppins items-center font-semibold text-base 
+          hover:text-prim-black-4 dark:hover:text-white mx-3 text-prim-gray-2 
+          ${active == item ? 'text-prim-black-4 dark:text-white' : 'text-prim-gray-2'}`}
         >
           <Link href={generateLink(i)}>{item}</Link>
         </li>
@@ -184,7 +185,7 @@ const checkActive = (active, setActive, router) => {
           )
           }
           {IsOpen &&(
-            <div className="fixed inset-x-0 flex flex-col bg-white pb-1800">
+            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-32 pt-72">
               <div className="flex justify-center mb-5 mt-5">
                 <ButtonGroup />
               </div>
