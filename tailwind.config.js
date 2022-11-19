@@ -15,6 +15,8 @@ module.exports = {
         'prim-black-2': '#1B1A21',
         'prim-black-3': '#2A2D3A',
         'prim-black-4': '#24252D',
+        'prim-blue': '#57C6DC',
+        'prim-pink': '#E287D4',
       },
       padding: {
         '1800': '1800px',

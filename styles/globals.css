@@ -7,7 +7,3 @@
 .prim-gradient {
   background: linear-gradient(90deg, #E287D4 0%, #57C6DC 100%);
 }
-
-.toggleborder {
-  border: #E287D4 solid 2px;
-}

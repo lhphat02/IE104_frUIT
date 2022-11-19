@@ -135,10 +135,10 @@ const checkActive = (active, setActive, router) => {
       {/* ========================MenuItems======================== */}
 
       {/* =========DarkMode Toggle========= */}
-      <div className='flex mx-2 hover:cursor-pointer p-1 toggleborder rounded-full' 
+      <div className='flex mx-2 hover:cursor-pointer p-1 bg-gradient-to-br to-prim-blue from-prim-pink rounded-full shadow-md' 
          >
         <Image
-          src={assets.moon2}
+          src={assets.moon}
           alt='toggle'
           width={20}
           height={20}

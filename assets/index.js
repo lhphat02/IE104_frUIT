@@ -16,7 +16,6 @@ import cross from './cross.png';
 import Search from './Search.png';
 import tick from './tick.png';
 import moon from './moon.png';
-import moon2 from './moon2.png';
 
 export default { 
     creator, 
@@ -35,6 +34,5 @@ export default {
     cross,
     Search,
     tick,
-    moon,
-    moon2
+    moon
 };
