@@ -12,7 +12,7 @@ function CreatorCard (props) {
         </div>
 
         <div className='flex flex-col items-center '>
-            <div className='p-1 bg-gradient-to-tr from-prim-blue to-prim-pink rounded-full flex items-center justify-center'>
+            <div className='p-1 md:p-0.5 bg-gradient-to-tr from-prim-blue to-prim-pink rounded-full flex items-center justify-center'>
                 <div className='relative w-20 h-20 md:w-14 md:h-14'>
                     <Image className='rounded-full'
                         src={props.imageCard}
