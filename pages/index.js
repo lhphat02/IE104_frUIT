@@ -13,7 +13,7 @@ const Home = () => {
       </div>
 
       {/* Creators */}
-        <p className='dark:text-white text-3xl font-bold text-prim-black-3'>Top Creators</p>
+        <p className='dark:text-white text-3xl font-bold text-prim-black-3 mb-6'>Top Creators</p>
         <div className='flex justify-between '>
           <div>
             <CreatorCard
