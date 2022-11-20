@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
+import router from 'next/router';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -49,6 +50,9 @@ const ButtonGroup = ({isMobile}) => {
       <Button
         BtnName="Create"
         classStyles={`mx-2 rounded-xl active:scale-110 ${isMobile && 'text-2xl px-20 py-4' }`} 
+        handleClick={()=>{
+          router.push('/create')
+        }}
       /> 
       ) : (
       <Button

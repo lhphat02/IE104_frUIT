@@ -7,3 +7,8 @@
 .prim-gradient {
   background: linear-gradient(90deg, #E287D4 0%, #57C6DC 100%);
 }
+.font-gradient {
+  background: -webkit-linear-gradient(90deg, #E287D4 0%, #57C6DC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
