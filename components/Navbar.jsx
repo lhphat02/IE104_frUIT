@@ -186,12 +186,31 @@ const checkActive = (active, setActive, router) => {
           )
           }
           {IsOpen &&(
-            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-4 pt-72">
-              <div className="flex justify-center mb-5 mt-5">
+            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-4 pt-96">
+              <div className="flex justify-center mb-5 mt-10">
                 <ButtonGroup isMobile />
               </div>
               <div className="flex justify-center">
                 <MenuItems isMobile active={active} setActive={setActive} setIsOpen={setIsOpen}/>
+              </div>
+              <div className="flex justify-evenly mt-64">
+                {[
+                  assets.facebook,
+                  assets.instagram,
+                  assets.telegram,
+                  assets.twitter,
+                  assets.discord  
+                ].map((image, i) => (
+                  <Image 
+                    key = {i}
+                    src = {image}
+                    className = "hover:cursor-pointer"
+                    objectFit = "contain"
+                    width={20}
+                    height={20}
+                    alt = "socialMedia"
+                  />
+                ))}
               </div>
             </div>
           )}
