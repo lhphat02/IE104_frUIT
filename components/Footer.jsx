@@ -44,7 +44,7 @@ const Footer = () => {
           <p className="flex justify-start font-poppins font-semibold mt-10 ml-0 text-sm text-black dark:text-prim-gray-1">
             Get the latest updates
           </p>
-          <div className="flex justify-start items-start flex-row md:w-full minlg:w-50 w-300 mt-2 bg-white border dark:border-prim-black-2 border-prim-gray-2 rounded-md">
+          <div className="flex justify-start items-start flex-row md:w-full minlg:w-500 w-300 mt-2 bg-white border dark:border-prim-black-2 border-prim-gray-2 rounded-md">
             <input
               type="email"
               placeholder="Your Email"
@@ -58,13 +58,13 @@ const Footer = () => {
           </div>
           </span>
           {/* ===================Right Column=================== */}
-          <div className=" flex justify-center items-start ml-80 md:ml-6 md:mt-4 text-sm dark:text-prim-gray-1">
+          <div className=" flex justify-center items-start ml-80 md:ml-40 md:mt-1 text-sm dark:text-prim-gray-1">
             <FooterLink
               heading="FrUIT"
               items={["Explore", "How its work", "Contact Us"]}
             />
           </div>
-          <div className="flex justify-end items-end ml-80 md:ml-6 md:mt-2 text-sm dark:text-prim-gray-1">
+          <div className="flex justify-end items-end ml-80 md:ml-40 md:mt-0 text-sm dark:text-prim-gray-1">
             <FooterLink
               heading="Team 5"
               items={[
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <span className="bg-prim-gray-1 dark:bg-prim-dark w-full md:ml-10">
+      <span className="bg-prim-gray-1 dark:bg-prim-dark w-full md:mt-9 md:w-full">
         <div className="flex flex-row justify-between">
           <div className="mt-1 ml-10">
             <p className="font-poppins font-semibold text-xs text-black dark:text-prim-gray-1 ">
@@ -86,7 +86,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex justify-around mr-20">
+          <div className="flex justify-around mr-20 md:mr-25">
             {[
               images.instagram,
               images.twitter,
