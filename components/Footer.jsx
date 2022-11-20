@@ -4,10 +4,9 @@ import { useTheme } from "next-themes";
 import images from "../assets";
 import Button from "./Button";
 
-
 const FooterLink = ({ heading, items }) => (
   <div className="sm:mx-4 text-black dark:text-prim-gray-1">
-    <h3 className="text-sm font-semibold font-poppins mb-8 ">{heading}</h3>
+    <h3 className="text-lg font-semibold font-poppins mb-6 ">{heading}</h3>
     {items.map((item, index) => (
       <p
         key={index}
@@ -19,74 +18,85 @@ const FooterLink = ({ heading, items }) => (
   </div>
 );
 const Footer = () => {
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   return (
     <footer className="flex justify-center items-center flex-col border-t bg-white border-prim-gray-1 sm:py-4 py-8 w-full dark:bg-prim-dark dark:border-prim-black-1 ">
       {/* ===================Footer UpperSecTion=================== */}
       <div className="w-full minmd:w-4/5 flex flex-row md:flex-col sm:px-4 px-10">
-        {/* ===================Left Column=================== */}
-        <div className="flex justify-start items-start flex-row">
-          {/* ===================Brand=================== */}
-          <div className="flex justify-between items-center ml-4">
-            <Image
-              src={images.logo}
-              objectFit="contain"
-              width={32}
-              height={32}
-              alt="logo"
-            />
+        <div className="w-full flex justify-between items-start flex-row">
 
-            <p className="font-semibold text-md ml-1 text-black dark:text-prim-gray-1">FrUIT</p>
+          {/* ===================Left Column=================== */}
+          <div className="ml-10">
+            {/* ===================Brand=================== */}
+            <div className="flex justify-start items-center">
+              <Image
+                src={images.logo}
+                objectFit="contain"
+                width={32}
+                height={32}
+                alt="logo"
+              />
+
+              <p className="font-bold text-lg text-black dark:text-prim-gray-1 ml-2">
+                frUIT
+              </p>
+            </div>
+
+            {/* ===================Get Email=================== */}
+            <div className="mt-10">
+              <p className="flex font-poppins font-semibold text-lg mb-5 text-black dark:text-prim-gray-1">
+                Get the latest updates
+              </p>
+
+              <div className="flex justify-between w-80 md:w-full minlg:w-50 border dark:border-prim-black-2 rounded-md">
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="h-10 w-full font-normal text-sm minlg:text-lg outline-none p-3 dark:bg-prim-black-2"
+                />
+                <Button 
+                  BtnName="Submit" 
+                  classStyles="rounded-md h-10 text-white text-md" />
+              </div>
+            </div>
+
           </div>
 
-          {/* ===================Get Email=================== */}
-          <span>
-          <p className="flex justify-start font-poppins font-semibold mt-10 ml-0 text-sm text-black dark:text-prim-gray-1">
-            Get the latest updates
-          </p>
-          <div className="flex justify-start items-start flex-row md:w-full minlg:w-50 w-300 mt-2 bg-white border dark:border-prim-black-2 border-prim-gray-2 rounded-md">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="h-7 flex-1 font-normal text-sm minlg:text-lg outline-none pl-2 dark:bg-prim-black-2 rounded-md"
-            />
-            <div className="flex-initial text-black">
-              
-              <Button btnName="Email Me" classStyles="rounded-md h-7"/>
-                           
+          {/* ===================Right Column=================== */}
+          <div className="flex-row justify-end flex">
+            <div className="flex mr-60 md:mt-4 text-sm dark:text-prim-gray-1">
+              <FooterLink
+                heading="frUIT"
+                items={["Explore", "How its work", "Contact Us"]}
+              />
+            </div>
+            <div className="flex mr-60 md:mt-2 text-sm dark:text-prim-gray-1">
+              <FooterLink
+                heading="Team 5"
+                items={[
+                  "Luu Huynh Phat",
+                  "Nguyen Van Chon",
+                  "Nguyen Minh Quan",
+                  "Nguyen Ngoc Mai Khanh",
+                  "Hoang Tuan Anh",
+                ]}
+              />
             </div>
           </div>
-          </span>
-          {/* ===================Right Column=================== */}
-          <div className=" flex justify-center items-start ml-80 md:ml-6 md:mt-4 text-sm dark:text-prim-gray-1">
-            <FooterLink
-              heading="FrUIT"
-              items={["Explore", "How its work", "Contact Us"]}
-            />
-          </div>
-          <div className="flex justify-end items-end ml-80 md:ml-6 md:mt-2 text-sm dark:text-prim-gray-1">
-            <FooterLink
-              heading="Team 5"
-              items={[
-                "Luu Huynh Phat",
-                "Nguyen Van Chon",
-                "Nguyen Minh Quan",
-                "Nguyen Ngoc Mai Khanh",
-                "Hoang Tuan Anh",
-              ]}
-            />
-          </div>
+
         </div>
       </div>
-      <span className="bg-prim-gray-1 dark:bg-prim-dark w-full md:ml-10">
+
+      {/* ===================Footer LowerSecTion=================== */}
+      <div className="dark:bg-prim-dark w-full mt-3 pt-5 border-t-2 dark:border-prim-black-3 md:ml-10">
         <div className="flex flex-row justify-between">
-          <div className="mt-1 ml-10">
-            <p className="font-poppins font-semibold text-xs text-black dark:text-prim-gray-1 ">
-              FrUIT, Inc. All Rights Reserved
+          <div className="mt-1 ml-20">
+            <p className="font-poppins font-semibold text-md text-black dark:text-prim-gray-1 ">
+              frUIT,  Inc. All Rights Reserved
             </p>
           </div>
 
-          <div className="flex justify-around mr-20">
+          <div className="flex mr-60">
             {[
               images.instagram,
               images.twitter,
@@ -94,18 +104,20 @@ const Footer = () => {
               images.discord,
               images.facebook,
             ].map((image, index) => (
-              <Image
-                key={index}
-                src={image}
-                objectFit="contain"
-                width={25}
-                height={25}
-                alt="social"
-              />
+              <div key={index} className="mx-3 hover:cursor-pointer">
+                <Image
+                  src={image}
+                  objectFit="contain"
+                  width={25}
+                  height={25}
+                  alt="social"
+                  className={`${theme === "light" && "filter invert"}`}
+                />
+              </div>
             ))}
           </div>
         </div>
-      </span>
+      </div>
     </footer>
   );
 };
