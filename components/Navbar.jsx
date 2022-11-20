@@ -158,15 +158,15 @@ const checkActive = (active, setActive, router) => {
 
       {/* =========Small Devices========= */}
       <div className="hidden md:flex flex-row justify-end">
-        <div className="prim-gradient rounded px-1.5 pt-0.5 shadow-md">
+        <div className="prim-gradient rounded p-2 shadow-md flex">
          {IsOpen ? (
           <Image 
               className='hover:cursor-pointer'
               src={assets.cross}
               alt="sm-close"
               objectFit="contain"
-              width={15}
-              height={15}
+              width={20}
+              height={20}
               onClick ={() =>
               setIsOpen(false)
             }
@@ -177,8 +177,8 @@ const checkActive = (active, setActive, router) => {
             src={assets.menu}
             alt="sm-menu"
             objectFit="contain"
-            width={15}
-            height={15}
+            width={20}
+            height={20}
             onClick ={() =>
             setIsOpen(true)
             }
@@ -186,7 +186,7 @@ const checkActive = (active, setActive, router) => {
           )
           }
           {IsOpen &&(
-            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-4 pt-96">
+            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-7 sm:pt-96 pt-32">
               <div className="flex justify-center mb-5 mt-10">
                 <ButtonGroup isMobile />
               </div>
