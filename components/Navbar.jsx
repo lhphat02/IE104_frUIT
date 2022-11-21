@@ -190,14 +190,15 @@ const checkActive = (active, setActive, router) => {
           )
           }
           {IsOpen &&(
-            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-1800 mt-7 sm:pt-96 pt-32">
+            <div className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-160 
+                            mt-7 sm:pt-140 pt-56 max-h-full">
               <div className="flex justify-center mb-5 mt-10">
                 <ButtonGroup isMobile />
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center sm:pb-60">
                 <MenuItems isMobile active={active} setActive={setActive} setIsOpen={setIsOpen}/>
               </div>
-              <div className="flex justify-evenly mt-64">
+              <div className="flex justify-evenly mt-64 sm:pt-64">
                 {[
                   assets.facebook,
                   assets.instagram,
@@ -208,7 +209,7 @@ const checkActive = (active, setActive, router) => {
                   <Image 
                     key = {i}
                     src = {image}
-                    className = "hover:cursor-pointer"
+                    className = {`hover:cursor-pointer ${theme === "light" && "filter invert"}`}
                     objectFit = "contain"
                     width={20}
                     height={20}
