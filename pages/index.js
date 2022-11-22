@@ -20,7 +20,7 @@ const Home = () => {
                 imageCard={images.creator1}
                 number="1"
                 name="Phat Luu"
-                address="0x3p5r...8txn"
+                address="0x7p5r...8txn"
               >
             </CreatorCard>
           </div>
@@ -29,7 +29,7 @@ const Home = () => {
                 imageCard={images.creator2}
                 number="2"
                 name="Quan Ngu"
-                address="0xefv3...try5"
+                address="0xefv1...tjy5"
               >
             </CreatorCard>
           </div>
@@ -47,7 +47,7 @@ const Home = () => {
                 imageCard={images.creator4}
                 number="4"
                 name="Huy Ngo"
-                address="0xhdfg...asd7"
+                address="0xh2fg...asd7"
               >
             </CreatorCard>
           </div>
@@ -56,7 +56,7 @@ const Home = () => {
                 imageCard={images.creator5}
                 number="5"
                 name="Khiem Chau"
-                address="0xqw8...qw9e"
+                address="0xqk8...bw9e"
               >
             </CreatorCard>
           
