@@ -49,7 +49,7 @@ const ButtonGroup = ({isMobile}) => {
     return connected ? (
       <Button
         BtnName="Create"
-        classStyles={`mx-2 rounded-xl active:scale-110 ${isMobile && 'text-2xl px-20 py-4' }`} 
+        classStyles={`mx-2 rounded-xl active:scale-110 duration-100 ${isMobile && 'text-2xl px-20 py-4' }`} 
         handleClick={()=>{
           router.push('/create')
         }}
@@ -57,7 +57,7 @@ const ButtonGroup = ({isMobile}) => {
       ) : (
       <Button
         BtnName="Connect"
-        classStyles="mx-2 rounded-xl active:scale-110"
+        classStyles="mx-2 rounded-xl active:scale-110 duration-100"
       />
       );
 };

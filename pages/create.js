@@ -3,8 +3,7 @@ import assets from '../assets';
 import Image from 'next/image';
 
 import Button from '../components/Button';
-import Input from '../components/Input'
-
+import Input from '../components/Input';
 
 const CreateNFT = () => {
   return (
@@ -18,10 +17,9 @@ const CreateNFT = () => {
         >
           NFT
         </div>
-      </div>
+    </div>
 
 {/* ==============================Drop zone================================== */}
-
 
       <h2 className="font-poppins text-xl font-semibold mb-4 mt-6">Upload File</h2>
      <div className='border-4 border-prim-gray-1 border-dashed rounded-2xl mt-4 h-80'>
@@ -60,8 +58,7 @@ const CreateNFT = () => {
             handleClick={() => {}}
           />
         </div>
-    </div>
-  )
-}
+  </div>
+);
 
-export default CreateNFT
+export default CreateNFT;
