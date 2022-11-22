@@ -6,12 +6,10 @@ async function main() {
 
   await frUIT.deployed();
 
-  console.log('NFTMarketplace deployed to:', frUIT.address);
+  console.log('frUIT Marketplace deployed to:', frUIT.address);
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
