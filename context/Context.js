@@ -12,6 +12,7 @@ export const ContextProvider = ({ children }) => {
     const accounts = await window.ethereum.request({
       method: 'eth_requestAccounts',
     });
+    console.log(accounts);
 
     setCurrentAccount(accounts[0]);
     window.location.reload();
@@ -21,6 +22,7 @@ export const ContextProvider = ({ children }) => {
     if (!window.ethereum) return alert('Please install MetaMask.');
 
     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+    console.log(accounts);
 
     if (accounts.length) {
       setCurrentAccount(accounts[0]);
