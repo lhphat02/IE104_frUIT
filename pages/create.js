@@ -1,4 +1,6 @@
 import Dropzone from 'react-dropzone';
+import assets from '../assets';
+import Image from 'next/image';
 
 import Button from '../components/Button';
 import Input from '../components/Input'
@@ -20,12 +22,14 @@ const CreateNFT = () => {
 
 {/* ==============================Drop zone================================== */}
 
-     <div className='border-4 border-dashed rounded-2xl mt-4 h-80'>
-     <Dropzone classStyles="flex justify-center">
+
+      <h2 className="font-poppins text-xl font-semibold mb-4 mt-6">Upload File</h2>
+     <div className='border-4 border-prim-gray-1 border-dashed rounded-2xl mt-4 h-80'>
+     <Dropzone classStyles="">
         {({getRootProps, getInputProps}) => (
           <div {...getRootProps()}>
             <input {...getInputProps()} />
-            <p className="flex justify-center mt-30 p-5 text-xl font-poppins font-medium text-prim-gray-2">
+            <p className="flex justify-center p-5 text-xl font-poppins font-medium text-prim-gray-2 dark:text-prim-gray-1 h-80 pt-32">
             Drag and drop some files here, or click to select files
             </p>
           </div>

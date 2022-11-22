@@ -19,6 +19,7 @@ module.exports = {
         'prim-pink': '#E287D4',
       },
       padding: {
+        '30': '120px',
         '160': '640px',
         '140' : '560px'
       },
