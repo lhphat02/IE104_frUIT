@@ -12,7 +12,7 @@ contract NFTMarketplace is ERC721URIStorage {
     Counters.Counter private _tokenId;
     Counters.Counter private _itemSold;
 
-    uint listingPrice = 0.005 ether;
+    uint listingPrice = 0.104 ether;
     address payable owner;
 
     mapping(uint => MarketItem) private idToMarketItem;
@@ -81,6 +81,7 @@ contract NFTMarketplace is ERC721URIStorage {
         );
     }
 
+    //Buy NFT
     function buyMarketItem(uint tokenId) public payable {
         uint price = idToMarketItem[tokenId].price;
         require(
@@ -90,12 +91,33 @@ contract NFTMarketplace is ERC721URIStorage {
 
         idToMarketItem[tokenId].owner = payable(address(msg.sender));
         idToMarketItem[tokenId].sold = true;
-
         _itemSold.increment();
 
         _transfer(address(this), msg.sender, tokenId);
 
         payable(owner).transfer(listingPrice);
         payable(idToMarketItem[tokenId].seller).transfer(msg.value);
+    }
+
+    //Fetch Listing NFT
+    function fetchMarketItem() public view returns (MarketItem[] memory) {
+        uint itemCount = _tokenId.current();
+        uint unsoldItemCount = itemCount - _itemSold.current();
+        uint index = 0;
+
+        MarketItem[] memory items = new MarketItem[](unsoldItemCount);
+
+        for (uint i = 0; i < itemCount; i++) {
+            if (idToMarketItem[i + 1].owner == address(this)) {
+                uint currentId = i + 1;
+
+                MarketItem memory currentItem = idToMarketItem[currentId];
+
+                items[index] = currentItem;
+                index++;
+            }
+        }
+
+        return items;
     }
 }
