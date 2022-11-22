@@ -127,8 +127,8 @@ const checkActive = (active, setActive, router) => {
             <Image
               src={assets.logo}
               objectFit="contain"
-              width={25}
-              height={25}
+              width={28}
+              height={28}
               alt="logo"
             />
             <p className="flex flex-row dark:text-white text-prim-black-1 font-bold font-poppins text-sm ml-2 mt-1.5">

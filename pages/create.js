@@ -1,7 +1,8 @@
-import { useDropzone } from 'react-dropzone';
+import Dropzone from 'react-dropzone';
 
 import Button from '../components/Button';
 import Input from '../components/Input'
+
 
 const CreateNFT = () => {
   return (
@@ -17,6 +18,22 @@ const CreateNFT = () => {
         </div>
       </div>
 
+{/* ==============================Drop zone================================== */}
+
+     <div className='border-4 border-dashed rounded-2xl mt-4 h-80'>
+     <Dropzone classStyles="flex justify-center">
+        {({getRootProps, getInputProps}) => (
+          <div {...getRootProps()}>
+            <input {...getInputProps()} />
+            <p className="flex justify-center mt-30 p-5 text-xl font-poppins font-medium text-prim-gray-2">
+            Drag and drop some files here, or click to select files
+            </p>
+          </div>
+        )}
+      </Dropzone>    
+     </div> 
+
+    
       <Input
           inputType="input"
           title="Name"
