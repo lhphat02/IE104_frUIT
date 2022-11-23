@@ -27,9 +27,9 @@ const Footer = () => {
       <div className="flex flex-row md:flex-col justify-between">
 
           {/* ===================Left Column=================== */}
-          <div className="ml-32 md:ml-2">
+          <div className="ml-32  md:ml-0">
             {/* ===================Brand=================== */}
-            <div className="flex justify-start">
+            <div className="flex justify-start md:ml-2">
               <Image
                 src={images.logo}
                 objectFit="contain"
@@ -45,11 +45,11 @@ const Footer = () => {
 
             {/* ===================Get Email=================== */}
             <div className="mt-10">
-              <p className="flex font-poppins font-semibold text-lg mb-5 text-black dark:text-prim-gray-1">
+              <p className="flex font-poppins font-semibold text-lg mb-5 text-black dark:text-prim-gray-1 md:ml-2">
                 Get the latest updates
               </p>
 
-              <div className="flex w-80 md:w-full border dark:border-prim-black-2 rounded-md md:pr-2">
+              <div className="flex md:justify-center md:w-full w-80 border dark:border-prim-black-2 rounded-md">
                 <input
                   type="email"
                   placeholder="Your Email"
