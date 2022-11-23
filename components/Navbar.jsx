@@ -55,7 +55,7 @@ const ButtonGroup = ({ isMobile }) => {
 
   return currentAccount ? (
     <Button
-      BtnName="Create"
+      btnName="Create"
       classStyles={`mx-2 rounded-xl active:scale-110 duration-100 ${
         isMobile && 'text-2xl px-20 py-4'
       }`}
@@ -65,7 +65,7 @@ const ButtonGroup = ({ isMobile }) => {
     />
   ) : (
     <Button
-      BtnName="Connect"
+      btnName="Connect"
       classStyles="mx-2 rounded-xl active:scale-110 duration-100"
       handleClick={() => {
         connectWallet();

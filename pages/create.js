@@ -1,6 +1,4 @@
 import Dropzone from 'react-dropzone';
-import Image from 'next/image';
-import assets from '../assets';
 
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -41,7 +39,7 @@ const CreateNFT = () => (
     <Input inputType="number" title="Price" placeholder="NFT Price" />
     <div className="flex justify-end mt-10">
       <Button
-        BtnName="Create NFT"
+        btnName="Create NFT"
         classStyles="rounded-lg text-lg active:scale-110 duration-100"
         handleClick={() => {}}
       />

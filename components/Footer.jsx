@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { useTheme } from "next-themes";
+import Image from 'next/image';
+import { useTheme } from 'next-themes';
 
-import images from "../assets";
-import Button from "./Button";
+import images from '../assets';
+import Button from './Button';
 
 const FooterLink = ({ heading, items }) => (
   <div className="sm:mx-4 text-black dark:text-prim-gray-1">
@@ -24,7 +24,6 @@ const Footer = () => {
       {/* ===================Footer UpperSecTion=================== */}
       <div className="w-full minmd:w-4/5 flex flex-row md:flex-col sm:px-4 px-10">
         <div className="w-full flex justify-between items-start flex-row">
-
           {/* ===================Left Column=================== */}
           <div className="ml-10">
             {/* ===================Brand=================== */}
@@ -54,12 +53,12 @@ const Footer = () => {
                   placeholder="Your Email"
                   className="h-10 w-full font-normal text-sm minlg:text-lg outline-none p-3 dark:bg-prim-black-2"
                 />
-                <Button 
-                  BtnName="Submit" 
-                  classStyles="rounded-md h-10 text-white text-md" />
+                <Button
+                  btnName="Submit"
+                  classStyles="rounded-md h-10 text-white text-md"
+                />
               </div>
             </div>
-
           </div>
 
           {/* ===================Right Column=================== */}
@@ -67,23 +66,22 @@ const Footer = () => {
             <div className="flex mr-60 md:mt-4 text-sm dark:text-prim-gray-1">
               <FooterLink
                 heading="frUIT"
-                items={["Explore", "How its work", "Contact Us"]}
+                items={['Explore', 'How its work', 'Contact Us']}
               />
             </div>
             <div className="flex mr-60 md:mt-2 text-sm dark:text-prim-gray-1">
               <FooterLink
                 heading="Team 5"
                 items={[
-                  "Luu Huynh Phat",
-                  "Nguyen Van Chon",
-                  "Nguyen Minh Quan",
-                  "Nguyen Ngoc Mai Khanh",
-                  "Hoang Tuan Anh",
+                  'Luu Huynh Phat',
+                  'Nguyen Van Chon',
+                  'Nguyen Minh Quan',
+                  'Nguyen Ngoc Mai Khanh',
+                  'Hoang Tuan Anh',
                 ]}
               />
             </div>
           </div>
-
         </div>
       </div>
 
@@ -92,7 +90,7 @@ const Footer = () => {
         <div className="flex flex-row justify-between">
           <div className="mt-1 ml-20">
             <p className="font-poppins font-semibold text-md text-black dark:text-prim-gray-1 ">
-              frUIT,  Inc. All Rights Reserved
+              frUIT, Inc. All Rights Reserved
             </p>
           </div>
 
@@ -111,7 +109,7 @@ const Footer = () => {
                   width={25}
                   height={25}
                   alt="social"
-                  className={`${theme === "light" && "filter invert"}`}
+                  className={`${theme === 'light' && 'filter invert'}`}
                 />
               </div>
             ))}
