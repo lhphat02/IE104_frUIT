@@ -20,14 +20,16 @@ const FooterLink = ({ heading, items }) => (
 const Footer = () => {
   const { theme } = useTheme();
   return (
-    <footer className="flex justify-center items-center flex-col border-t bg-white border-prim-gray-1 sm:py-4 py-8 w-full dark:bg-prim-dark dark:border-prim-black-1 ">
+    <footer className="flex flex-col border-t 
+                    bg-white border-prim-gray-1 py-8
+                    dark:bg-prim-dark dark:border-prim-black-1">
       {/* ===================Footer UpperSecTion=================== */}
-      <div className="w-full minmd:w-4/5 flex flex-row md:flex-col sm:px-4 px-10">
-        <div className="w-full flex justify-between items-start flex-row">
+      <div className="flex flex-row md:flex-col justify-between">
+
           {/* ===================Left Column=================== */}
-          <div className="ml-10">
+          <div className="ml-32 md:ml-2">
             {/* ===================Brand=================== */}
-            <div className="flex justify-start items-center">
+            <div className="flex justify-start">
               <Image
                 src={images.logo}
                 objectFit="contain"
@@ -47,29 +49,29 @@ const Footer = () => {
                 Get the latest updates
               </p>
 
-              <div className="flex justify-between w-80 md:w-full minlg:w-50 border dark:border-prim-black-2 rounded-md">
+              <div className="flex w-80 md:w-full border dark:border-prim-black-2 rounded-md md:pr-2">
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="h-10 w-full font-normal text-sm minlg:text-lg outline-none p-3 dark:bg-prim-black-2"
+                  className="h-10 w-full font-normal md:text-sm text-lg outline-none p-3 dark:bg-prim-black-2"
                 />
                 <Button
                   btnName="Submit"
-                  classStyles="rounded-md h-10 text-white text-md"
+                  classStyles="rounded-md h-10 text-white"
                 />
               </div>
             </div>
           </div>
 
           {/* ===================Right Column=================== */}
-          <div className="flex-row justify-end flex">
-            <div className="flex mr-60 md:mt-4 text-sm dark:text-prim-gray-1">
+          <div className='flex md:flex-row justify-between md:mt-8'>
+            <div className="text-sm dark:text-prim-gray-1 mr-60 md:mr-0 md:ml-20 sm:ml-5">
               <FooterLink
                 heading="frUIT"
                 items={['Explore', 'How its work', 'Contact Us']}
               />
             </div>
-            <div className="flex mr-60 md:mt-2 text-sm dark:text-prim-gray-1">
+            <div className="text-sm dark:text-prim-gray-1 mr-48 md:mr-20 sm:mr-5">
               <FooterLink
                 heading="Team 5"
                 items={[
@@ -82,19 +84,17 @@ const Footer = () => {
               />
             </div>
           </div>
-        </div>
       </div>
 
       {/* ===================Footer LowerSecTion=================== */}
-      <div className="dark:bg-prim-dark w-full mt-3 pt-5 border-t-2 dark:border-prim-black-3 md:ml-10">
-        <div className="flex flex-row justify-between">
-          <div className="mt-1 ml-20">
-            <p className="font-poppins font-semibold text-md text-black dark:text-prim-gray-1 ">
+      <div className="flex flex-row sm:flex-col justify-between
+                    dark:bg-prim-dark mt-3 pt-7 border-t-2 dark:border-prim-black-3">
+            <p className="flex sm:justify-center font-poppins font-semibold text-md sm:text-xs
+                        text-black dark:text-prim-gray-1 md:ml-10 ml-10 sm:ml-0">
               frUIT, Inc. All Rights Reserved
             </p>
-          </div>
 
-          <div className="flex mr-60">
+          <div className="flex flex-row sm:justify-center mr-10 sm:mr-0 sm:mt-4">
             {[
               images.instagram,
               images.twitter,
@@ -102,7 +102,7 @@ const Footer = () => {
               images.discord,
               images.facebook,
             ].map((image, index) => (
-              <div key={index} className="mx-3 hover:cursor-pointer">
+              <div key={index} className="mx-3 md:mx-2 hover:cursor-pointer">
                 <Image
                   src={image}
                   objectFit="contain"
@@ -114,7 +114,6 @@ const Footer = () => {
               </div>
             ))}
           </div>
-        </div>
       </div>
     </footer>
   );
