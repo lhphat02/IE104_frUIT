@@ -46,3 +46,5 @@ typechain-types
 .eslintrc.js
 
 .privatekey
+
+workspace 2.code-workspace
