@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import Image from 'next/image';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
 
 import Button from '../components/Button';
@@ -21,42 +20,6 @@ const options = {
 };
 const client = ipfsHttpClient(options);
 const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
-
-// const FileDropzone = ({ value, onChange, uploadToInfura }) => {
-//   const [loading, setLoading] = useState(false);
-
-//   const OnDrop = useCallback(async (acceptedFiles) => {
-//     setLoading(true);
-//     await uploadToInfura(acceptedFiles[0])
-//       .then((json) => onChange(json.url))
-//       .finally(() => setLoading(false));
-//   }, []);
-
-//   const { getRootProps, getInputProps } = useDropzone({
-//     OnDrop,
-//     multiple: false,
-//     accept: 'image/*',
-//     maxSize: 5000000,
-//   });
-
-//   return (
-//     <div {...getRootProps()}>
-//       <input {...getInputProps()} />
-//       {value ? (
-//         <Image src={value} alt="upload" />
-//       ) : loading ? (
-//         <p>Loading...</p>
-//       ) : (
-//         <p
-//           className="flex justify-center p-5 text-xl font-poppins font-medium
-//                         text-prim-gray-2 dark:text-prim-gray-1 h-80 pt-32 hover:cursor-pointer"
-//         >
-//           Drag and drop some files here, or click to select files
-//         </p>
-//       )}
-//     </div>
-//   );
-// };
 
 const CreateNFT = () => {
   const [fileUrl, setFileUrl] = useState(false);
@@ -79,6 +42,7 @@ const CreateNFT = () => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
+    multiple: false,
     accept: 'image/*',
     maxSize: 5000000,
   });
@@ -94,35 +58,6 @@ const CreateNFT = () => {
         </div>
       </div>
 
-      {/* ==============================Drop zone================================== */}
-
-      {/* <h2 className="font-poppins text-xl font-semibold mb-4 mt-6">Upload File</h2>
-     <div className='border-4 border-prim-gray-1 border-dashed rounded-2xl mt-4 h-80'>
-     <Dropzone>
-        {({getRootProps, getInputProps}) => (
-          <div {...getRootProps()}>
-            <input {...getInputProps()} />
-            <p className="flex justify-center p-5 text-xl font-poppins font-medium text-prim-gray-2 dark:text-prim-gray-1 h-80 pt-32">
-              Drag and drop your file here, or click to select files
-            </p>
-          </div>
-        )}
-      </Dropzone>
-     </div>  */}
-      {/* <div>
-        <h2 className="font-poppins text-xl font-semibold mb-4 mt-6">
-          Upload File
-        </h2>
-        <div className="border-4 border-prim-gray-1 border-dashed rounded-2xl mt-4 h-80">
-          <FileDropzone
-            value={image}
-            onChange={setImage}
-            uploadToInfura={uploadToInfura}
-          />
-        </div>
-      </div> */}
-
-      {/* Phat's dropzone */}
       <div className="mt-10">
         <p className="font-poppins text-xl font-semibold">Upload file</p>
         <div className="mt-4">
