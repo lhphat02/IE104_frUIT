@@ -89,7 +89,7 @@ const CreateNFT = () => {
       <Input inputType="number" title="Price" placeholder="NFT Price" />
       <div className="flex justify-end mt-10">
         <Button
-          BtnName="Create NFT"
+          btnName="Create NFT"
           classStyles="rounded-lg text-lg active:scale-110 duration-100"
           handleClick={() => {}}
         />
