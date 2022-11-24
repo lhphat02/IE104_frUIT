@@ -128,7 +128,7 @@ const CreateNFT = () => {
         <div className="mt-4">
           <div
             {...getRootProps()}
-            className="dark:bg-prim-black-1 border-4 dark:border-white border-prim-gray-2 flex flex-col items-center p-5 rounded-sm border-dashed"
+            className="dark:bg-prim-black-1 border-4 dark:border-white border-prim-gray-2 flex flex-col items-center p-5 rounded-xl border-dashed"
           >
             <input {...getInputProps()} />
             <div className={fileUrl && 'hidden'}>
