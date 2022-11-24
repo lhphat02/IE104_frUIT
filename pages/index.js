@@ -25,7 +25,7 @@ const Home = () => (
           address="0x7p5r...8txn"
         />
       </div>
-      <div className='xs:hidden'>
+      <div className="xs:hidden">
         <CreatorCard
           imageCard={images.creator2}
           number="2"
@@ -33,7 +33,7 @@ const Home = () => (
           address="0xefv1...tjy5"
         />
       </div>
-      <div className='sm:hidden'>
+      <div className="sm:hidden">
         <CreatorCard
           imageCard={images.creator3}
           number="3"
@@ -41,15 +41,15 @@ const Home = () => (
           address="0xtdt3...nh0n"
         />
       </div>
-      <div className='sm:hidden'>
-        <CreatorCard 
+      <div className="sm:hidden">
+        <CreatorCard
           imageCard={images.creator4}
           number="4"
           name="Huy Ngo"
           address="0xh2fg...asd7"
         />
       </div>
-      <div className='md:hidden'>
+      <div className="md:hidden">
         <CreatorCard
           imageCard={images.creator5}
           number="5"
