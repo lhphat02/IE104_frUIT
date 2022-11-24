@@ -1,24 +1,27 @@
-import { ThemeProvider } from 'next-themes'
-import Head from 'next/head'
+import { ThemeProvider } from 'next-themes';
+import Head from 'next/head';
 
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import '../styles/globals.css'
+import { ContextProvider } from '../context/Context';
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
+import '../styles/globals.css';
 
 const MyApp = ({ Component, pageProps }) => (
-    <ThemeProvider attribute='class'>
+  <ContextProvider>
+    <ThemeProvider attribute="class">
       <Head>
         <title>frUIT Marketplace</title>
-        <link rel='icon' href='/logo.png'/>
+        <link rel="icon" href="/logo.png" />
       </Head>
       <div className="dark:bg-prim-dark bg-white min-h-screen">
-        <Navbar/>
-          <div className='pt-20 w-full'>
-            <Component {...pageProps} />
-          </div>
-        <Footer/>
+        <Navbar />
+        <div className="pt-20 w-full">
+          <Component {...pageProps} />
+        </div>
+        <Footer />
       </div>
     </ThemeProvider>
-  );
+  </ContextProvider>
+);
 
 export default MyApp;

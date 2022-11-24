@@ -40,7 +40,9 @@
 <h2 align="left">🚀 For developing</h2>
 
 ###
-
+  
+  <h3 align="left">Require Metamask Wallet installed</h3><br>
+  
 <p align="left">```<br>
   <i>//create local nodes</i> <br>
   - npm hardhat node 

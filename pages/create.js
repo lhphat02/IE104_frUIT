@@ -61,10 +61,9 @@ const CreateNFT = () => {
         <div className='font-poppins font-extrabold text-4xl sm:mb-4 ml-2 font-gradient'
         >
           NFT
-        </div>
     </div>
 
-{/* ==============================Drop zone================================== */}
+    {/* ==============================Drop zone================================== */}
 
       {/* <h2 className="font-poppins text-xl font-semibold mb-4 mt-6">Upload File</h2>
      <div className='border-4 border-prim-gray-1 border-dashed rounded-2xl mt-4 h-80'>
@@ -73,7 +72,7 @@ const CreateNFT = () => {
           <div {...getRootProps()}>
             <input {...getInputProps()} />
             <p className="flex justify-center p-5 text-xl font-poppins font-medium text-prim-gray-2 dark:text-prim-gray-1 h-80 pt-32">
-            Drag and drop some files here, or click to select files
+              Drag and drop your file here, or click to select files
             </p>
           </div>
         )}
@@ -111,5 +110,4 @@ const CreateNFT = () => {
   </div>
 )
 }
-
 export default CreateNFT;
