@@ -48,12 +48,12 @@ const CreateNFT = () => {
   });
 
   return (
-    <div className="p-16">
-      <div className="flex flex-row items-center">
+    <div className="p-16 md:p-8">
+      <div className="flex flex-row sm:flex-col items-center">
         <h1 className="font-poppins text-3xl font-semibold ml-4">
           Create your
         </h1>
-        <div className="font-poppins font-extrabold text-4xl sm:mb-4 ml-2 font-gradient">
+        <div className="font-poppins font-extrabold text-4xl ml-2 sm:mt-2 font-gradient">
           NFT
         </div>
       </div>
