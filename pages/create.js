@@ -1,15 +1,15 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
 
 import Button from '../components/Button';
 import Input from '../components/Input';
+import { Context } from '../context/Context';
 
 // Connect Infura Dedicated Gateway
 const projectId = '2HzKZHh7OyLxfrib8uAOuZexRbD';
 const projectSecret = '525733ee30c91b97e669099d89600345';
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString(
-  // eslint-disable-next-line comma-dangle
   'base64'
 )}`;
 const options = {
@@ -22,7 +22,13 @@ const client = ipfsHttpClient(options);
 const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 
 const CreateNFT = () => {
+  const { createNFT } = useContext(Context);
   const [fileUrl, setFileUrl] = useState(false);
+  const [formInput, setFormInput] = useState({
+    name: '',
+    description: '',
+    price: '',
+  });
 
   const uploadToInfura = async (file) => {
     try {
@@ -87,18 +93,35 @@ const CreateNFT = () => {
         </div>
       </div>
 
-      <Input inputType="input" title="Name" placeholder="NFT Name" />
+      <Input
+        inputType="input"
+        title="Name"
+        placeholder="NFT Name"
+        handleClick={(e) =>
+          setFormInput({ ...formInput, name: e.target.value })
+        }
+      />
       <Input
         inputType="textarea"
         title="Description"
         placeholder="Describe your NFT"
+        handleClick={(e) =>
+          setFormInput({ ...formInput, description: e.target.value })
+        }
       />
-      <Input inputType="number" title="Price" placeholder="NFT Price" />
+      <Input
+        inputType="number"
+        title="Price"
+        placeholder="NFT Price"
+        handleClick={(e) =>
+          setFormInput({ ...formInput, price: e.target.value })
+        }
+      />
       <div className="flex justify-end mt-10">
         <Button
           btnName="Create NFT"
           classStyles="rounded-lg text-lg active:scale-110 duration-100"
-          handleClick={() => {}}
+          handleClick={() => createNFT(fileUrl, formInput.price)}
         />
       </div>
     </div>
