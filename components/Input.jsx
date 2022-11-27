@@ -16,7 +16,7 @@ const Input = ({ inputType, title, placeholder, handleClick }) => (
           placeholder={placeholder}
           onChange={handleClick}
         />
-        <p className="font-poppins text-xl minlg:text-4xl font-semibold">ETH</p>
+        <p className="font-poppins text-xl font-semibold">ETH</p>
       </div>
     ) : inputType === 'textarea' ? (
       <textarea

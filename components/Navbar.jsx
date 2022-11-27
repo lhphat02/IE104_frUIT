@@ -57,7 +57,7 @@ const ButtonGroup = ({ isMobile }) => {
     <Button
       btnName="Create"
       classStyles={`mx-2 rounded-xl active:scale-110 duration-100 ${
-        isMobile && 'text-2xl px-20 py-4'
+        isMobile && 'text-2xl px-16 py-4 sm:px-8 sm:py-2 sm:text-xl'
       }`}
       handleClick={() => {
         router.push('/create');
@@ -66,7 +66,9 @@ const ButtonGroup = ({ isMobile }) => {
   ) : (
     <Button
       btnName="Connect"
-      classStyles="mx-2 rounded-xl active:scale-110 duration-100"
+      classStyles={`mx-2 rounded-xl active:scale-110 duration-100 ${
+        isMobile && 'text-2xl px-16 py-4 sm:px-8 sm:py-2 sm:text-xl'
+      }`}
       handleClick={() => {
         connectWallet();
       }}
@@ -192,12 +194,12 @@ const Navbar = () => {
           {IsOpen && (
             <div
               className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-160
-                            mt-7 sm:pt-140 pt-56 max-h-full"
+                            mt-7 md:pt-28 max-h-full"
             >
               <div className="flex justify-center mb-5 mt-10">
                 <ButtonGroup isMobile />
               </div>
-              <div className="flex justify-center sm:pb-60">
+              <div className="flex justify-center">
                 <MenuItems
                   isMobile
                   active={active}
@@ -205,7 +207,7 @@ const Navbar = () => {
                   setIsOpen={setIsOpen}
                 />
               </div>
-              <div className="flex justify-evenly mt-64 sm:pt-64">
+              <div className="flex justify-evenly md:mt-32 sm:mt-36">
                 {[
                   assets.facebook,
                   assets.instagram,
