@@ -3,6 +3,7 @@ import Dropzone from 'react-dropzone';
 import Button from '../components/Button';
 import Input from '../components/Input';
 
+
 const CreateNFT = () => (
   <div className="p-16">
     <div className="flex flex-row items-center">
