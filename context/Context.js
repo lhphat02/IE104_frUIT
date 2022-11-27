@@ -1,5 +1,5 @@
-import { ethers } from 'hardhat';
 import React, { useEffect, useState } from 'react';
+import { ethers } from 'ethers';
 
 import { ContractAddress, ContractAddressABI } from './ABI';
 
@@ -43,7 +43,7 @@ export const ContextProvider = ({ children }) => {
     const signer = provider.getSigner();
 
     const contract = fetchContract(signer);
-    const price = ethers.utils.parseEther(unformattedPrice);
+    const price = ethers.utils.parseUnits(unformattedPrice, 'ether');
     const listingPrice = await contract.getListingPrice();
 
     const createMarketItem = await contract.createToken(url, price, {
