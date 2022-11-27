@@ -1,12 +1,6 @@
-const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
-    domains: [dedicatedEndPoint, 'fruit-marketplace.infura-ipfs.io'],
-  },
-  env: {
-    BASE_URL: process.env.BASE_URL,
+    domains: ['ipfs.infura.io'],
   },
 };
-module.exports = nextConfig;
