@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
 
 import { ContractAddress, ContractAddressABI } from './ABI';
@@ -38,16 +39,18 @@ export const ContextProvider = ({ children }) => {
   };
 
   const createNFT = async (url, unformattedPrice) => {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
     await provider.send('eth_requestAccounts', []);
     const signer = provider.getSigner();
 
-    const contract = fetchContract(signer);
     const price = ethers.utils.parseUnits(unformattedPrice, 'ether');
+    const contract = fetchContract(signer);
     const listingPrice = await contract.getListingPrice();
 
     const createMarketItem = await contract.createToken(url, price, {
-      value: listingPrice,
+      value: listingPrice.toString(),
     });
     await createMarketItem.wait();
   };

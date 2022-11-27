@@ -23,12 +23,29 @@ const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 
 const CreateNFT = () => {
   const { createNFT } = useContext(Context);
-  const [fileUrl, setFileUrl] = useState(false);
+  const [fileUrl, setFileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
     name: '',
     description: '',
     price: '',
   });
+
+  const createMarket = async () => {
+    const { name, description, price } = formInput;
+    // const router = useRouter();
+    if (!name || !description || !price || !fileUrl) return;
+    /* first, upload to IPFS */
+    const data = JSON.stringify({ name, description, image: fileUrl });
+    try {
+      const added = await client.add(data);
+      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+      /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
+      await createNFT(url, formInput.price);
+      // router.push('/');
+    } catch (error) {
+      console.log('Error uploading file: ', error);
+    }
+  };
 
   const uploadToInfura = async (file) => {
     try {
@@ -121,7 +138,7 @@ const CreateNFT = () => {
         <Button
           btnName="Create NFT"
           classStyles="rounded-lg text-lg active:scale-110 duration-100"
-          handleClick={() => createNFT(fileUrl, formInput.price)}
+          handleClick={createMarket}
         />
       </div>
     </div>
