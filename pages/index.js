@@ -2,7 +2,7 @@ import images from '../assets';
 import CreatorCard from '../components/CreatorCard.jsx';
 
 const Home = () => (
-  <div className="flex justify-center p-10 xs:p-6 flex-col w-full">
+  <div className="flex justify-center p-10 xs:p-6 flex-col w-full minmd:px-60 pc:px-28">
     {/* banner */}
     <div className="py-10">
       <div className="shadow-md prim-gradient h-72 sm:h-52 xs:h-48 px-10 items-center flex rounded-3xl">

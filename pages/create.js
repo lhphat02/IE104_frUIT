@@ -1,6 +1,7 @@
 import { useCallback, useState, useContext } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
+import { useRouter } from 'next/router';
 
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -32,16 +33,15 @@ const CreateNFT = () => {
 
   const createMarket = async () => {
     const { name, description, price } = formInput;
-    // const router = useRouter();
+    const router = useRouter();
+
     if (!name || !description || !price || !fileUrl) return;
-    /* first, upload to IPFS */
     const data = JSON.stringify({ name, description, image: fileUrl });
     try {
       const added = await client.add(data);
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
       await createNFT(url, formInput.price);
-      // router.push('/');
+      router.push('/');
     } catch (error) {
       console.log('Error uploading file: ', error);
     }
