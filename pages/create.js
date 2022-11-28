@@ -24,6 +24,7 @@ const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 
 const CreateNFT = () => {
   const { createNFT } = useContext(Context);
+  const router = useRouter();
   const [fileUrl, setFileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
     name: '',
@@ -31,19 +32,19 @@ const CreateNFT = () => {
     price: '',
   });
 
-  const createMarket = async () => {
+  const createMarketItem = async () => {
     const { name, description, price } = formInput;
-    const router = useRouter();
 
-    if (!name || !description || !price || !fileUrl) return;
+    if (!fileUrl || !name || !description || !price) return;
+
     const data = JSON.stringify({ name, description, image: fileUrl });
     try {
       const added = await client.add(data);
-      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      await createNFT(url, formInput.price);
+      const url = `${dedicatedEndPoint}/ipfs/${added.path}`;
+      await createNFT(url, price);
       router.push('/');
     } catch (error) {
-      console.log('Error uploading file: ', error);
+      console.log('Error creating NFT:', error);
     }
   };
 
@@ -72,30 +73,30 @@ const CreateNFT = () => {
 
   return (
     <div className="p-16 md:p-8">
-      <div className="flex flex-row sm:flex-col items-center">
-        <h1 className="font-poppins text-3xl font-semibold ml-4">
+      <div className="flex flex-row items-center sm:flex-col">
+        <h1 className="ml-4 text-3xl font-semibold font-poppins">
           Create your
         </h1>
-        <div className="font-poppins font-extrabold text-4xl ml-2 sm:mt-2 font-gradient">
+        <div className="ml-2 text-4xl font-extrabold font-poppins sm:mt-2 font-gradient">
           NFT
         </div>
       </div>
 
       <div className="mt-10">
-        <p className="font-poppins text-xl font-semibold">Upload file</p>
+        <p className="text-xl font-semibold font-poppins">Upload file</p>
         <div className="mt-4">
           <div
             {...getRootProps()}
-            className="dark:bg-prim-black-1 border-4 dark:border-white border-prim-gray-2 flex flex-col items-center p-5 rounded-xl border-dashed"
+            className="flex flex-col items-center p-5 border-4 border-dashed dark:bg-prim-black-1 dark:border-white border-prim-gray-2 rounded-xl"
           >
             <input {...getInputProps()} />
             <div className={fileUrl && 'hidden'}>
-              <div className="flex items-center flex-col">
-                <p className="font-poppins text-lg font-semibold my-2">
+              <div className="flex flex-col items-center">
+                <p className="my-2 text-lg font-semibold font-poppins">
                   Drag and drop your file here
                 </p>
-                <p className="font-poppins text-lg font-semibold my-2">or</p>
-                <p className="font-poppins text-lg font-semibold my-2">
+                <p className="my-2 text-lg font-semibold font-poppins">or</p>
+                <p className="my-2 text-lg font-semibold font-poppins">
                   Click here to import file from your device
                 </p>
               </div>
@@ -138,7 +139,7 @@ const CreateNFT = () => {
         <Button
           btnName="Create NFT"
           classStyles="rounded-lg text-lg active:scale-110 duration-100"
-          handleClick={createMarket}
+          handleClick={createMarketItem}
         />
       </div>
     </div>
