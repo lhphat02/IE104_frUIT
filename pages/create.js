@@ -6,17 +6,6 @@ import Button from '../components/Button';
 import Input from '../components/Input';
 import { Context } from '../context/Context';
 
-<<<<<<< HEAD
-
-const CreateNFT = () => (
-  <div className="p-16">
-    <div className="flex flex-row items-center">
-      <h1 className="font-poppins text-3xl font-semibold ml-4">Create your</h1>
-      <div className="font-poppins font-extrabold text-4xl sm:mb-4 ml-2 font-gradient">
-        NFT
-      </div>
-    </div>
-=======
 // Connect Infura Dedicated Gateway
 const projectId = '2HzKZHh7OyLxfrib8uAOuZexRbD';
 const projectSecret = '525733ee30c91b97e669099d89600345';
@@ -61,7 +50,6 @@ const CreateNFT = () => {
   const uploadToInfura = async (file) => {
     try {
       const added = await client.add({ content: file });
->>>>>>> 0d83bfb0e9c05f88e23ca87ce363f3bcdba938ec
 
       const url = `${dedicatedEndPoint}/ipfs/${added.path}`;
 
