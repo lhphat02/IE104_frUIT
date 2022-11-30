@@ -76,7 +76,7 @@ const Home = () => {
       <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
         Top NFTs
       </p>
-      <div className="flex flex-wrap justify-start w-full mt-3 md:justify-center">
+      <div className="flex flex-wrap justify-between w-full mt-3 md:justify-evenly">
         {nftItems.map((nft) => (
           <NFTCard key={nft.tokenId} nft={nft} />
         ))}

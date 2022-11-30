@@ -99,7 +99,7 @@ contract NFTMarketplace is ERC721URIStorage {
         payable(idToMarketItem[tokenId].seller).transfer(msg.value);
     }
 
-    //Fetch Listing NFT
+    //Fetch MarketItem NFT
     function fetchMarketItem() public view returns (MarketItem[] memory) {
         uint itemCount = _tokenId.current();
         uint unsoldItemCount = itemCount - _itemSold.current();
@@ -109,6 +109,62 @@ contract NFTMarketplace is ERC721URIStorage {
 
         for (uint i = 0; i < itemCount; i++) {
             if (idToMarketItem[i + 1].owner == address(this)) {
+                uint currentId = i + 1;
+
+                MarketItem memory currentItem = idToMarketItem[currentId];
+
+                items[index] = currentItem;
+                index++;
+            }
+        }
+
+        return items;
+    }
+
+    //Fetch owned NFTs
+    function fetchCollectionItem() public view returns (MarketItem[] memory) {
+        uint totalIemCount = _tokenId.current();
+        uint index = 0;
+        uint itemCount = 0;
+
+        for (uint i = 0; i < totalIemCount; i++) {
+            if (idToMarketItem[i + 1].owner == msg.sender) {
+                itemCount++;
+            }
+        }
+
+        MarketItem[] memory items = new MarketItem[](itemCount);
+
+        for (uint i = 0; i < totalIemCount; i++) {
+            if (idToMarketItem[i + 1].owner == msg.sender) {
+                uint currentId = i + 1;
+
+                MarketItem memory currentItem = idToMarketItem[currentId];
+
+                items[index] = currentItem;
+                index++;
+            }
+        }
+
+        return items;
+    }
+
+    //Fetch Listing NFT
+    function fetchListingItem() public view returns (MarketItem[] memory) {
+        uint totalIemCount = _tokenId.current();
+        uint index = 0;
+        uint itemCount = 0;
+
+        for (uint i = 0; i < totalIemCount; i++) {
+            if (idToMarketItem[i + 1].seller == msg.sender) {
+                itemCount++;
+            }
+        }
+
+        MarketItem[] memory items = new MarketItem[](itemCount);
+
+        for (uint i = 0; i < totalIemCount; i++) {
+            if (idToMarketItem[i + 1].seller == msg.sender) {
                 uint currentId = i + 1;
 
                 MarketItem memory currentItem = idToMarketItem[currentId];

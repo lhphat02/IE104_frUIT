@@ -6,6 +6,7 @@ import { ContractAddress, ContractAddressABI } from './ABI';
 
 export const Context = React.createContext();
 
+//Contract api
 const fetchContract = (signerOrProvider) =>
   new ethers.Contract(ContractAddress, ContractAddressABI, signerOrProvider);
 
@@ -14,7 +15,8 @@ export const ContextProvider = ({ children }) => {
 
   // Connect MetaMask
   const connectWallet = async () => {
-    if (!window.ethereum) return alert('Please install MetaMask.');
+    //Check if browser have installed metamask
+    if (!window.ethereum) return alert('Please install MetaMask !');
 
     const accounts = await window.ethereum.request({
       method: 'eth_requestAccounts',
@@ -25,8 +27,9 @@ export const ContextProvider = ({ children }) => {
     window.location.reload();
   };
 
+  //Check if connected before or not
   const checkWalletConnection = async () => {
-    if (!window.ethereum) return alert('Please install MetaMask.');
+    if (!window.ethereum) return alert('Please install MetaMask !');
 
     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
     console.log(accounts);
@@ -38,6 +41,7 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  //Create NFT (signer side)
   const createNFT = async (url, unformattedPrice) => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send('eth_requestAccounts', []);
@@ -53,11 +57,51 @@ export const ContextProvider = ({ children }) => {
     await createMarketItem.wait();
   };
 
+  //Fetch all NFTs listed on marketplace (owner: marketplace, provider side)
   const fetchExistingMarketItem = async () => {
     const provider = new ethers.providers.JsonRpcProvider();
     const contract = fetchContract(provider);
 
     const data = await contract.fetchMarketItem();
+
+    const items = await Promise.all(
+      data.map(async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+        const tokenURI = await contract.tokenURI(tokenId);
+        const {
+          data: { image, name, description },
+        } = await axios.get(tokenURI);
+        const price = ethers.utils.formatUnits(
+          unformattedPrice.toString(),
+          'ether'
+        );
+
+        return {
+          price,
+          tokenId: tokenId.toNumber(),
+          id: tokenId.toNumber(),
+          seller,
+          owner,
+          image,
+          name,
+          description,
+          tokenURI,
+        };
+      })
+    );
+
+    return items;
+  };
+
+  //Fetch all NFTs users have listed or owned (seller/owner: signer, signer side)
+  const fetchCollectionOrListed = async (type) => {
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = fetchContract(signer);
+
+    const data =
+      type === 'fetchListed'
+        ? await contract.fetchListingItem()
+        : await contract.fetchCollectionItem();
 
     const items = await Promise.all(
       data.map(async ({ tokenId, seller, owner, price: unformattedPrice }) => {
@@ -98,6 +142,7 @@ export const ContextProvider = ({ children }) => {
         currentAccount,
         createNFT,
         fetchExistingMarketItem,
+        fetchCollectionOrListed,
       }}
     >
       {children}
