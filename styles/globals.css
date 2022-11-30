@@ -13,4 +13,9 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .transparent-black {
+    background-color: black;
+    background-blend-mode: multiply;
+  }
 }

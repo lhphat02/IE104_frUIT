@@ -6,21 +6,16 @@ import assets from '../assets';
 const Loading = () => {
   const { theme } = useTheme();
   return (
-    <div className="flex items-center justify-center m-5">
-      <div className="flex items-center justify-center p-1 rounded-full md:p-1 bg-gradient-to-tr from-prim-blue to-prim-pink">
-        <div
-          className={`relative w-40 h-40 md:w-14 md:h-14 ${
-            theme === 'dark' && 'filter invert'
-          }`}
-        >
-          <Image
-            src={assets.loading}
-            alt=""
-            objectFit="cover"
-            layout="fill"
-            className={`rounded-full`}
-          />
-        </div>
+    <div className="flex flex-col items-center justify-center m-5">
+      <div className="relative flex justify-center">
+        <Image
+          src={theme === 'light' ? assets.loadinglight : assets.loadingdark}
+          alt=""
+          width={300}
+          height={300}
+          objectFit="contain"
+        />
+        <p className="absolute text-2xl font-bold bottom-5">Loading..</p>
       </div>
     </div>
   );

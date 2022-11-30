@@ -16,7 +16,8 @@ import cross from './cross.png';
 import Search from './Search.png';
 import tick from './tick.png';
 import moon from './moon.png';
-import loading from './loading.gif';
+import loadinglight from './loadinglight.gif';
+import loadingdark from './loadingdark.gif';
 
 export default {
   creator,
@@ -36,5 +37,6 @@ export default {
   Search,
   tick,
   moon,
-  loading,
+  loadinglight,
+  loadingdark,
 };
