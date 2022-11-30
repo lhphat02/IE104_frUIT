@@ -8,7 +8,7 @@ import { shortenAddress } from '../utils/shortenAddress';
 const NFTCard = ({ nft, onProfilePage }) => {
   return (
     <Link href={{ pathname: '/nft-detail', query: nft }}>
-      <div className="w-56 p-3 shadow-lg cursor-pointer bg-prim-gray-1 sm:w-full dark:bg-prim-black-3 minmd:w-64 rounded-2xl sm:mx-2">
+      <div className="w-full p-3 shadow-lg cursor-pointer bg-prim-gray-1 dark:bg-prim-black-3 rounded-2xl">
         <div className="relative w-full overflow-hidden h-52 sm:h-44 xs:h-56 rounded-xl">
           <Image
             src={nft.image}

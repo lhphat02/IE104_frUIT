@@ -76,7 +76,7 @@ const Home = () => {
       <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
         Top NFTs
       </p>
-      <div className="grid w-full grid-cols-1 mt-3 gap-x-20 gap-y-10 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
+      <div className="grid w-full grid-cols-1 gap-8 mt-3 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
         {nftItems.map((nft) => (
           <NFTCard key={nft.tokenId} nft={nft} />
         ))}
