@@ -5,6 +5,7 @@ import creator2 from './creator2.png';
 import creator3 from './creator3.jpg';
 import creator4 from './creator4.jpg';
 import creator5 from './creator5.jpg';
+import creatornft from './creatornft.png';
 import logo from './logo.png';
 import discord from './discord.png';
 import instagram from './instagram.png';
@@ -26,6 +27,7 @@ export default {
   creator3,
   creator4,
   creator5,
+  creatornft,
   logo,
   discord,
   instagram,
