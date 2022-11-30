@@ -6,7 +6,7 @@ import assets from '../assets';
 const Loading = () => {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col items-center justify-center m-5">
+    <div className="flex flex-col items-center justify-center m-2">
       <div className="relative flex justify-center">
         <Image
           src={theme === 'light' ? assets.loadinglight : assets.loadingdark}
@@ -15,7 +15,7 @@ const Loading = () => {
           height={300}
           objectFit="contain"
         />
-        <p className="absolute text-2xl font-bold bottom-5">Loading..</p>
+        <p className="absolute text-2xl font-semibold bottom-3">Loading. . .</p>
       </div>
     </div>
   );
