@@ -8,10 +8,12 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "hardhat/console.sol";
 
 contract NFTMarketplace is ERC721URIStorage {
+    //Using counter library to track token id
     using Counters for Counters.Counter;
     Counters.Counter private _tokenId;
     Counters.Counter private _itemSold;
 
+    //Listing fee on marketplace
     uint listingPrice = 0.104 ether;
     address payable owner;
 
@@ -46,7 +48,7 @@ contract NFTMarketplace is ERC721URIStorage {
         listingPrice = _listingPrice;
     }
 
-    //Check Listing Price
+    //Get Listing Price
     function getListingPrice() public view returns (uint) {
         return listingPrice;
     }
@@ -59,6 +61,7 @@ contract NFTMarketplace is ERC721URIStorage {
         _tokenId.increment();
         uint newTokenId = _tokenId.current();
 
+        //Mint token and set URI for token
         _mint(msg.sender, newTokenId);
         _setTokenURI(newTokenId, tokenURL);
         createMarketItem(newTokenId, inputPrice);
@@ -72,6 +75,7 @@ contract NFTMarketplace is ERC721URIStorage {
             "Must have enough token to pay listing price"
         );
 
+        //Put NFT on market
         idToMarketItem[tokenId] = MarketItem(
             tokenId,
             payable(msg.sender),
@@ -89,12 +93,13 @@ contract NFTMarketplace is ERC721URIStorage {
             "Must have enough tokens to be able to buy this NFT"
         );
 
+        //Transfer ownership
         idToMarketItem[tokenId].owner = payable(address(msg.sender));
         idToMarketItem[tokenId].sold = true;
         _itemSold.increment();
-
         _transfer(address(this), msg.sender, tokenId);
 
+        //Transaction: signer to marketplace (listing fee), sender to seller (nft price)
         payable(owner).transfer(listingPrice);
         payable(idToMarketItem[tokenId].seller).transfer(msg.value);
     }
@@ -105,6 +110,7 @@ contract NFTMarketplace is ERC721URIStorage {
         uint unsoldItemCount = itemCount - _itemSold.current();
         uint index = 0;
 
+        //create new array, length = unsold items on market
         MarketItem[] memory items = new MarketItem[](unsoldItemCount);
 
         for (uint i = 0; i < itemCount; i++) {
@@ -133,6 +139,7 @@ contract NFTMarketplace is ERC721URIStorage {
             }
         }
 
+        //create new array, length = owned items
         MarketItem[] memory items = new MarketItem[](itemCount);
 
         for (uint i = 0; i < totalIemCount; i++) {
@@ -161,6 +168,7 @@ contract NFTMarketplace is ERC721URIStorage {
             }
         }
 
+        //create new array, length = listing items
         MarketItem[] memory items = new MarketItem[](itemCount);
 
         for (uint i = 0; i < totalIemCount; i++) {
