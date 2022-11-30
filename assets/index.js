@@ -16,23 +16,25 @@ import cross from './cross.png';
 import Search from './Search.png';
 import tick from './tick.png';
 import moon from './moon.png';
+import loading from './loading.gif';
 
-export default { 
-    creator, 
-    creator1, 
-    creator2, 
-    creator3, 
-    creator4, 
-    creator5, 
-    logo, 
-    discord, 
-    instagram, 
-    telegram, 
-    twitter, 
-    facebook, 
-    menu,
-    cross,
-    Search,
-    tick,
-    moon
+export default {
+  creator,
+  creator1,
+  creator2,
+  creator3,
+  creator4,
+  creator5,
+  logo,
+  discord,
+  instagram,
+  telegram,
+  twitter,
+  facebook,
+  menu,
+  cross,
+  Search,
+  tick,
+  moon,
+  loading,
 };
