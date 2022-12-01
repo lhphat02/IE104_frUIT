@@ -24,20 +24,19 @@ const NFTdetail = () => {
   });
 
   useEffect(() => {
-    if (!router.isReady) return;
     setNft(router.query);
-  }, [router.isReady]);
+  }, []);
 
   console.log(nft);
   return (
     <div className="flex justify-center my-8 md:flex-col">
       <div className="relative flex justify-center flex-1 p-12 border-r sm:px-4 md:border-r-0 md:border-b dark:border-prim-black-1 border-prim-gray-1">
-        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500 rounded-3xl">
+        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
           <Image
             src={nft.image}
             alt=""
             objectFit="cover"
-            className="rounded-3xl"
+            className="rounded-2xl"
             layout="fill"
           />
         </div>

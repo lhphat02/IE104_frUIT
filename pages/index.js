@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
-      {/* banner */}
+      {/* =================Banner================= */}
       <div className="py-10">
         <div className="flex items-center px-10 shadow-md prim-gradient h-72 sm:h-52 xs:h-48 rounded-3xl">
           <p className="overflow-hidden text-5xl font-bold text-white md:text-4xl sm:text-2xl xs:text-xl">
@@ -26,7 +26,7 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Creators */}
+      {/* =================Creators================= */}
       <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
         Top Creators
       </p>
@@ -73,9 +73,11 @@ const Home = () => {
         </div>
       </div>
 
+      {/* =================NFTs================= */}
       <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
         Top NFTs
       </p>
+      {/* Xài grid tiện hơn flex */}
       <div className="grid w-full grid-cols-1 gap-8 mt-3 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
         {nftItems.map((nft) => (
           <NFTCard key={nft.tokenId} nft={nft} />
