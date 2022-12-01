@@ -96,6 +96,7 @@ const checkActive = (active, setActive, router) => {
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [active, setActive] = useState('Explore');
+  const [atTop, setAtTop] = useState(true);
   const [IsOpen, setIsOpen] = useState(false);
   const router = useRouter();
 
@@ -103,10 +104,22 @@ const Navbar = () => {
     checkActive(active, setActive, router);
   }, [router.pathname]);
 
+  useEffect(() => {
+    window.onscroll = () =>
+      window.pageYOffset === 0 ? setAtTop(true) : setAtTop(false);
+    return () => (window.onscroll = null);
+  });
+
   console.log(theme);
 
   return (
-    <nav className="fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b shadow-md border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark">
+    <nav
+      className={`fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark ${
+        atTop
+          ? 'shadow-xl'
+          : 'filter backdrop-blur-lg bg-opacity-75 dark:filter dark:backdrop-blur-lg dark:bg-opacity-75  '
+      }`}
+    >
       {/* ========================BrandName======================== */}
       <div className="flex justify-start flex-1 ml-2">
         <Link href="/">
