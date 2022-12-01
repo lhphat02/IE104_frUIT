@@ -62,7 +62,7 @@ const Footer = () => {
 
         {/* ===================Right Column=================== */}
         <div className="flex justify-between md:flex-row md:mt-8">
-          <div className="text-sm dark:text-prim-gray-1 mr-60 md:mr-0 md:ml-20 sm:ml-5">
+          <div className="text-sm dark:text-prim-gray-1 mr-36 laptop:mr-60 md:mr-0 md:ml-20 sm:ml-5">
             <FooterLink
               heading="frUIT"
               items={['Explore', 'How its work', 'Contact Us']}
@@ -84,7 +84,7 @@ const Footer = () => {
       </div>
 
       {/* ===================Footer LowerSecTion=================== */}
-      <div className="flex flex-row justify-between mx-32 mt-3 border-t-2 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
+      <div className="flex flex-row justify-between mt-3 border-t-2 tablet:mx-32 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
         <p className="flex font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0">
           frUIT, Inc. All Rights Reserved
         </p>
