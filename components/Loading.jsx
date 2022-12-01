@@ -15,7 +15,9 @@ const Loading = () => {
           height={300}
           objectFit="contain"
         />
-        <p className="absolute text-2xl font-semibold bottom-3">Loading. . .</p>
+        <p className="absolute text-2xl font-semibold text-prim-gray-2 font-poppins bottom-3">
+          Loading. .
+        </p>
       </div>
     </div>
   );
