@@ -5,6 +5,7 @@ import creator2 from './creator2.png';
 import creator3 from './creator3.jpg';
 import creator4 from './creator4.jpg';
 import creator5 from './creator5.jpg';
+import creatornft from './creatornft.png';
 import logo from './logo.png';
 import discord from './discord.png';
 import instagram from './instagram.png';
@@ -16,23 +17,28 @@ import cross from './cross.png';
 import Search from './Search.png';
 import tick from './tick.png';
 import moon from './moon.png';
+import loadinglight from './loadinglight.gif';
+import loadingdark from './loadingdark.gif';
 
-export default { 
-    creator, 
-    creator1, 
-    creator2, 
-    creator3, 
-    creator4, 
-    creator5, 
-    logo, 
-    discord, 
-    instagram, 
-    telegram, 
-    twitter, 
-    facebook, 
-    menu,
-    cross,
-    Search,
-    tick,
-    moon
+export default {
+  creator,
+  creator1,
+  creator2,
+  creator3,
+  creator4,
+  creator5,
+  creatornft,
+  logo,
+  discord,
+  instagram,
+  telegram,
+  twitter,
+  facebook,
+  menu,
+  cross,
+  Search,
+  tick,
+  moon,
+  loadinglight,
+  loadingdark,
 };

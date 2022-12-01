@@ -5,12 +5,12 @@ import images from '../assets';
 import Button from './Button';
 
 const FooterLink = ({ heading, items }) => (
-  <div className="sm:mx-4 text-black dark:text-prim-gray-1">
-    <h3 className="text-lg font-semibold font-poppins mb-6 ">{heading}</h3>
+  <div className="text-black sm:mx-4 dark:text-prim-gray-1">
+    <h3 className="mb-6 text-lg font-semibold font-poppins ">{heading}</h3>
     {items.map((item, index) => (
       <p
         key={index}
-        className="hover:cursor-pointer font-poppins font-normal my-4 dark:text-prim-gray-1 dark:hover:text-prim-blue hover:text-prim-pink"
+        className="my-4 font-normal hover:cursor-pointer font-poppins dark:text-prim-gray-1 dark:hover:text-prim-blue hover:text-prim-pink"
       >
         {item}
       </p>
@@ -21,16 +21,14 @@ const Footer = () => {
   const { theme } = useTheme();
   return (
     <footer
-      className="flex flex-col border-t md:px-4
-                    bg-white border-prim-gray-1 py-8
-                    dark:bg-prim-dark dark:border-prim-black-1"
+      className="flex flex-col py-8 bg-white border-t md:px-4 border-prim-gray-1 dark:bg-prim-dark dark:border-prim-black-1"
     >
       {/* ===================Footer UpperSecTion=================== */}
-      <div className="flex flex-row md:flex-col justify-between">
+      <div className="flex flex-row justify-between md:flex-col">
         {/* ===================Left Column=================== */}
-        <div className="ml-32  md:ml-0">
+        <div className="ml-32 md:ml-0">
           {/* ===================Brand=================== */}
-          <div className="flex justify-start items-center md:ml-2">
+          <div className="flex items-center justify-start md:ml-2">
             <Image
               src={images.logo}
               objectFit="contain"
@@ -39,22 +37,22 @@ const Footer = () => {
               alt="logo"
             />
 
-            <p className="font-bold text-lg text-black dark:text-prim-gray-1 ml-2">
+            <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
               frUIT
             </p>
           </div>
 
           {/* ===================Get Email=================== */}
           <div className="mt-10">
-            <p className="flex font-poppins font-semibold text-lg mb-5 text-black dark:text-prim-gray-1 md:ml-2">
+            <p className="flex mb-5 text-lg font-semibold text-black font-poppins dark:text-prim-gray-1 md:ml-2">
               Get the latest updates
             </p>
 
-            <div className="flex md:justify-center md:w-full w-80 border dark:border-prim-black-2 rounded-md">
+            <div className="flex border rounded-md md:justify-center md:w-full w-80 dark:border-prim-black-2">
               <input
                 type="email"
                 placeholder="Your Email"
-                className="h-10 w-full font-normal md:text-sm text-lg outline-none p-3 dark:bg-prim-black-2"
+                className="w-full h-10 p-3 text-lg font-normal outline-none md:text-sm dark:bg-prim-black-2"
               />
               <Button
                 btnName="Submit"
@@ -65,14 +63,14 @@ const Footer = () => {
         </div>
 
         {/* ===================Right Column=================== */}
-        <div className="flex md:flex-row justify-between md:mt-8">
+        <div className="flex justify-between md:flex-row md:mt-8">
           <div className="text-sm dark:text-prim-gray-1 mr-60 md:mr-0 md:ml-20 sm:ml-5">
             <FooterLink
               heading="frUIT"
               items={['Explore', 'How its work', 'Contact Us']}
             />
           </div>
-          <div className="text-sm dark:text-prim-gray-1 mr-48 md:mr-20 sm:mr-5">
+          <div className="mr-48 text-sm dark:text-prim-gray-1 md:mr-20 sm:mr-5">
             <FooterLink
               heading="Team 5"
               items={[
@@ -88,17 +86,15 @@ const Footer = () => {
 
       {/* ===================Footer LowerSecTion=================== */}
       <div
-        className="flex flex-row sm:flex-col justify-between
-                    dark:bg-prim-dark mt-3 pt-7 border-t-2 dark:border-prim-black-3"
+        className="flex flex-row justify-between mt-3 border-t-2 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3"
       >
         <p
-          className="flex sm:justify-center font-poppins font-semibold text-md sm:text-xs
-                        text-black dark:text-prim-gray-1 md:ml-10 ml-10 sm:ml-0"
+          className="flex ml-10 font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0"
         >
           frUIT, Inc. All Rights Reserved
         </p>
 
-        <div className="flex flex-row sm:justify-center mr-10 sm:mr-0 sm:mt-4">
+        <div className="flex flex-row mr-10 sm:justify-center sm:mr-0 sm:mt-4">
           {[
             images.instagram,
             images.twitter,

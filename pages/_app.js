@@ -13,9 +13,9 @@ const MyApp = ({ Component, pageProps }) => (
         <title>frUIT Marketplace</title>
         <link rel="icon" href="/logo.png" />
       </Head>
-      <div className="dark:bg-prim-dark bg-white">
+      <div className="bg-white dark:bg-prim-dark">
         <Navbar />
-        <div className="pt-20 w-full">
+        <div className="w-full pt-16">
           <Component {...pageProps} />
         </div>
         <Footer />

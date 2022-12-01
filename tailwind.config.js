@@ -1,8 +1,5 @@
 module.exports = {
-  content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-  ],
+  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -19,19 +16,33 @@ module.exports = {
         'prim-pink': '#E287D4',
       },
       padding: {
-        '30': '120px',
-        '160': '640px',
-        '140' : '560px'
+        30: '120px',
+        160: '640px',
+        140: '560px',
       },
       margin: {
-        '30': '120px'
-      }
+        30: '120px',
+      },
+      width: {
+        300: '300px',
+        500: '500px',
+        700: '700px',
+      },
+      height: {
+        300: '300px',
+        500: '500px',
+        700: '700px',
+      },
     },
     screens: {
       lg: { max: '1800px' },
       md: { max: '1080px' },
       sm: { max: '600px' },
       xs: { max: '400px' },
+      mobile: '600px',
+      note: '800px',
+      tablet: '1080px',
+      laptop: '1230px',
       pc: '1500px',
       minmd: '1700px',
       minlg: '2100px',
@@ -43,7 +54,7 @@ module.exports = {
   variants: {
     extend: {
       backgroundColor: ['dark'],
-      textColor: ['dark']
+      textColor: ['dark'],
     },
   },
   plugins: [],

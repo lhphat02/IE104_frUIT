@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Web3Modal from 'web3modal';
 import { ethers } from 'ethers';
+import axios from 'axios';
 
 import { ContractAddress, ContractAddressABI } from './ABI';
 
 export const Context = React.createContext();
 
+//Contract interaction
 const fetchContract = (signerOrProvider) =>
   new ethers.Contract(ContractAddress, ContractAddressABI, signerOrProvider);
 
@@ -14,8 +15,10 @@ export const ContextProvider = ({ children }) => {
 
   // Connect MetaMask
   const connectWallet = async () => {
-    if (!window.ethereum) return alert('Please install MetaMask.');
+    //Check if browser have installed metamask
+    if (!window.ethereum) return alert('Please install MetaMask !');
 
+    //Request connection to metamask's user ethereum accounts
     const accounts = await window.ethereum.request({
       method: 'eth_requestAccounts',
     });
@@ -25,9 +28,11 @@ export const ContextProvider = ({ children }) => {
     window.location.reload();
   };
 
+  //Check if connected before or not
   const checkWalletConnection = async () => {
-    if (!window.ethereum) return alert('Please install MetaMask.');
+    if (!window.ethereum) return alert('Please install MetaMask !');
 
+    //Ask for available accounts without requesting
     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
     console.log(accounts);
 
@@ -38,29 +43,132 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+  //Create NFT (signer side)
   const createNFT = async (url, unformattedPrice) => {
-    const web3Modal = new Web3Modal();
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
+    //Interact contract as signer
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send('eth_requestAccounts', []);
     const signer = provider.getSigner();
-
-    const price = ethers.utils.parseUnits(unformattedPrice, 'ether');
     const contract = fetchContract(signer);
+
+    //Parse price number so that the machine can understand
+    const price = ethers.utils.parseUnits(unformattedPrice, 'ether');
     const listingPrice = await contract.getListingPrice();
 
+    //Pay listing fee to the market owner (value = msg.value)
     const createMarketItem = await contract.createToken(url, price, {
       value: listingPrice.toString(),
     });
     await createMarketItem.wait();
   };
 
+  //Fetch all NFTs listed on marketplace (owner: marketplace, provider side)
+  const fetchExistingMarketItem = async () => {
+    //Interact contract as provider
+    const provider = new ethers.providers.JsonRpcProvider();
+    const contract = fetchContract(provider);
+
+    const data = await contract.fetchMarketItem();
+    const items = await Promise.all(
+      data.map(async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+        const tokenURI = await contract.tokenURI(tokenId);
+        const {
+          data: { image, name, description },
+        } = await axios.get(tokenURI);
+        const price = ethers.utils.formatUnits(
+          unformattedPrice.toString(),
+          'ether'
+        );
+
+        return {
+          price,
+          tokenId: tokenId.toNumber(),
+          id: tokenId.toNumber(),
+          seller,
+          owner,
+          image,
+          name,
+          description,
+          tokenURI,
+        };
+      })
+    );
+
+    return items;
+  };
+
+  //Buy NFTs (signer side)
+  const buyNFT = async (nft) => {
+    //Interact contract as signer
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = fetchContract(signer);
+
+    //Parse price number so that the machine can understand
+    const price = ethers.utils.parseUnits(nft.price, 'ether');
+    const transaction = await contract.buyMarketItem(nft.tokenId, {
+      value: price,
+    });
+    await transaction.wait();
+  };
+
+  //Fetch all NFTs users have listed or owned (seller/owner: signer, signer side)
+  const fetchCollectionOrListed = async (type) => {
+    //Interact contract as signer
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contract = fetchContract(signer);
+
+    //Check if getting data for collection or listed page
+    const data =
+      type === 'fetchListed'
+        ? await contract.fetchListingItem()
+        : await contract.fetchCollectionItem();
+
+    const items = await Promise.all(
+      data.map(async ({ tokenId, seller, owner, price: unformattedPrice }) => {
+        const tokenURI = await contract.tokenURI(tokenId);
+        const {
+          data: { image, name, description },
+        } = await axios.get(tokenURI);
+        const price = ethers.utils.formatUnits(
+          unformattedPrice.toString(),
+          'ether'
+        );
+
+        return {
+          price,
+          tokenId: tokenId.toNumber(),
+          id: tokenId.toNumber(),
+          seller,
+          owner,
+          image,
+          name,
+          description,
+          tokenURI,
+        };
+      })
+    );
+
+    return items;
+  };
+
+  //Auto connect available accounts on load
   useEffect(() => {
     checkWalletConnection();
   }, []);
 
   return (
-    <Context.Provider value={{ connectWallet, currentAccount, createNFT }}>
+    <Context.Provider
+      value={{
+        connectWallet,
+        currentAccount,
+        createNFT,
+        fetchExistingMarketItem,
+        fetchCollectionOrListed,
+        buyNFT,
+      }}
+    >
       {children}
     </Context.Provider>
   );
