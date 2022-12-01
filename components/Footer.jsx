@@ -20,9 +20,7 @@ const FooterLink = ({ heading, items }) => (
 const Footer = () => {
   const { theme } = useTheme();
   return (
-    <footer
-      className="flex flex-col py-8 bg-white border-t md:px-4 border-prim-gray-1 dark:bg-prim-dark dark:border-prim-black-1"
-    >
+    <footer className="flex flex-col py-8 bg-white border-t md:px-4 border-prim-gray-1 dark:bg-prim-dark dark:border-prim-black-1">
       {/* ===================Footer UpperSecTion=================== */}
       <div className="flex flex-row justify-between md:flex-col">
         {/* ===================Left Column=================== */}
@@ -64,13 +62,13 @@ const Footer = () => {
 
         {/* ===================Right Column=================== */}
         <div className="flex justify-between md:flex-row md:mt-8">
-          <div className="text-sm dark:text-prim-gray-1 mr-60 md:mr-0 md:ml-20 sm:ml-5">
+          <div className="text-sm dark:text-prim-gray-1 mr-36 laptop:mr-60 md:mr-0 md:ml-20 sm:ml-5">
             <FooterLink
               heading="frUIT"
               items={['Explore', 'How its work', 'Contact Us']}
             />
           </div>
-          <div className="mr-48 text-sm dark:text-prim-gray-1 md:mr-20 sm:mr-5">
+          <div className="text-sm mr-52 dark:text-prim-gray-1 md:mr-20 sm:mr-5">
             <FooterLink
               heading="Team 5"
               items={[
@@ -78,6 +76,7 @@ const Footer = () => {
                 'Nguyen Van Chon',
                 'Nguyen Minh Quan',
                 'Hoang Tuan Anh',
+                'Nguyen Ngoc Mai Khanh',
               ]}
             />
           </div>
@@ -85,12 +84,8 @@ const Footer = () => {
       </div>
 
       {/* ===================Footer LowerSecTion=================== */}
-      <div
-        className="flex flex-row justify-between mt-3 border-t-2 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3"
-      >
-        <p
-          className="flex ml-10 font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0"
-        >
+      <div className="flex flex-row justify-between mt-3 border-t-2 tablet:mx-32 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
+        <p className="flex font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0">
           frUIT, Inc. All Rights Reserved
         </p>
 

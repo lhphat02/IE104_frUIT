@@ -12,6 +12,7 @@ const fetchContract = (signerOrProvider) =>
 
 export const ContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
+  const [loading, setLoading] = useState(false);
 
   // Connect MetaMask
   const connectWallet = async () => {
@@ -64,6 +65,7 @@ export const ContextProvider = ({ children }) => {
 
   //Fetch all NFTs listed on marketplace (owner: marketplace, provider side)
   const fetchExistingMarketItem = async () => {
+    setLoading(false);
     //Interact contract as provider
     const provider = new ethers.providers.JsonRpcProvider();
     const contract = fetchContract(provider);
@@ -114,6 +116,7 @@ export const ContextProvider = ({ children }) => {
 
   //Fetch all NFTs users have listed or owned (seller/owner: signer, signer side)
   const fetchCollectionOrListed = async (type) => {
+    setLoading(false);
     //Interact contract as signer
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -167,6 +170,7 @@ export const ContextProvider = ({ children }) => {
         fetchExistingMarketItem,
         fetchCollectionOrListed,
         buyNFT,
+        loading,
       }}
     >
       {children}
