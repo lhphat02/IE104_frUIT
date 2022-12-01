@@ -116,7 +116,7 @@ const Navbar = () => {
     <nav
       className={`fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark ${
         atTop
-          ? 'shadow-xl'
+          ? 'shadow-lg'
           : 'filter backdrop-blur-lg bg-opacity-75 dark:filter dark:backdrop-blur-lg dark:bg-opacity-75  '
       }`}
     >
