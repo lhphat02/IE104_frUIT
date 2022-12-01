@@ -5,8 +5,9 @@ import React from 'react';
 
 import { shortenAddress } from '../utils/shortenAddress';
 
-const NFTCard = ({ nft, onProfilePage }) => {
+const NFTCard = ({ nft, onCollectionPage }) => {
   return (
+    // Get NFT's query string
     <Link href={{ pathname: '/nft-detail', query: nft }}>
       <div className="w-full p-3 shadow-lg cursor-pointer bg-prim-gray-1 dark:bg-prim-black-3 rounded-2xl">
         <div className="relative w-full overflow-hidden h-52 sm:h-44 xs:h-56 rounded-xl">
@@ -27,7 +28,7 @@ const NFTCard = ({ nft, onProfilePage }) => {
               {nft.price} <span className="font-normal">ETH</span>
             </p>
             <p className="text-xs font-semibold font-poppins">
-              {shortenAddress(onProfilePage ? nft.owner : nft.seller)}
+              {shortenAddress(onCollectionPage ? nft.owner : nft.seller)}
             </p>
           </div>
         </div>

@@ -24,13 +24,17 @@ const NFTdetail = () => {
   });
 
   useEffect(() => {
+    //Parse NFT query string into object
     setNft(router.query);
   }, []);
 
   console.log(nft);
+
   return (
     <div className="flex justify-center my-8 md:flex-col">
+      {/* =================Left Section================= */}
       <div className="relative flex justify-center flex-1 p-12 border-r sm:px-4 md:border-r-0 md:border-b dark:border-prim-black-1 border-prim-gray-1">
+        {/* =================NFT Image================= */}
         <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
           <Image
             src={nft.image}
@@ -42,13 +46,16 @@ const NFTdetail = () => {
         </div>
       </div>
 
+      {/* =================Right Section================= */}
       <div className="justify-start flex-1 p-12 sm:px-4 sm:pb-4">
+        {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
           <h2 className="text-2xl font-semibold font-poppins minmd:text-3xl">
             {nft.name}
           </h2>
         </div>
 
+        {/* =================NFT Creator================= */}
         <div className="mt-10">
           <p className="text-base font-medium font-poppins dark:text-white text-prim-black-1 minlg:text-base">
             Creator
@@ -67,6 +74,7 @@ const NFTdetail = () => {
           </div>
         </div>
 
+        {/* =================NFT Details================= */}
         <div className="flex flex-col mt-10">
           <div className="flex flex-row w-full border-b dark:border-prim-black-1 border-prim-gray-1">
             <p className="mb-2 text-base font-medium font-poppins">Details</p>
@@ -77,18 +85,23 @@ const NFTdetail = () => {
             </p>
           </div>
         </div>
+
+        {/* =================Buy Section================= */}
         <div className="flex flex-row mt-20 sm:flex-col">
           {currentAccount === nft.seller.toLowerCase() ? (
+            //If already listed
             <p className="p-2 text-base font-normal border text-prim-gray-2 font-poppins border-prim-gray-2">
               You can't buy your own NFT
             </p>
           ) : currentAccount === nft.owner.toLowerCase() ? (
+            //If already owned
             <Button
               btnName="List on Marketplace"
               classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
               handleClick={() => {}}
             />
           ) : (
+            //If not owned or listed
             <Button
               btnName={`Buy for ${nft.price} ETH`}
               classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
