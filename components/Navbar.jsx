@@ -106,11 +106,11 @@ const Navbar = () => {
   console.log(theme);
 
   return (
-    <nav className="flex flex-row justify-between items-center w-full fixed z-10 p-4 border-b bg-white border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark shadow-md">
+    <nav className="fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b shadow-md border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark">
       {/* ========================BrandName======================== */}
-      <div className="flex flex-1 justify-start ml-2">
+      <div className="flex justify-start flex-1 ml-2">
         <Link href="/">
-          <div className="justify-center items-center flex flex-row md:hidden cursor-pointer">
+          <div className="flex flex-row items-center justify-center cursor-pointer md:hidden">
             <Image
               src={assets.logo}
               objectFit="contain"
@@ -126,7 +126,7 @@ const Navbar = () => {
 
         <Link href="/">
           <div
-            className="hidden md:flex cursor-pointer"
+            className="hidden cursor-pointer md:flex"
             onClick={() => {
               setActive('Explore');
               setIsOpen(false);
@@ -149,7 +149,7 @@ const Navbar = () => {
       {/* ========================MenuItems======================== */}
 
       {/* =========DarkMode Toggle========= */}
-      <div className="flex mx-4 hover:cursor-pointer p-1 bg-gradient-to-br to-prim-blue from-prim-pink rounded-full shadow-md">
+      <div className="flex p-1 mx-4 rounded-full shadow-md hover:cursor-pointer bg-gradient-to-br to-prim-blue from-prim-pink">
         <Image
           src={assets.moon}
           alt="toggle"
@@ -162,14 +162,14 @@ const Navbar = () => {
       </div>
 
       {/* =========Large Devices========= */}
-      <div className="md:hidden flex">
+      <div className="flex md:hidden">
         <MenuItems active={active} setActive={setActive} />
         <ButtonGroup />
       </div>
 
       {/* =========Small Devices========= */}
-      <div className="hidden md:flex flex-row justify-end">
-        <div className="prim-gradient rounded p-2 shadow-md flex">
+      <div className="flex-row justify-end hidden h-full md:flex">
+        <div className="flex p-2 rounded shadow-md prim-gradient">
           {IsOpen ? (
             <Image
               className="hover:cursor-pointer"
@@ -192,11 +192,8 @@ const Navbar = () => {
             />
           )}
           {IsOpen && (
-            <div
-              className="fixed inset-x-0 flex flex-col dark:bg-prim-dark bg-white pb-160
-                            mt-7 md:pt-28 max-h-full"
-            >
-              <div className="flex justify-center mb-5 mt-10">
+            <div className="fixed inset-x-0 flex flex-col max-h-full min-h-full bg-white dark:bg-prim-dark mt-7 md:pt-28">
+              <div className="flex justify-center mb-5 mt-28">
                 <ButtonGroup isMobile />
               </div>
               <div className="flex justify-center">
@@ -207,7 +204,7 @@ const Navbar = () => {
                   setIsOpen={setIsOpen}
                 />
               </div>
-              <div className="flex justify-evenly md:mt-32 sm:mt-36">
+              <div className="fixed flex w-full bottom-16 justify-evenly">
                 {[
                   assets.facebook,
                   assets.instagram,
