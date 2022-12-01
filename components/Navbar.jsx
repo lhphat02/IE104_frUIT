@@ -99,6 +99,7 @@ const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
   const [IsOpen, setIsOpen] = useState(false);
   const router = useRouter();
+  let render = 0;
 
   useEffect(() => {
     checkActive(active, setActive, router);
@@ -107,7 +108,6 @@ const Navbar = () => {
   useEffect(() => {
     window.onscroll = () =>
       window.pageYOffset === 0 ? setAtTop(true) : setAtTop(false);
-    return () => (window.onscroll = null);
   });
 
   console.log(theme);
@@ -209,7 +209,7 @@ const Navbar = () => {
               className={`fixed inset-x-0 flex flex-col bg-white h-700 dark:bg-prim-dark mt-11 md:pt-28 ${
                 atTop
                   ? 'shadow-lg'
-                  : 'filter backdrop-blur-lg bg-opacity-95 dark:filter dark:backdrop-blur-lg dark:bg-gradient-to-b dark:from-transparent dark:to-prim-dark'
+                  : 'filter backdrop-blur-lg bg-opacity-95 dark:bg-prim-dark'
               }`}
             >
               <div className="flex justify-center mb-5 mt-28">
