@@ -5,19 +5,6 @@ import Link from 'next/link';
 import images from '../assets';
 import Button from './Button';
 
-const FooterLink = ({ heading, items }) => (
-  <div className="text-black sm:mx-4 dark:text-prim-gray-1">
-    <h3 className="mb-6 text-lg font-semibold font-poppins ">{heading}</h3>
-    {items.map((item, index) => (
-      <p
-        key={index}
-        className="my-4 font-normal hover:cursor-pointer font-poppins dark:text-prim-gray-1 dark:hover:text-prim-blue hover:text-prim-pink"
-      >
-        {item}
-      </p>
-    ))}
-  </div>
-);
 const Footer = () => {
   const { theme } = useTheme();
   return (
@@ -82,11 +69,21 @@ const Footer = () => {
               <h3 className="mb-6 text-lg font-semibold font-poppins ">
                 Team 5
               </h3>
-              <p className="footer-link">Luu Huynh Phat</p>
-              <p className="footer-link">Nguyen Van Chon</p>
-              <p className="footer-link">Nguyen Minh Quan</p>
-              <p className="footer-link">Hoang Tuan Anh</p>
-              <p className="footer-link">Nguyen Ngoc Mai Khanh</p>
+              <a href="https://www.facebook.com/phattruonglao/">
+                <p className="footer-link">Luu Huynh Phat</p>
+              </a>
+              <a href="https://www.facebook.com/chon.jeni">
+                <p className="footer-link">Nguyen Van Chon</p>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100038721821613">
+                <p className="footer-link">Nguyen Minh Quan</p>
+              </a>
+              <a href="https://www.facebook.com/anh.hoangtuan.50999405">
+                <p className="footer-link">Hoang Tuan Anh</p>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100064256781506">
+                <p className="footer-link">Nguyen Ngoc Mai Khanh</p>
+              </a>
             </div>
           </div>
         </div>
