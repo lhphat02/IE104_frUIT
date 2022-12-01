@@ -68,7 +68,7 @@ const Footer = () => {
               items={['Explore', 'How its work', 'Contact Us']}
             />
           </div>
-          <div className="mr-48 text-sm dark:text-prim-gray-1 md:mr-20 sm:mr-5">
+          <div className="text-sm mr-52 dark:text-prim-gray-1 md:mr-20 sm:mr-5">
             <FooterLink
               heading="Team 5"
               items={[
@@ -84,8 +84,8 @@ const Footer = () => {
       </div>
 
       {/* ===================Footer LowerSecTion=================== */}
-      <div className="flex flex-row justify-between mt-3 border-t-2 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
-        <p className="flex ml-10 font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0">
+      <div className="flex flex-row justify-between mx-32 mt-3 border-t-2 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
+        <p className="flex font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0">
           frUIT, Inc. All Rights Reserved
         </p>
 
