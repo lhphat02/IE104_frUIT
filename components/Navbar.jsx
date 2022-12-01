@@ -114,7 +114,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-dark dark:bg-prim-dark ${
+      className={`fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
         atTop
           ? 'shadow-lg'
           : 'filter backdrop-blur-lg bg-opacity-75 dark:filter dark:backdrop-blur-lg dark:bg-opacity-75  '
@@ -205,7 +205,13 @@ const Navbar = () => {
             />
           )}
           {IsOpen && (
-            <div className="fixed inset-x-0 flex flex-col max-h-full min-h-full bg-white dark:bg-prim-dark mt-7 md:pt-28">
+            <div
+              className={`fixed inset-x-0 flex flex-col bg-white h-700 dark:bg-prim-dark mt-11 md:pt-28 ${
+                atTop
+                  ? 'shadow-lg'
+                  : 'filter backdrop-blur-lg bg-opacity-95 dark:filter dark:backdrop-blur-lg dark:bg-gradient-to-b dark:from-transparent dark:to-prim-dark'
+              }`}
+            >
               <div className="flex justify-center mb-5 mt-28">
                 <ButtonGroup isMobile />
               </div>
@@ -217,7 +223,11 @@ const Navbar = () => {
                   setIsOpen={setIsOpen}
                 />
               </div>
-              <div className="fixed flex w-full bottom-16 justify-evenly">
+              <div
+                className={`fixed flex w-full bottom-12 justify-evenly ${
+                  !atTop && 'bottom-32'
+                }`}
+              >
                 {[
                   assets.facebook,
                   assets.instagram,

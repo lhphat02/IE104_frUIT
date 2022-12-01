@@ -50,14 +50,12 @@ const NFTdetail = () => {
       <div className="justify-start flex-1 p-12 sm:px-4 sm:pb-4">
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
-          <h2 className="text-2xl font-semibold font-poppins minmd:text-3xl">
-            {nft.name}
-          </h2>
+          <h2 className="text-3xl font-bold font-poppins">{nft.name}</h2>
         </div>
 
         {/* =================NFT Creator================= */}
         <div className="mt-10">
-          <p className="text-base font-medium font-poppins dark:text-white text-prim-black-1 minlg:text-base">
+          <p className="text-lg font-semibold font-poppins dark:text-white text-prim-black-1 minlg:text-base">
             Creator
           </p>
           <div className="flex flex-row items-center mt-3 hover:cursor-pointer">
@@ -77,7 +75,7 @@ const NFTdetail = () => {
         {/* =================NFT Details================= */}
         <div className="flex flex-col mt-10">
           <div className="flex flex-row w-full border-b dark:border-prim-black-1 border-prim-gray-1">
-            <p className="mb-2 text-base font-medium font-poppins">Details</p>
+            <p className="mb-2 text-lg font-semibold font-poppins">Details</p>
           </div>
           <div className="mt-3">
             <p className="text-base font-normal font-poppins">

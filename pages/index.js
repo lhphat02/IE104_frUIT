@@ -30,7 +30,7 @@ const Home = () => {
       <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
         Top Creators
       </p>
-      <div className="flex justify-between sm:justify-evenly">
+      <div className="flex justify-between md:justify-evenly">
         <div>
           <CreatorCard
             imageCard={images.creator1}
@@ -39,7 +39,7 @@ const Home = () => {
             address="0x7p5r...8txn"
           />
         </div>
-        <div className="xs:hidden">
+        <div className="hidden mobile:flex">
           <CreatorCard
             imageCard={images.creator2}
             number="2"
@@ -47,7 +47,7 @@ const Home = () => {
             address="0xefv1...tjy5"
           />
         </div>
-        <div className="sm:hidden">
+        <div className="hidden note:flex">
           <CreatorCard
             imageCard={images.creator3}
             number="3"
@@ -55,7 +55,7 @@ const Home = () => {
             address="0xtdt3...nh0n"
           />
         </div>
-        <div className="md:hidden">
+        <div className="hidden tablet:flex">
           <CreatorCard
             imageCard={images.creator4}
             number="4"
@@ -63,7 +63,7 @@ const Home = () => {
             address="0xh2fg...asd7"
           />
         </div>
-        <div className="md:hidden">
+        <div className="hidden laptop:flex">
           <CreatorCard
             imageCard={images.creator5}
             number="5"
