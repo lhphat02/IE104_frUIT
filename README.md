@@ -32,7 +32,7 @@
   <img src="https://camo.githubusercontent.com/bcd4bda49ef6cd9537db065920f4f4f6ac670eae0e0adf2c5133c19b319f1574/68747470733a2f2f627261646c632e67616c6c65727963646e2e76736173736574732e696f2f657874656e73696f6e732f627261646c632f7673636f64652d7461696c77696e646373732f302e322e302f313535383034303536333634392f4d6963726f736f66742e56697375616c53747564696f2e53657276696365732e49636f6e732e44656661756c74" height="40" width="40 alt="tailwindcss logo"  />
   <img src="https://logo-download.com/wp-content/data/images/png/Solidity-logo.png" height="40" width="52" alt="solidity logo"  />
   <img src="https://seeklogo.com/images/H/hardhat-logo-888739EBB4-seeklogo.com.png" height="35" width="47" alt="hardhat logo"  />
-  <img src="https://assets.st-note.com/production/uploads/images/84648887/rectangle_large_type_2_424f2d4f279d959d7f7f53e22e4e1c85.png?fit=bounds&quality=85&width=1280" height="100" width="200" alt="openzeppelin logo"  />
+  <img src="https://global.discourse-cdn.com/business6/uploads/zeppelin/optimized/2X/0/0a32463c14c653474b518f3a747c031dbae4b589_2_500x500.png" height="50" width="50" alt="openzeppelin logo"  />
 </div>
 
 ###
