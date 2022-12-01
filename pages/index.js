@@ -85,7 +85,7 @@ const Home = () => {
         <Loading />
       ) : (
         //=================NFTs=================
-        //Xài grid tiện hơn flex
+        //    Xài grid tiện hơn flex
         <div className="grid w-full grid-cols-1 gap-8 mt-3 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
           {nftItems.map((nft) => (
             <NFTCard key={nft.tokenId} nft={nft} />

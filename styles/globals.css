@@ -19,3 +19,9 @@
     background-blend-mode: multiply;
   }
 }
+
+@layer components {
+  .footer-link {
+    @apply my-4 font-normal hover:cursor-pointer font-poppins dark:text-prim-gray-1 dark:hover:text-prim-blue hover:text-prim-pink;
+  }
+}
