@@ -13,7 +13,7 @@ const fetchContract = (signerOrProvider) =>
 
 export const ContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Connect MetaMask
   const connectWallet = async () => {
