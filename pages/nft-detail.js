@@ -7,6 +7,7 @@ import { Context } from '../context/Context';
 import assets from '../assets';
 import Button from '../components/Button';
 import Loading from '../components/Loading';
+import Modal from '../components/Modal';
 
 const NFTdetail = () => {
   const { buyNFT, currentAccount } = useContext(Context);
@@ -107,6 +108,7 @@ const NFTdetail = () => {
               handleClick={() => {}}
             />
           )}
+          <Modal />
         </div>
       </div>
     </div>
