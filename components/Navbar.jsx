@@ -206,7 +206,7 @@ const Navbar = () => {
           )}
           {IsOpen && (
             <div
-              className={`fixed inset-x-0 flex flex-col bg-white h-700 dark:bg-prim-dark mt-11 md:pt-28 ${
+              className={`fixed inset-x-0 flex flex-col bg-white h-900 dark:bg-prim-dark mt-11 md:pt-28 ${
                 atTop
                   ? 'shadow-lg'
                   : 'filter backdrop-blur-lg bg-opacity-95 dark:bg-prim-dark'

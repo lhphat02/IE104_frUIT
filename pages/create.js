@@ -67,7 +67,8 @@ const CreateNFT = () => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     multiple: false,
-    accept: 'image/*',
+    accept: {'image/jpeg': [],
+    'image/png': [],},
     maxSize: 5000000,
   });
 
