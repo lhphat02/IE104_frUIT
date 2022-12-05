@@ -14,9 +14,9 @@ const NFTdetail = () => {
   const { buyNFT, currentAccount } = useContext(Context);
   const router = useRouter();
   const { theme } = useTheme();
-  const [ paymentModal, setPaymentModal ] = useState(false);
-  const [ successModal, setSuccessModal ] = useState(false);
-  const [ isLoading, setIsLoading ] = useState(true); 
+  const [paymentModal, setPaymentModal] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [nft, setNft] = useState({
     price: '',
     tokenId: '',
@@ -38,12 +38,10 @@ const NFTdetail = () => {
 
   console.log(nft);
 
-  
-
   const checkout = async () => {
-    await buyNFT(nft)
-    setPaymentModal(false)
-    setSuccessModal(true) 
+    await buyNFT(nft);
+    setPaymentModal(false);
+    setSuccessModal(true);
   };
 
   return (
@@ -112,7 +110,11 @@ const NFTdetail = () => {
             <Button
               btnName="List on Marketplace"
               classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
-              handleClick={() => router.push(`/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`)}
+              handleClick={() =>
+                router.push(
+                  `/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
+                )
+              }
             />
           ) : (
             //If not owned or listed
@@ -126,26 +128,24 @@ const NFTdetail = () => {
       </div>
       {/* ==============================NFT-Detail Modal==================================== */}
       {paymentModal && (
-        <Modal 
-          header={
-          <p className='font-bold'>Check Out</p>
-          }
+        <Modal
+          header={<p className="font-bold">Check Out</p>}
           body={
             <div>
-              <div className='flex justify-between mb-5 font-semibold'>
+              <div className="flex justify-between mb-5 font-semibold">
                 <p>Item</p>
                 <p>Subtotal</p>
               </div>
-              <div className='flex justify-between mb-5'>
-                <div className='flex flex-row'>
-                  <Image 
+              <div className="flex justify-between mb-5">
+                <div className="flex flex-row">
+                  <Image
                     src={nft.image}
                     width={120}
                     height={120}
                     alt="nft-image"
                   />
-                  <div className='ml-3 mt-6'>
-                    <p className='font-medium'>{nft.seller}</p>
+                  <div className="mt-6 ml-3">
+                    <p className="font-medium">{nft.seller}</p>
                     <p>{nft.description}</p>
                   </div>
                 </div>
@@ -153,53 +153,55 @@ const NFTdetail = () => {
                   <p>{nft.price}</p>
                 </div>
               </div>
-              <div className='flex justify-between'>
-                <p className='font-semibold'>Total</p>
+              <div className="flex justify-between">
+                <p className="font-semibold">Total</p>
                 <p>{nft.price}</p>
               </div>
             </div>
           }
           footer={
-            <div className='flex justify-center'>
-              <Button 
+            <div className="flex justify-center">
+              <Button
                 btnName={`Check out`}
                 classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
                 handleClick={checkout}
               />
-              <Button 
+              <Button
                 btnName={`Cancel`}
                 classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
                 handleClick={() => setPaymentModal(false)}
               />
             </div>
           }
-          handleClose = {() => setPaymentModal(false)}
+          handleClose={() => setPaymentModal(false)}
         />
-        )}
+      )}
 
-        {successModal && (
-        <Modal 
-          header = {
-            <p className='font-poppins font-bold'>Payment Successful</p>
-          }
-          body = {
-            <div className='flex flex-col'>
-              <div className='flex justify-center mb-14'>
-              <Image 
-                src={nft.image}
-                width={300}
-                height={300}
-                alt="nft-image"
-              />
+      {successModal && (
+        <Modal
+          header={<p className="font-bold font-poppins">Payment Successful</p>}
+          body={
+            <div className="flex flex-col">
+              <div className="flex justify-center mb-14">
+                <Image
+                  src={nft.image}
+                  width={300}
+                  height={300}
+                  alt="nft-image"
+                />
               </div>
-              <p className='flex justify-center'>You successfully purchased {nft.name} from {nft.seller}</p>
+              <p className="flex justify-center">
+                You successfully purchased {nft.name} from {nft.seller}
+              </p>
             </div>
           }
-          footer = {
-            <div className='flex flex-col'>
-            <p className='flex justify-center text-xl font-semibold mb-5'>Share</p>
-            <div className='flex justify-evenly'>
-            {[
+          footer={
+            <div className="flex flex-col">
+              <p className="flex justify-center mb-5 text-xl font-semibold">
+                Share
+              </p>
+              <div className="flex justify-evenly">
+                {[
                   assets.facebook,
                   assets.instagram,
                   assets.telegram,
@@ -216,13 +218,13 @@ const NFTdetail = () => {
                     height={25}
                     alt="socialMedia"
                   />
-                ))} 
+                ))}
               </div>
             </div>
           }
-          handleClose = {() => setSuccessModal(false)}
+          handleClose={() => setSuccessModal(false)}
         />
-        )}
+      )}
     </div>
   );
 };
