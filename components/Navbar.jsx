@@ -97,7 +97,7 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [active, setActive] = useState('Explore');
   const [atTop, setAtTop] = useState(true);
-  const [IsOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
   let render = 0;
 
@@ -105,10 +105,20 @@ const Navbar = () => {
     checkActive(active, setActive, router);
   }, [router.pathname]);
 
+  // check if on top of page
   useEffect(() => {
     window.onscroll = () =>
       window.pageYOffset === 0 ? setAtTop(true) : setAtTop(false);
   });
+
+  // disable body scroll when navbar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [isOpen]);
 
   console.log(theme);
 
@@ -183,7 +193,7 @@ const Navbar = () => {
       {/* =========Small Devices========= */}
       <div className="flex-row justify-end hidden h-full md:flex">
         <div className="flex p-2 rounded shadow-md prim-gradient">
-          {IsOpen ? (
+          {isOpen ? (
             <Image
               className="hover:cursor-pointer"
               src={assets.cross}
@@ -204,7 +214,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(true)}
             />
           )}
-          {IsOpen && (
+          {isOpen && (
             <div
               className={`fixed inset-x-0 flex flex-col bg-white h-900 dark:bg-prim-dark mt-11 md:pt-28 ${
                 atTop
@@ -220,12 +230,12 @@ const Navbar = () => {
                   isMobile
                   active={active}
                   setActive={setActive}
-                  setIsOpen={setIsOpen}
+                  setisOpen={setIsOpen}
                 />
               </div>
               <div
-                className={`fixed flex w-full bottom-12 justify-evenly ${
-                  !atTop && 'bottom-32'
+                className={`fixed flex w-full bottom-80 xs:bottom-40 justify-evenly ${
+                  atTop && 'sm:bottom-16'
                 }`}
               >
                 {[
