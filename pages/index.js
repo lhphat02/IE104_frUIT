@@ -21,7 +21,7 @@ const Home = () => {
       {/* =================Banner================= */}
       <div className="py-10">
         <div className="flex items-center px-10 shadow-md prim-gradient h-72 sm:h-52 xs:h-48 rounded-3xl">
-          <p className="overflow-hidden text-5xl font-bold text-white md:text-4xl sm:text-2xl xs:text-xl">
+          <p className="text-5xl font-bold text-white md:text-4xl sm:text-3xl xs:text-xl">
             Discover, collect, and sell extraordinary NFTs
           </p>
         </div>

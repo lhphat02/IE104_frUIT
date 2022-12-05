@@ -53,7 +53,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return listingPrice;
     }
 
-    //Mint Token and create market item
+    //Mint Token
     function createToken(
         string memory tokenURL,
         uint inputPrice
@@ -68,6 +68,7 @@ contract NFTMarketplace is ERC721URIStorage {
         return newTokenId;
     }
 
+    //Create Market Item
     function createMarketItem(uint tokenId, uint price) private {
         require(price > 0, "Price must be higher than 0");
         require(
@@ -80,6 +81,16 @@ contract NFTMarketplace is ERC721URIStorage {
             tokenId,
             payable(msg.sender),
             payable(address(this)),
+            price,
+            false
+        );
+
+        //Tranfer NFT to marketplace
+        _transfer(msg.sender, address(this), tokenId);
+        emit MarketItemCreated(
+            tokenId,
+            msg.sender,
+            address(this),
             price,
             false
         );
