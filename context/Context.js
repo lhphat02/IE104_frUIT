@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import axios from 'axios';
+import Web3Modal from 'web3modal';
 
 import { ContractAddress, ContractAddressABI } from './ABI';
 
@@ -12,7 +13,7 @@ const fetchContract = (signerOrProvider) =>
 
 export const ContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Connect MetaMask
   const connectWallet = async () => {
@@ -118,7 +119,9 @@ export const ContextProvider = ({ children }) => {
   const fetchCollectionOrListed = async (type) => {
     setLoading(false);
     //Interact contract as signer
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = fetchContract(signer);
 

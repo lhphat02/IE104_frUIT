@@ -74,23 +74,24 @@ const Home = () => {
         </div>
       </div>
 
+      {/* =======================NFTs======================= */}
       <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
         Top NFTs
       </p>
-      {!loading && !nftItems.length ? (
-        <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
-          There is no NFT on market
-        </h1>
-      ) : loading ? (
+      {loading ? (
         <Loading />
-      ) : (
-        //=================NFTs=================
+      ) : // Check if there's any NFT on market
+      nftItems.length ? (
         //    Xài grid tiện hơn flex
         <div className="grid w-full grid-cols-1 gap-8 mt-3 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
           {nftItems.map((nft) => (
             <NFTCard key={nft.tokenId} nft={nft} />
           ))}
         </div>
+      ) : (
+        <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
+          There is no NFT on market
+        </h1>
       )}
     </div>
   );

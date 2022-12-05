@@ -1,9 +1,40 @@
-import React from 'react'
+import React from 'react';
+import { useEffect, useState, useContext } from 'react';
+import Image from 'next/image';
 
+import { Context } from '../context/Context';
+import { shortenAddress } from '../utils/shortenAddress';
+import assets from '../assets';
+
+// hàm kiểm tra trước khi đưa dữ liệu cho trang Collection hay trang Listed 
 const NFT_Collection = () => {
-  return (
-    <div>NFT_Collection</div>
-  )
-}
+  const { fetchCollectionOrListed, currentAccount } = useContext(Context);
+  const [nftItems, setNftItems] = useState([]);
+  // sử dụng useEffect để load dữ liệu
+  useEffect(() => {
+    fetchCollectionOrListed().then((items) => {
+      setNftItems(items);
+    });
+  }, []);
+  // dùng [] để tránh render lại
 
-export default NFT_Collection
+  return (
+    <div className="flex flex-col items-center justify-start h-full min-h-full">
+      <div className="flex flex-col items-center justify-center">
+        <div className="z-0 flex flex-col items-center justify-center mt-20">
+          <div className="flex items-center justify-center w-40 h-40 p-1 rounded-full sm:h-36 bg-prim-black-2">
+            <Image
+              src={assets.creator1}
+              className="object-cover rounded-full"
+            />
+          </div>
+          <p className="mt-6 text-2xl font-semibold font-poppins dark:text-white text-prim-black-1">
+            {shortenAddress(currentAccount)}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NFT_Collection;

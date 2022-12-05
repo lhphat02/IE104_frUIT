@@ -7,6 +7,7 @@ import { Context } from '../context/Context';
 import assets from '../assets';
 import Button from '../components/Button';
 import Loading from '../components/Loading';
+import Modal from '../components/Modal';
 
 const NFTdetail = () => {
   const { buyNFT, currentAccount } = useContext(Context);
@@ -25,8 +26,9 @@ const NFTdetail = () => {
 
   useEffect(() => {
     //Parse NFT query string into object
+    if (!router.isReady) return;
     setNft(router.query);
-  }, []);
+  }, [router.isReady]);
 
   console.log(nft);
 
@@ -106,6 +108,7 @@ const NFTdetail = () => {
               handleClick={() => {}}
             />
           )}
+          <Modal />
         </div>
       </div>
     </div>

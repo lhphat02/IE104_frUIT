@@ -58,7 +58,9 @@ const Footer = () => {
               <Link href={'/'}>
                 <p className="footer-link">Explore</p>
               </Link>
-              <p className="footer-link">How its work</p>
+              <a href="https://github.com/lhphat02/IE104_frUIT">
+                <p className="footer-link">How its work</p>
+              </a>
               <a href="https://us18.list-manage.com/contact-form?u=1713bdfdd6cff262d36cd4f15&form_id=68cf768a10ebb33ba3c222070887a47d">
                 <p className="footer-link">Contact Us</p>
               </a>
