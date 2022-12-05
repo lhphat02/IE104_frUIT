@@ -25,8 +25,9 @@ const NFTdetail = () => {
   });
 
   useEffect(() => {
-    //Parse NFT query string into object
+    //Waiting data to be loaded
     if (!router.isReady) return;
+    //Parse NFT query string into object
     setNft(router.query);
   }, [router.isReady]);
 
