@@ -72,7 +72,7 @@ const NFTdetail = () => {
       <div className="justify-start flex-1 p-12 sm:px-4 sm:pb-4">
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
-          <h2 className="h-16 overflow-hidden text-3xl font-bold w-700 font-poppins">
+          <h2 className="h-10 overflow-hidden text-3xl font-bold w-700 font-poppins">
             {nft.name}
           </h2>
         </div>
