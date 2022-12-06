@@ -16,7 +16,7 @@ const NFTdetail = () => {
   const { theme } = useTheme();
   const [paymentModal, setPaymentModal] = useState(false);
   const [successModal, setSuccessModal] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);S
   const [nft, setNft] = useState({
     price: '',
     tokenId: '',
@@ -35,6 +35,14 @@ const NFTdetail = () => {
     //Parse NFT query string into object
     setNft(router.query);
   }, [router.isReady]);
+
+  useEffect(() => {
+    if (successModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [successModal]);
 
   console.log(nft);
 
@@ -64,7 +72,7 @@ const NFTdetail = () => {
       <div className="justify-start flex-1 p-12 sm:px-4 sm:pb-4">
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
-          <h2 className="text-3xl font-bold font-poppins">{nft.name}</h2>
+          <h2 className="text-3xl font-bold font-poppins">{shortenAddress(nft.name)}</h2>
         </div>
 
         {/* =================NFT Creator================= */}
@@ -127,6 +135,8 @@ const NFTdetail = () => {
         </div>
       </div>
       {/* ==============================NFT-Detail Modal==================================== */}
+
+      {/* ----------------------------------Opening Payment Modal------------------------------------ */}
       {paymentModal && (
         <Modal
           header={<p className="font-bold">Check Out</p>}
@@ -145,8 +155,8 @@ const NFTdetail = () => {
                     alt="nft-image"
                   />
                   <div className="mt-6 ml-3">
-                    <p className="font-medium">{nft.seller}</p>
-                    <p>{nft.description}</p>
+                    <p className="font-medium">{shortenAddress(nft.seller)}</p>
+                    <p>{shortenAddress(nft.description)}</p>
                   </div>
                 </div>
                 <div>
@@ -177,6 +187,7 @@ const NFTdetail = () => {
         />
       )}
 
+        {/* ------------------------------After bought nft Opening Success Modal-----------------------------     */}
       {successModal && (
         <Modal
           header={<p className="font-bold font-poppins">Payment Successful</p>}
@@ -190,8 +201,8 @@ const NFTdetail = () => {
                   alt="nft-image"
                 />
               </div>
-              <p className="flex justify-center">
-                You successfully purchased {nft.name} from {nft.seller}
+              <p className="text-center">
+                You successfully purchased <strong>{shortenAddress(nft.name)}</strong> from <strong>{shortenAddress(nft.seller)}</strong>
               </p>
             </div>
           }
