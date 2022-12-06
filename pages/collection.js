@@ -8,15 +8,17 @@ import assets from '../assets';
 import Loading from '../components/Loading';
 import NFTCard from '../components/NFTCard';
 
+// hàm kiểm tra trước khi đưa dữ liệu cho trang Collection hay trang Listed 
 const NFT_Collection = () => {
   const { fetchCollectionOrListed, currentAccount } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
-
+  // sử dụng useEffect để load dữ liệu
   useEffect(() => {
     fetchCollectionOrListed().then((items) => {
       setNftItems(items);
     });
   }, []);
+  // dùng [] để tránh render lại
 
   return (
     <>
