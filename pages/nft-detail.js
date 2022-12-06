@@ -37,6 +37,22 @@ const NFTdetail = () => {
   }, [router.isReady]);
 
   useEffect(() => {
+    if (paymentModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [paymentModal]);
+
+  useEffect(() => {
+    if (successModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [successModal]);
+
+  useEffect(() => {
     if (successModal) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -55,7 +71,11 @@ const NFTdetail = () => {
   return (
     <div className="flex justify-center my-8 md:flex-col">
       {/* =================Left Section================= */}
-      <div className="relative flex justify-center flex-1 p-12 border-r sm:px-4 md:border-r-0 md:border-b dark:border-prim-black-1 border-prim-gray-1">
+      <div className={`relative flex justify-center flex-1 p-12 border-r sm:px-4 md:border-r-0 md:border-b 
+                    dark:border-prim-black-1 border-prim-gray-1
+                    ${paymentModal && 'opacity-20'}
+                    ${successModal && 'opacity-20'}
+                    `}>
         {/* =================NFT Image================= */}
         <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
           <Image
@@ -69,7 +89,10 @@ const NFTdetail = () => {
       </div>
 
       {/* =================Right Section================= */}
-      <div className="justify-start flex-1 p-12 sm:px-4 sm:pb-4">
+      <div className={`justify-start flex-1 p-12 sm:px-4 sm:pb-4 
+                        ${paymentModal && 'opacity-20'}
+                        ${successModal && 'opacity-20'}
+                      `}>
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
           <h2 className="text-3xl font-bold font-poppins">{nft.name}</h2>
@@ -80,7 +103,7 @@ const NFTdetail = () => {
           <p className="text-lg font-semibold font-poppins dark:text-white text-prim-black-1 minlg:text-base">
             Creator
           </p>
-          <div className="flex flex-row items-center mt-3">
+          <div className="flex flex-row items-center mt-3 hover:cursor-pointer">
             <div className="relative w-12 h-12 mr-2 minlg:w-20 minlg:h-20 ">
               <Image
                 src={assets.creatornft}
@@ -116,8 +139,8 @@ const NFTdetail = () => {
           ) : currentAccount === nft.owner.toLowerCase() ? (
             //If already owned
             <Button
-              btnName="Sell NFT"
-              classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-lg"
+              btnName="List on Marketplace"
+              classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
               handleClick={() =>
                 router.push(
                   `/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
@@ -173,13 +196,14 @@ const NFTdetail = () => {
             <div className="flex justify-center">
               <Button
                 btnName={`Check out`}
-                classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
+                classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl p-2 dark:prim-gradient"
                 handleClick={checkout}
               />
               <Button
                 btnName={`Cancel`}
-                classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
+                classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl p-2"
                 handleClick={() => setPaymentModal(false)}
+                cancelBg
               />
             </div>
           }
@@ -187,7 +211,7 @@ const NFTdetail = () => {
         />
       )}
 
-      {/* ------------------------------After bought nft Opening Success Modal-----------------------------     */}
+        {/* ------------------------------After bought nft Opening Success Modal-----------------------------     */}
       {successModal && (
         <Modal
           header={<p className="font-bold font-poppins">Payment Successful</p>}
@@ -202,9 +226,7 @@ const NFTdetail = () => {
                 />
               </div>
               <p className="text-center">
-                You successfully purchased{' '}
-                <strong>{shortenAddress(nft.name)}</strong> from{' '}
-                <strong>{shortenAddress(nft.seller)}</strong>
+                You successfully purchased <strong>{shortenAddress(nft.name)}</strong> from <strong>{shortenAddress(nft.seller)}</strong>
               </p>
             </div>
           }
