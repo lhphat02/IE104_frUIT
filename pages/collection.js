@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Context } from '../context/Context';
 import { shortenAddress } from '../utils/shortenAddress';
 import assets from '../assets';
+import Loading from '../components/Loading';
+import NFTCard from '../components/NFTCard';
 
 // hàm kiểm tra trước khi đưa dữ liệu cho trang Collection hay trang Listed 
 const NFT_Collection = () => {
@@ -19,21 +21,53 @@ const NFT_Collection = () => {
   // dùng [] để tránh render lại
 
   return (
-    <div className="flex flex-col items-center justify-start h-full min-h-full">
-      <div className="flex flex-col items-center justify-center">
-        <div className="z-0 flex flex-col items-center justify-center mt-20">
-          <div className="flex items-center justify-center w-40 h-40 p-1 rounded-full sm:h-36 bg-prim-black-2">
+    <>
+      <div className="relative flex flex-col items-center justify-start ">
+        {/*Banner*/}
+        <div className="relative w-full h-80 sm:h-48">
+          <Image
+            src={assets.bg}
+            className="w-full "
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
+
+        {/*Avatar*/}
+        <div className="absolute flex flex-col items-center justify-center -bottom-36 sm:-bottom-28">
+          <div className="flex items-center justify-center border-8 border-white rounded-full sm:w-36 dark:border-prim-dark">
             <Image
-              src={assets.creator1}
-              className="object-cover rounded-full"
+              src={assets.creator}
+              className="rounded-full "
+              objectFit="cover"
+              width={200}
+              height={200}
             />
           </div>
-          <p className="mt-6 text-2xl font-semibold font-poppins dark:text-white text-prim-black-1">
+          <p className="mt-3 text-2xl font-semibold font-poppins">
             {shortenAddress(currentAccount)}
           </p>
         </div>
       </div>
-    </div>
+
+      <div className="flex flex-col justify-center w-full p-10 mt-36 xs:p-6 minmd:px-60 pc:px-28">
+        <p className="mb-10 text-3xl font-bold dark:text-white">Your NFTs</p>
+        {!Loading ? (
+          <Loading />
+        ) : // Check if there's any NFT on market
+        nftItems.length ? (
+          <div className="grid w-full grid-cols-1 gap-8 mb-20 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5">
+            {nftItems.map((nft) => (
+              <NFTCard key={nft.tokenId} nft={nft} onCollectionPage />
+            ))}
+          </div>
+        ) : (
+          <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
+            There is no NFT in your collection
+          </h1>
+        )}
+      </div>
+    </>
   );
 };
 
