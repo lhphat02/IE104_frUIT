@@ -1,33 +1,38 @@
-import React, {useState,useContext,useEffect}from 'react';
+import React, {useState,useContext,useEffect} from 'react';
 
 import {Context} from '../context/Context';
 
-import { NFTCard } from '../components/NFTCard';
+import NFTCard  from '../components/NFTCard';
+
+import Loading from '../components/Loading'
 
 const ListedNFT = () => {
-    const {fecthCollectionOrListed}=useContext(Context);
+    const {fetchCollectionOrListed}=useContext(Context);
     const [nftItems,setNftItems]=useState([]);
 
     useEffect(() =>{
-        fecthCollectionOrListed().then((items)=>{
+        fetchCollectionOrListed('fetchListed').then((items)=>{
             setNftItems(items);
         });
     },[]);
 
     return(
-        <div className="flex justify-center min-h-screen p-12 sm:px-4">
-        <div className="w-full minmd:w-4/5">
-          <div className="mt-4">
-            <h2 className="mt-2 ml-4 text-2xl font-semibold font-poppins dark:text-white text-nft-black-1 sm:ml-2">
-              NFTs Listed for Sale
-            </h2>
-            <div className="flex flex-wrap justify-start w-full mt-3 md:justify-center">
-              {nftItems.map((nft) => (
-                <NFTCard key={`nft-${nft.tokenId}`} nft={nft} />
-              ))}
-            </div>
+      <div className="flex flex-col justify-center w-full p-10 mt-36 xs:p-6 minmd:px-60 pc:px-28">
+        <p className="mb-10 text-3xl font-bold dark:text-white">Your listed NFTs</p>
+        {!Loading ? (
+          <Loading />
+        ) : // Check if there's any NFT on market
+        nftItems.length ? (
+          <div className="grid w-full grid-cols-1 gap-8 mb-20 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5">
+            {nftItems.map((nft) => (
+              <NFTCard key={nft.tokenId} nft={nft}/>
+            ))}
           </div>
-        </div>
+        ) : (
+          <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
+            There is no NFT listed
+          </h1>
+        )}
       </div>
     );
 };
