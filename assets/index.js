@@ -19,6 +19,7 @@ import tick from './tick.png';
 import moon from './moon.png';
 import loadinglight from './loadinglight.gif';
 import loadingdark from './loadingdark.gif';
+import bg from './bg.png';
 
 export default {
   creator,
@@ -41,4 +42,5 @@ export default {
   moon,
   loadinglight,
   loadingdark,
+  bg,
 };
