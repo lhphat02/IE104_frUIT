@@ -18,57 +18,54 @@ const NFT_Collection = () => {
     });
   }, []);
 
-
   return (
     <>
-    <div className="relative flex flex-col justify-start items-center ">
-    {/*Banner*/}
-      <div className='relative w-full h-80'>
-      <Image
+      <div className="relative flex flex-col items-center justify-start ">
+        {/*Banner*/}
+        <div className="relative w-full h-80">
+          <Image
             src={assets.bg}
             className="w-full "
-            layout='fill'
-            objectFit='cover'
-           
-          />
-      </div>
-
-    {/*avatar*/}
-      <div className='flex justify-center flex-col items-center z-10 absolute -bottom-40'>
-        <div className="flex justify-center items-center rounded-full sm:w-36 border-8 dark:border-prim-dark border-white">
-          <Image
-            src={assets.creator1}
-            className="rounded-full "
-            objectFit='cover'
-            width={200}
-            height={200}
+            layout="fill"
+            objectFit="cover"
           />
         </div>
-        <p className="mt-3 text-2xl font-semibold font-poppins">
-          {/*{shortenAddress(currentAccount)}*/}
-          Phat Luu
-        </p>
-      </div>
-    </div>
 
-    <p className="my-6 text-3xl font-bold ml-30 sm:ml-14 dark:text-white text-prim-black-3 mt-48">
-    Your NFTs
-    </p>
-    {!Loading ? (
-      <Loading />
+        {/*Avatar*/}
+        <div className="absolute flex flex-col items-center justify-center -bottom-36">
+          <div className="flex items-center justify-center border-8 border-white rounded-full sm:w-36 dark:border-prim-dark">
+            <Image
+              src={assets.creator}
+              className="rounded-full "
+              objectFit="cover"
+              width={200}
+              height={200}
+            />
+          </div>
+          <p className="mt-3 text-2xl font-semibold font-poppins">
+            {shortenAddress(currentAccount)}
+          </p>
+        </div>
+      </div>
+
+      <p className="mt-48 mb-12 text-3xl font-bold ml-30 sm:ml-14 dark:text-white">
+        Your NFTs
+      </p>
+      {!Loading ? (
+        <Loading />
       ) : // Check if there's any NFT on market
       nftItems.length ? (
-    //    Xài grid tiện hơn flex
-        <div className="grid w-full grid-cols-1 gap-8 mt-3 ml-30 mb-20 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
-        {nftItems.map((nft) => (
-        <NFTCard key={nft.tokenId} nft={nft} />
-         ))}
-    </div>
-    ) : (
-      <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
-        There is no NFT on your collection
-      </h1>
-    )}
+        //    Xài grid tiện hơn flex
+        <div className="grid w-full grid-cols-1 gap-8 mt-3 mb-20 ml-30 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
+          {nftItems.map((nft) => (
+            <NFTCard key={nft.tokenId} nft={nft} onCollectionPage />
+          ))}
+        </div>
+      ) : (
+        <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
+          There is no NFT in your collection
+        </h1>
+      )}
     </>
   );
 };
