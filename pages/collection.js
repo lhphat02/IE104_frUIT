@@ -22,7 +22,7 @@ const NFT_Collection = () => {
     <>
       <div className="relative flex flex-col items-center justify-start ">
         {/*Banner*/}
-        <div className="relative w-full h-80">
+        <div className="relative w-full h-80 sm:h-48">
           <Image
             src={assets.bg}
             className="w-full "
@@ -32,7 +32,7 @@ const NFT_Collection = () => {
         </div>
 
         {/*Avatar*/}
-        <div className="absolute flex flex-col items-center justify-center -bottom-36">
+        <div className="absolute flex flex-col items-center justify-center -bottom-36 sm:-bottom-28">
           <div className="flex items-center justify-center border-8 border-white rounded-full sm:w-36 dark:border-prim-dark">
             <Image
               src={assets.creator}
@@ -48,24 +48,23 @@ const NFT_Collection = () => {
         </div>
       </div>
 
-      <p className="mt-48 mb-12 text-3xl font-bold ml-30 sm:ml-14 dark:text-white">
-        Your NFTs
-      </p>
-      {!Loading ? (
-        <Loading />
-      ) : // Check if there's any NFT on market
-      nftItems.length ? (
-        //    Xài grid tiện hơn flex
-        <div className="grid w-full grid-cols-1 gap-8 mt-3 mb-20 ml-30 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
-          {nftItems.map((nft) => (
-            <NFTCard key={nft.tokenId} nft={nft} onCollectionPage />
-          ))}
-        </div>
-      ) : (
-        <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
-          There is no NFT in your collection
-        </h1>
-      )}
+      <div className="flex flex-col justify-center w-full p-10 mt-36 xs:p-6 minmd:px-60 pc:px-28">
+        <p className="mb-10 text-3xl font-bold dark:text-white">Your NFTs</p>
+        {!Loading ? (
+          <Loading />
+        ) : // Check if there's any NFT on market
+        nftItems.length ? (
+          <div className="grid w-full grid-cols-1 gap-8 mb-20 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5">
+            {nftItems.map((nft) => (
+              <NFTCard key={nft.tokenId} nft={nft} onCollectionPage />
+            ))}
+          </div>
+        ) : (
+          <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
+            There is no NFT in your collection
+          </h1>
+        )}
+      </div>
     </>
   );
 };
