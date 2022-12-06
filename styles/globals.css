@@ -8,6 +8,9 @@
   .prim-gradient {
     background: linear-gradient(90deg, #e287d4 0%, #57c6dc 100%);
   }
+  .reverse-prim-gradient{
+    background: linear-gradient(90deg, #57c6dc 0%, #e287d4 100%);
+  }
   .font-gradient {
     background: -webkit-linear-gradient(90deg, #e287d4 0%, #57c6dc 100%);
     -webkit-background-clip: text;
