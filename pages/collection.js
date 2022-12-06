@@ -34,7 +34,7 @@ const NFT_Collection = () => {
       </div>
 
     {/*avatar*/}
-      <div className='flex justify-center flex-col items-center z-10 absolute -bottom-40'>
+      <div className='flex justify-center flex-col items-center absolute -bottom-40'>
         <div className="flex justify-center items-center rounded-full sm:w-36 border-8 dark:border-prim-dark border-white">
           <Image
             src={assets.creator1}
