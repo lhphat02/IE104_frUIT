@@ -18,7 +18,7 @@ const Modal = ({ header, body, footer, handleClose }) => {
   return (
     <div
       onClick={handleClickOutside}
-      className="flex justify-center items-center fixed inset-0"
+      className="flex justify-center items-center fixed inset-0 top-10image.png"
     >
       <div ref={modalRef} className="flex flex-col w-2/5 bg-white rounded-lg dark:bg-prim-black-1">
         <div className="flex justify-end mt-4 mr-4">
@@ -34,7 +34,7 @@ const Modal = ({ header, body, footer, handleClose }) => {
         <div className="p-10 border-t border-b sm:px-4 dark:border-prim-gray-3 border-prim-gray-1">
           {body}
         </div>
-        <div className="p-7">
+        <div className="p-6">
           {footer}
         </div>
       </div>

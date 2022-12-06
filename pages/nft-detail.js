@@ -217,11 +217,11 @@ const NFTdetail = () => {
           header={<p className="font-bold font-poppins">Payment Successful</p>}
           body={
             <div className="flex flex-col">
-              <div className="flex justify-center mb-14">
+              <div className="flex justify-center mb-4">
                 <Image
                   src={nft.image}
-                  width={300}
-                  height={300}
+                  width={250}
+                  height={250}
                   alt="nft-image"
                 />
               </div>
