@@ -33,6 +33,7 @@ const ListedNFT = () => {
             There is no NFT listed
           </h1>
         )}
+        
       </div>
     );
 };
