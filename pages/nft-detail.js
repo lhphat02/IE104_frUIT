@@ -72,7 +72,7 @@ const NFTdetail = () => {
       <div className="justify-start flex-1 p-12 sm:px-4 sm:pb-4">
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
-          <h2 className="text-3xl font-bold font-poppins">{shortenAddress(nft.name)}</h2>
+          <h2 className="text-3xl font-bold font-poppins">{nft.name}</h2>
         </div>
 
         {/* =================NFT Creator================= */}
@@ -80,7 +80,7 @@ const NFTdetail = () => {
           <p className="text-lg font-semibold font-poppins dark:text-white text-prim-black-1 minlg:text-base">
             Creator
           </p>
-          <div className="flex flex-row items-center mt-3 hover:cursor-pointer">
+          <div className="flex flex-row items-center mt-3">
             <div className="relative w-12 h-12 mr-2 minlg:w-20 minlg:h-20 ">
               <Image
                 src={assets.creatornft}
@@ -116,8 +116,8 @@ const NFTdetail = () => {
           ) : currentAccount === nft.owner.toLowerCase() ? (
             //If already owned
             <Button
-              btnName="List on Marketplace"
-              classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
+              btnName="Sell NFT"
+              classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-lg"
               handleClick={() =>
                 router.push(
                   `/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
@@ -187,7 +187,7 @@ const NFTdetail = () => {
         />
       )}
 
-        {/* ------------------------------After bought nft Opening Success Modal-----------------------------     */}
+      {/* ------------------------------After bought nft Opening Success Modal-----------------------------     */}
       {successModal && (
         <Modal
           header={<p className="font-bold font-poppins">Payment Successful</p>}
@@ -202,7 +202,9 @@ const NFTdetail = () => {
                 />
               </div>
               <p className="text-center">
-                You successfully purchased <strong>{shortenAddress(nft.name)}</strong> from <strong>{shortenAddress(nft.seller)}</strong>
+                You successfully purchased{' '}
+                <strong>{shortenAddress(nft.name)}</strong> from{' '}
+                <strong>{shortenAddress(nft.seller)}</strong>
               </p>
             </div>
           }
