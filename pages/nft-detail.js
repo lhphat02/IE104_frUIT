@@ -150,7 +150,7 @@ const NFTdetail = () => {
           )}
         </div>
       </div>
-      {/* ==============================NFT-Detail Modal==================================== */}
+      {/* ==============================NFT-Detail Modal for Large Devices==================================== */}
 
       {/* ----------------------------------Opening Payment Modal------------------------------------ */}
       <div className='sm:hidden'>
@@ -257,6 +257,9 @@ const NFTdetail = () => {
       )}
       </div>
 
+      {/* ==============================NFT-Detail Modal for Small Devices==================================== */}
+
+      {/* ----------------------------------Opening Payment Modal------------------------------------ */}
 
       <div className='mobile:hidden'>      
       {paymentModal && (

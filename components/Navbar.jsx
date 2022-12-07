@@ -230,7 +230,7 @@ const Navbar = () => {
                   isMobile
                   active={active}
                   setActive={setActive}
-                  setisOpen={setIsOpen}
+                  setIsOpen={setIsOpen}
                 />
               </div>
               <div
