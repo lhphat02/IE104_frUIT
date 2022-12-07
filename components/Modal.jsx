@@ -18,11 +18,11 @@ const Modal = ({ header, body, footer, handleClose }) => {
   return (
     <div
       onClick={handleClickOutside}
-      className="fixed inset-0 flex items-center justify-center"
+      className="fixed inset-0 z-10 flex items-center justify-center top-8 sm:top-96 sm:-bottom-16 xs:top-80"
     >
       <div
         ref={modalRef}
-        className="flex flex-col w-2/5 bg-white rounded-lg dark:bg-prim-black-1"
+        className="flex flex-col pc:w-2/5 mobile:w-3/5 sm:w-full bg-white rounded-lg dark:bg-prim-black-1 shadow-lg dark:shadow-none"
       >
         <div className="flex justify-end mt-4 mr-4">
           <div
@@ -42,7 +42,7 @@ const Modal = ({ header, body, footer, handleClose }) => {
             {header}
           </h2>
         </div>
-        <div className="p-10 border-t border-b sm:px-4 dark:border-prim-gray-3 border-prim-gray-1">
+        <div className="p-10 sm:p-7 border-t border-b sm:px-4 dark:border-prim-gray-3 border-prim-gray-1">
           {body}
         </div>
         <div className="p-7">{footer}</div>
