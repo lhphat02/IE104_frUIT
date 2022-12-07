@@ -22,7 +22,7 @@ const Modal = ({ header, body, footer, handleClose }) => {
     >
       <div
         ref={modalRef}
-        className="flex flex-col pc:w-2/5 mobile:w-3/5 sm:w-full bg-white rounded-lg dark:bg-prim-black-1 shadow-lg dark:shadow-none"
+        className="flex flex-col bg-white rounded-lg shadow-lg pc:w-2/5 mobile:w-4/5 sm:w-full dark:bg-prim-black-1 dark:shadow-none"
       >
         <div className="flex justify-end mt-4 mr-4">
           <div
@@ -42,7 +42,7 @@ const Modal = ({ header, body, footer, handleClose }) => {
             {header}
           </h2>
         </div>
-        <div className="p-10 sm:p-7 border-t border-b sm:px-4 dark:border-prim-gray-3 border-prim-gray-1">
+        <div className="p-10 border-t border-b sm:p-7 sm:px-4 dark:border-prim-gray-3 border-prim-gray-1">
           {body}
         </div>
         <div className="p-7">{footer}</div>
