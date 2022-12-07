@@ -150,7 +150,7 @@ const NFTdetail = () => {
           )}
         </div>
       </div>
-      {/* ==============================NFT-Detail Modal==================================== */}
+      {/* ==============================NFT-Detail Modal for Large Devices==================================== */}
 
       {/* ----------------------------------Opening Payment Modal------------------------------------ */}
       <div className="sm:hidden">
@@ -264,35 +264,31 @@ const NFTdetail = () => {
         )}
       </div>
 
-      <div className="mobile:hidden">
-        {paymentModal && (
-          <Modal
-            header={<p className="font-bold">Check Out</p>}
-            body={
-              <div>
-                <div className="flex justify-between mb-5 font-semibold">
-                  <p>Item</p>
-                  <p>Subtotal</p>
-                </div>
-                <div className="flex justify-between mb-5">
-                  <div className="flex flex-row">
-                    <Image
-                      src={nft.image}
-                      width={100}
-                      height={100}
-                      alt="nft-image"
-                    />
-                    <div className="mt-6 ml-3">
-                      <p className="font-medium">
-                        {shortenAddress(nft.seller)}
-                      </p>
-                      <p className="w-40 h-10 overflow-y-scroll break-words">
-                        {nft.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <p>{nft.price}</p>
+      {/* ==============================NFT-Detail Modal for Small Devices==================================== */}
+
+      {/* ----------------------------------Opening Payment Modal------------------------------------ */}
+
+      <div className='mobile:hidden'>      
+      {paymentModal && (
+        <Modal
+          header={<p className="font-bold">Check Out</p>}
+          body={
+            <div>
+              <div className="flex justify-between mb-5 font-semibold">
+                <p>Item</p>
+                <p>Subtotal</p>
+              </div>
+              <div className="flex justify-between mb-5">
+                <div className="flex flex-row">
+                  <Image
+                    src={nft.image}
+                    width={100}
+                    height={100}
+                    alt="nft-image"
+                  />
+                  <div className="mt-6 ml-3">
+                    <p className="font-medium">{shortenAddress(nft.seller)}</p>
+                    <p className='w-40 h-10 overflow-y-scroll break-words'>{nft.description}</p>
                   </div>
                 </div>
                 <div className="flex justify-between">
