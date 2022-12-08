@@ -43,7 +43,7 @@
   <h3 align="left">Require Metamask Wallet installed</h3><br>
   <p align="left">1. Create Metamask Account</p><br>
   <p align="left">2. Import given accounts to wallet after create local nodes (20 accounts with 10000ETH)</p><br>
-  <p align="left">3. Go to Setting => Advance => scrol dow and turn on Show test net</p><br>
+  <p align="left">3. Go to Setting => Advance => scroll down and turn on Show test net</p><br>
   <p align="left">4. Switch network to Localhost 8545</p><br>
   <p align="left">5. Switch to imported accounts and connect to marketplace</p><br>
   <p align="left">6. Enjoy ! </p><br>
