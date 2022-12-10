@@ -125,7 +125,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
+      className={`fixed z-20 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
         atTop
           ? 'shadow-lg'
           : 'filter backdrop-blur-lg bg-opacity-75 dark:filter dark:backdrop-blur-lg dark:bg-opacity-75  '
