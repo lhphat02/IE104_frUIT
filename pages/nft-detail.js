@@ -70,7 +70,7 @@ const NFTdetail = () => {
                     `}
       >
         {/* =================NFT Image================= */}
-        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 pc:w-700 w-500 sm:w-full sm:h-300 h-500">
+        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
           <Image
             src={nft.image}
             alt=""
