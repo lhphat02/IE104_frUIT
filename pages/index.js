@@ -7,12 +7,13 @@ import NFTCard from '../components/NFTCard';
 import Loading from '../components/Loading';
 
 const Home = () => {
-  const { fetchExistingMarketItem, loading } = useContext(Context);
+  const { fetchExistingMarketItem, loading, setLoading } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
 
   useEffect(() => {
     fetchExistingMarketItem().then((items) => {
       setNftItems(items);
+      setLoading(false);
     });
   }, []);
 
