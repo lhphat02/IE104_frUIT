@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Context } from '../context/Context';
 import Button from './Button';
 import assets from '../assets';
+import Searchbar from './Searchbar'
 
 // ----------------------------------------------MenuItems-------------------------------------------
 const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
@@ -170,6 +171,8 @@ const Navbar = () => {
       </div>
 
       {/* ========================MenuItems======================== */}
+
+    
 
       {/* =========DarkMode Toggle========= */}
       <div className="flex p-1 mx-4 rounded-full shadow-md hover:cursor-pointer bg-gradient-to-br to-prim-blue from-prim-pink">

@@ -7,11 +7,14 @@ import { shortenAddress } from '../utils/shortenAddress';
 import assets from '../assets';
 import Loading from '../components/Loading';
 import NFTCard from '../components/NFTCard';
+import SearchBar from '../components/Searchbar';
 
 // hàm kiểm tra trước khi đưa dữ liệu cho trang Collection hay trang Listed 
 const NFT_Collection = () => {
   const { fetchCollectionOrListed, currentAccount } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
+  const [searchfield, setSearchfield] = useState('');
+
   // sử dụng useEffect để load dữ liệu
   useEffect(() => {
     fetchCollectionOrListed().then((items) => {
@@ -19,6 +22,14 @@ const NFT_Collection = () => {
     });
   }, []);
   // dùng [] để tránh render lại
+
+  const onSearchChange = (event) => {
+    setSearchfield(event.target.value);
+  };
+  
+  const filteredNFT = nftItems.filter((nft) => {
+    return nft.name.toLowerCase().includes(searchfield.toLowerCase());
+  });
 
   return (
     <>
@@ -51,13 +62,19 @@ const NFT_Collection = () => {
       </div>
 
       <div className="flex flex-col justify-center w-full p-10 mt-36 xs:p-6 minmd:px-60 pc:px-28">
-        <p className="mb-10 text-3xl font-bold dark:text-white">Your NFTs</p>
+          <p className="mb-10 text-3xl font-bold dark:text-white">Your NFTs</p>
+          <div className='mb-10'>
+            <SearchBar 
+              placeholder="Search NFT here"
+              searchChange={onSearchChange}
+            />
+           </div>
         {!Loading ? (
           <Loading />
         ) : // Check if there's any NFT on market
         nftItems.length ? (
           <div className="grid w-full grid-cols-1 gap-8 mb-20 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5">
-            {nftItems.map((nft) => (
+            {filteredNFT.map((nft) => (
               <NFTCard key={nft.tokenId} nft={nft} onCollectionPage />
             ))}
           </div>

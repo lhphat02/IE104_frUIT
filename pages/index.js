@@ -1,20 +1,34 @@
 import { useState, useEffect, useContext } from 'react';
+import { useRouter } from 'next/router';
 
 import { Context } from '../context/Context';
 import images from '../assets';
 import CreatorCard from '../components/CreatorCard.jsx';
 import NFTCard from '../components/NFTCard';
 import Loading from '../components/Loading';
+import SearchBar from '../components/Searchbar';
+
 
 const Home = () => {
   const { fetchExistingMarketItem, loading } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
+  const [searchfield, setSearchfield] = useState('');
 
   useEffect(() => {
     fetchExistingMarketItem().then((items) => {
       setNftItems(items);
     });
   }, []);
+
+
+  const onSearchChange = (event) => {
+    setSearchfield(event.target.value);
+  };
+  
+  const filteredNFT = nftItems.filter((nft) => {
+    return nft.name.toLowerCase().includes(searchfield.toLowerCase());
+  });
+
 
   return (
     <div className="flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
@@ -75,16 +89,25 @@ const Home = () => {
       </div>
 
       {/* =======================NFTs======================= */}
-      <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
-        Top NFTs
-      </p>
+      <div className='flex flex-row sm:flex-col justify-between my-4'> 
+         <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
+          Top NFTs
+        </p>
+        <div className='sm:mb-5'>
+          <SearchBar 
+          placeholder="Search NFT here"
+          searchChange={onSearchChange}
+          />
+        </div>
+      </div>
+     
       {loading ? (
         <Loading />
       ) : // Check if there's any NFT on market
       nftItems.length ? (
         //    Xài grid tiện hơn flex
         <div className="grid w-full grid-cols-1 gap-8 mt-3 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5 ">
-          {nftItems.map((nft) => (
+          {filteredNFT.map((nft) => (
             <NFTCard key={nft.tokenId} nft={nft} />
           ))}
         </div>
