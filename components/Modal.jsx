@@ -18,7 +18,8 @@ const Modal = ({ header, body, footer, handleClose }) => {
   return (
     <div
       onClick={handleClickOutside}
-      className="fixed inset-0 z-10 flex items-center justify-center top-8 sm:top-96 sm:-bottom-16 xs:top-80"
+      className="fixed inset-0 z-10 flex items-center justify-center tablet:top-8 nestHub:top-10 sm:top-96 surfaceDuo:top-48 
+                sm:-bottom-16 xs:top-80 iphoneSE:top-56"
     >
       <div
         ref={modalRef}
@@ -45,7 +46,7 @@ const Modal = ({ header, body, footer, handleClose }) => {
         <div className="p-10 border-t border-b sm:p-7 sm:px-4 dark:border-prim-gray-3 border-prim-gray-1">
           {body}
         </div>
-        <div className="p-7">{footer}</div>
+        <div className="p-7 iphoneSE:pb-24">{footer}</div>
       </div>
     </div>
   );

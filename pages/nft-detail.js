@@ -70,7 +70,7 @@ const NFTdetail = () => {
                     `}
       >
         {/* =================NFT Image================= */}
-        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
+        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 pc:w-700 w-500 sm:w-full sm:h-300 h-500">
           <Image
             src={nft.image}
             alt=""
@@ -90,7 +90,7 @@ const NFTdetail = () => {
       >
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col">
-          <h2 className="h-10 overflow-hidden text-3xl font-bold w-700 sm:w-80 xs:w-56 font-poppins">
+          <h2 className="h-10 overflow-hidden text-3xl font-bold w-500 sm:w-80 xs:w-56 font-poppins">
             {nft.name}
           </h2>
         </div>
@@ -120,7 +120,7 @@ const NFTdetail = () => {
             <p className="mb-2 text-lg font-semibold font-poppins">Details</p>
           </div>
           <div className="mt-3">
-            <p className="overflow-y-scroll text-base font-normal break-words h-200 w-700 sm:w-80 font-poppins">
+            <p className="overflow-y-scroll text-base font-normal break-words h-200 pc:w-700 w-500 sm:w-80 font-poppins">
               {nft.description}
             </p>
           </div>
