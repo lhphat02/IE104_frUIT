@@ -1,4 +1,4 @@
-import react from "react";
+import react from 'react';
 
 const aboutUS = () => {
     return(
@@ -89,8 +89,51 @@ const aboutUS = () => {
                 <img src="" alt=""></img>
             </div>
         </div>
+        <div>
+          <img src="" alt="Lưu Huỳnh Phát"></img>
+          <div>
+            Lưu Huỳnh Phát
+            <p>Vị trí</p>
+            <p>tự sự</p>
+          </div>
+          <img src="" alt=""></img>
+          <img src="" alt=""></img>
+          <img src="" alt=""></img>
+        </div>
+        <div>
+          <img src="" alt="Nguyễn Minh Quân"></img>
+          <div>
+            Nguyễn Minh Quân
+            <p>Vị trí</p>
+            <p>tự sự</p>
+          </div>
+          <img src="" alt=""></img>
+          <img src="" alt=""></img>
+          <img src="" alt=""></img>
+        </div>
+        <img src="" alt="Hoàng Tuấn Anh"></img>
+        <div>
+          Hoàng Tuấn Anh
+          <p>Vị trí</p>
+          <p>tự sự</p>
+        </div>
+        <img src="" alt=""></img>
+        <img src="" alt=""></img>
+        <img src="" alt=""></img>
+        <div>
+          <img src="" alt="Nguyễn Ngọc Mai Khanh"></img>
+          <div>
+            <p>Nguyễn Ngọc Mai Khanh</p>
+            <p>Vị trí</p>
+            <p>tự sự</p>
+          </div>
+          <img src="" alt=""></img>
+          <img src="" alt=""></img>
+          <img src="" alt=""></img>
+        </div>
+      </div>
     </div>
-)}
+  );
+};
 
-
-export default aboutUS
+export default aboutUS;

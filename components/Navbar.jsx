@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Context } from '../context/Context';
 import Button from './Button';
 import assets from '../assets';
-import Searchbar from './Searchbar'
+import Searchbar from './Searchbar';
 
 // ----------------------------------------------MenuItems-------------------------------------------
 const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
@@ -172,8 +172,6 @@ const Navbar = () => {
 
       {/* ========================MenuItems======================== */}
 
-    
-
       {/* =========DarkMode Toggle========= */}
       <div className="flex p-1 mx-4 rounded-full shadow-md hover:cursor-pointer bg-gradient-to-br to-prim-blue from-prim-pink">
         <Image
@@ -238,7 +236,7 @@ const Navbar = () => {
               </div>
               <div
                 className={`fixed flex w-full bottom-80 xs:bottom-40 justify-evenly ${
-                  atTop && 'sm:bottom-16'
+                  atTop && 'md:bottom-16'
                 }`}
               >
                 {[
