@@ -58,6 +58,7 @@ const ResellNFT = () => {
           classStyles="rounded-lg text-lg active:scale-110 duration-100"
           handleClick={() => {
             createNFT(tokenURI, resellPrice, id, true);
+            router.push('/');
           }}
         />
       </div>
