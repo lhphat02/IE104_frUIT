@@ -20,6 +20,7 @@ import moon from './moon.png';
 import loadinglight from './loadinglight.gif';
 import loadingdark from './loadingdark.gif';
 import bg from './bg.jpg';
+import bg2 from './bg2.jpg';
 import img01 from './img01.png';
 export default {
   creator,
@@ -43,5 +44,6 @@ export default {
   loadinglight,
   loadingdark,
   bg,
+  bg2,
   img01,
 };
