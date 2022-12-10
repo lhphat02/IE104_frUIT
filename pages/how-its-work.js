@@ -1,10 +1,11 @@
-import react from "react";
+import react from 'react';
 
-const howItwork = () => {
-    return(
+const Intruction = () => {
+  return (
     <div>
-        <p className="text-xl">How it work</p>
+      <p className="text-xl">How it work</p>
     </div>
-)}
+  );
+};
 
-export default howItwork
+export default Intruction;
