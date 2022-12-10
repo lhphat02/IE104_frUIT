@@ -4,6 +4,7 @@ import { create as ipfsHttpClient } from 'ipfs-http-client';
 import { useRouter } from 'next/router';
 
 import Button from '../components/Button';
+import Loading from '../components/Loading';
 import Input from '../components/Input';
 import { Context } from '../context/Context';
 
@@ -23,7 +24,7 @@ const client = ipfsHttpClient(options);
 const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 
 const CreateNFT = () => {
-  const { createNFT } = useContext(Context);
+  const { createNFT, loading } = useContext(Context);
   const router = useRouter();
   const [fileUrl, setFileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
@@ -67,8 +68,7 @@ const CreateNFT = () => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
     multiple: false,
-    accept: {'image/jpeg': [],
-    'image/png': [],},
+    accept: { 'image/jpeg': [], 'image/png': [] },
     maxSize: 5000000,
   });
 
