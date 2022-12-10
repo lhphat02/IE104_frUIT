@@ -7,12 +7,13 @@ import NFTCard from '../components/NFTCard';
 import Loading from '../components/Loading';
 
 const ListedNFT = () => {
-  const { fetchCollectionOrListed } = useContext(Context);
+  const { fetchCollectionOrListed, loading, setLoading } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
 
   useEffect(() => {
     fetchCollectionOrListed('fetchListed').then((items) => {
       setNftItems(items);
+      setLoading(false);
     });
   }, []);
 
@@ -21,9 +22,9 @@ const ListedNFT = () => {
       <p className="mb-10 text-3xl font-bold dark:text-white">
         Your listed NFTs
       </p>
-      {!Loading ? (
+      {loading ? (
         <Loading />
-      ) : // Check if there's any NFT on market
+      ) : // Check if there's any listing NFT
       nftItems.length ? (
         <div className="grid w-full grid-cols-1 gap-8 mb-20 mobile:grid-cols-2 note:grid-cols-3 tablet:grid-cols-4 laptop:grid-cols-5">
           {nftItems.map((nft) => (
