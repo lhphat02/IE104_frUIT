@@ -40,7 +40,7 @@ const ListedNFT = () => {
           objectFit="cover"
         />
         <div className="flex items-center px-10 h-72 sm:h-52 xs:h-48 rounded-3xl">
-          <p className="z-10 w-full text-5xl font-bold text-center text-white  md:text-4xl sm:text-3xl xs:text-xl">
+          <p className="z-10 w-full text-5xl font-bold text-center text-white md:text-4xl sm:text-3xl xs:text-xl">
             CHECK YOUR SELLING NFTS HERE
           </p>
         </div>
