@@ -1,11 +1,15 @@
 import React, { useState, useContext, useEffect } from 'react';
 
+import Image from 'next/image';
+import assets from '../assets';
+
 import { Context } from '../context/Context';
 
 import NFTCard from '../components/NFTCard';
 
 import Loading from '../components/Loading';
 import SearchBar from '../components/Searchbar';
+
 
 const ListedNFT = () => {
   const { fetchCollectionOrListed, loading, setLoading } = useContext(Context);
@@ -28,6 +32,20 @@ const ListedNFT = () => {
   });
 
   return (
+    <>
+     <div className="relative w-full h-80 sm:h-48">
+         <Image
+            src={assets.img01}
+            className="w-full  "
+            layout="fill"
+            objectFit="cover"
+          />
+        <div className="flex items-center px-10 h-72 sm:h-52 xs:h-48 rounded-3xl">
+          <p className="w-full  z-10 text-center text-5xl font-bold text-white md:text-4xl sm:text-3xl xs:text-xl">
+            YOU CAN BUY AND SELL NFT HERE
+          </p>
+        </div>
+      </div>
     <div className="flex flex-col justify-center w-full p-10 mt-10 mb-60 xs:p-6 minmd:px-60 pc:px-28">
       <p className="mb-10 text-3xl font-bold dark:text-white">
         Your listed NFTs
@@ -53,6 +71,7 @@ const ListedNFT = () => {
         </h1>
       )}
     </div>
+    </>
   );
 };
 
