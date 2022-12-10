@@ -24,9 +24,14 @@ const aboutUS = () => {
                         tự sự
                     </p>
                 </div>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
+                <div className="flex flex-row justify-center items-center">
+                    <img className="rounded-full"
+                        src="https://1.bp.blogspot.com/-S8HTBQqmfcs/XN0ACIRD9PI/AAAAAAAAAlo/FLhccuLdMfIFLhocRjWqsr9cVGdTN_8sgCPcBGAYYCw/s1600/f_logo_RGB-Blue_1024.png"
+                        alt="Facebook" width="10%"></img>
+                    <img className="rounded-full"
+                        src="https://th.bing.com/th/id/R.66cdca2a32dc3ffee6c16b1b39615096?rik=LPgeH3rxBq4QBA&riu=http%3a%2f%2fwww.clintonfitch.com%2fwp-content%2fuploads%2f2018%2f01%2fGmail-Icon.png&ehk=faQcrEq8H976O8CxSZcIBjaMzIGFMSDDtixcpxVRgrc%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Gmail" width="10%"></img>
+                </div>
             </div>
             <div className="flex flex-col justify-center items-center">
                 <img className="rounded-full"
@@ -39,9 +44,14 @@ const aboutUS = () => {
                         tự sự
                     </p>
                 </div>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
+                <div className="flex flex-row justify-center items-center">
+                    <img className="rounded-full"
+                        src="https://1.bp.blogspot.com/-S8HTBQqmfcs/XN0ACIRD9PI/AAAAAAAAAlo/FLhccuLdMfIFLhocRjWqsr9cVGdTN_8sgCPcBGAYYCw/s1600/f_logo_RGB-Blue_1024.png"
+                        alt="Facebook" width="10%"></img>
+                    <img className="rounded-full"
+                        src="https://th.bing.com/th/id/R.66cdca2a32dc3ffee6c16b1b39615096?rik=LPgeH3rxBq4QBA&riu=http%3a%2f%2fwww.clintonfitch.com%2fwp-content%2fuploads%2f2018%2f01%2fGmail-Icon.png&ehk=faQcrEq8H976O8CxSZcIBjaMzIGFMSDDtixcpxVRgrc%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Gmail" width="10%"></img>
+                </div>
             </div>
             <div className="flex flex-col justify-center items-center">
                 <img className="rounded-full"
@@ -54,9 +64,14 @@ const aboutUS = () => {
                         tự sự
                     </p>
                 </div>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
+                <div className="flex flex-row justify-center items-center">
+                    <img className="rounded-full"
+                        src="https://1.bp.blogspot.com/-S8HTBQqmfcs/XN0ACIRD9PI/AAAAAAAAAlo/FLhccuLdMfIFLhocRjWqsr9cVGdTN_8sgCPcBGAYYCw/s1600/f_logo_RGB-Blue_1024.png"
+                        alt="Facebook" width="10%"></img>
+                    <img className="rounded-full"
+                        src="https://th.bing.com/th/id/R.66cdca2a32dc3ffee6c16b1b39615096?rik=LPgeH3rxBq4QBA&riu=http%3a%2f%2fwww.clintonfitch.com%2fwp-content%2fuploads%2f2018%2f01%2fGmail-Icon.png&ehk=faQcrEq8H976O8CxSZcIBjaMzIGFMSDDtixcpxVRgrc%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Gmail" width="10%"></img>
+                </div>
             </div>
             <div className="flex flex-col justify-center items-center">
                 <img className="rounded-full"
@@ -69,9 +84,14 @@ const aboutUS = () => {
                         tự sự
                     </p>
                 </div>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
+                <div className="flex flex-row justify-center items-center">
+                    <img className="rounded-full"
+                        src="https://1.bp.blogspot.com/-S8HTBQqmfcs/XN0ACIRD9PI/AAAAAAAAAlo/FLhccuLdMfIFLhocRjWqsr9cVGdTN_8sgCPcBGAYYCw/s1600/f_logo_RGB-Blue_1024.png"
+                        alt="Facebook" width="10%"></img>
+                    <img className="rounded-full"
+                        src="https://th.bing.com/th/id/R.66cdca2a32dc3ffee6c16b1b39615096?rik=LPgeH3rxBq4QBA&riu=http%3a%2f%2fwww.clintonfitch.com%2fwp-content%2fuploads%2f2018%2f01%2fGmail-Icon.png&ehk=faQcrEq8H976O8CxSZcIBjaMzIGFMSDDtixcpxVRgrc%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Gmail" width="10%"></img>
+                </div>
             </div>
             <div className="flex flex-col justify-center items-center">
                 <img className="rounded-full"
@@ -84,9 +104,14 @@ const aboutUS = () => {
                         tự sự
                     </p>
                 </div>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
-                <img src="" alt=""></img>
+                <div className="flex flex-row justify-center items-center">
+                    <img className="rounded-full"
+                        src="https://1.bp.blogspot.com/-S8HTBQqmfcs/XN0ACIRD9PI/AAAAAAAAAlo/FLhccuLdMfIFLhocRjWqsr9cVGdTN_8sgCPcBGAYYCw/s1600/f_logo_RGB-Blue_1024.png"
+                        alt="Facebook" width="10%"></img>
+                    <img className="rounded-full"
+                        src="https://th.bing.com/th/id/R.66cdca2a32dc3ffee6c16b1b39615096?rik=LPgeH3rxBq4QBA&riu=http%3a%2f%2fwww.clintonfitch.com%2fwp-content%2fuploads%2f2018%2f01%2fGmail-Icon.png&ehk=faQcrEq8H976O8CxSZcIBjaMzIGFMSDDtixcpxVRgrc%3d&risl=&pid=ImgRaw&r=0"
+                        alt="Gmail" width="10%"></img>
+                </div>
             </div>
         </div>
     </div>
