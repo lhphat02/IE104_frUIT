@@ -137,8 +137,13 @@ const NFTdetail = () => {
             //If already owned
             <Button
               btnName="Sell NFT"
-              classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-lg"
-              handleClick={() => alert('Chưa thêm tính năng này hehe')}
+              btnType="primary"
+              classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
+              handleClick={() =>
+                router.push(
+                  `/resell-nft?id=${nft.tokenId}&tokenURI=${nft.tokenURI}`
+                )
+              }
             />
           ) : (
             //If not owned or listed
