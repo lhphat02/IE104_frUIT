@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .prim-gradient {
+    background: linear-gradient(90deg, #e287d4 0%, #57c6dc 100%);
+  }
+  .reverse-prim-gradient{
+    background: linear-gradient(90deg, #57c6dc 0%, #e287d4 100%);
+  }
+  .font-gradient {
+    background: -webkit-linear-gradient(90deg, #e287d4 0%, #57c6dc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .transparent-black {
+    background-color: black;
+    background-blend-mode: multiply;
+  }
+}
+
+@layer components {
+  .footer-link {
+    @apply my-4 font-normal hover:cursor-pointer font-poppins dark:text-prim-gray-1 dark:hover:text-prim-blue hover:text-prim-pink;
+  }
+}
