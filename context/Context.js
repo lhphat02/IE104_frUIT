@@ -12,7 +12,7 @@ const fetchContract = (signerOrProvider) =>
 
 export const ContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   // Connect MetaMask
   const connectWallet = async () => {
@@ -31,6 +31,7 @@ export const ContextProvider = ({ children }) => {
 
   //Check if connected before or not
   const checkWalletConnection = async () => {
+    setLoading(true);
     if (!window.ethereum) return alert('Please install MetaMask !');
 
     //Ask for available accounts without requesting
@@ -45,7 +46,7 @@ export const ContextProvider = ({ children }) => {
   };
 
   //Create NFT (signer side)
-  const createNFT = async (url, unformattedPrice) => {
+  const createNFT = async (url, unformattedPrice, id, resell) => {
     //Interact contract as signer
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send('eth_requestAccounts', []);
@@ -57,15 +58,20 @@ export const ContextProvider = ({ children }) => {
     const listingPrice = await contract.getListingPrice();
 
     //Pay listing fee to the market owner (value = msg.value)
-    const createMarketItem = await contract.createToken(url, price, {
-      value: listingPrice.toString(),
-    });
-    await createMarketItem.wait();
+    const sellMarketItem = resell
+      ? await contract.resellItem(id, price, {
+          value: listingPrice.toString(),
+        })
+      : await contract.createToken(url, price, {
+          value: listingPrice.toString(),
+        });
+
+    await sellMarketItem.wait();
   };
 
   //Fetch all NFTs listed on marketplace (owner: marketplace, provider side)
   const fetchExistingMarketItem = async () => {
-    setLoading(false);
+    setLoading(true);
     //Interact contract as provider
     const provider = new ethers.providers.JsonRpcProvider();
     const contract = fetchContract(provider);
@@ -116,7 +122,7 @@ export const ContextProvider = ({ children }) => {
 
   //Fetch all NFTs users have listed or owned (seller/owner: signer, signer side)
   const fetchCollectionOrListed = async (type) => {
-    setLoading(false);
+    setLoading(true);
     //Interact contract as signer
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
@@ -171,6 +177,7 @@ export const ContextProvider = ({ children }) => {
         fetchCollectionOrListed,
         buyNFT,
         loading,
+        setLoading,
       }}
     >
       {children}

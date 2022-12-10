@@ -16,15 +16,15 @@ const NFTCard = ({ nft, onCollectionPage }) => {
             objectFit="cover"
             layout="fill"
             alt={`nft${nft.id}`}
-            className="duration-200 ease-in hover:scale-110"
+            className="duration-300 ease-in-out hover:scale-110"
           />
         </div>
         <div className="flex flex-col mt-3">
-          <p className="text-sm font-semibold font-poppins dark:text-white text-prim-black-1 overflow-hidden">
+          <p className="overflow-hidden text-sm font-semibold font-poppins dark:text-white text-prim-black-1">
             {nft.name}
           </p>
           <div className="flex flex-row justify-between mt-1 xs:flex-col xs:items-start xs:mt-3">
-            <p className="text-xs font-semibold font-poppins overflow-hidden">
+            <p className="overflow-hidden text-xs font-semibold font-poppins">
               {nft.price} <span className="font-normal">ETH</span>
             </p>
             <p className="text-xs font-semibold font-poppins">

@@ -10,13 +10,14 @@ import SearchBar from '../components/Searchbar';
 
 
 const Home = () => {
-  const { fetchExistingMarketItem, loading } = useContext(Context);
+  const { fetchExistingMarketItem, loading, setLoading } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
   const [searchfield, setSearchfield] = useState('');
 
   useEffect(() => {
     fetchExistingMarketItem().then((items) => {
       setNftItems(items);
+      setLoading(false);
     });
   }, []);
 
