@@ -1,6 +1,6 @@
-import react from "react";
+import react from 'react';
 
-const howItwork = () => {
+const Intruction = () => {
     return(
     <div className="mx-20">
         <p className="my-10 text-7xl text-center font-bold font-poppins">How it work</p>
@@ -61,4 +61,4 @@ const howItwork = () => {
     
 )}
 
-export default howItwork
+export default Intruction;

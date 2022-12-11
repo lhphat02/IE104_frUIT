@@ -1,4 +1,6 @@
-import react from "react";
+import Image from 'next/image';
+import react from 'react';
+import assets from '../assets';
 
 const aboutUS = () => {
     return(
@@ -92,7 +94,7 @@ const aboutUS = () => {
         </div>
       </div>
     </div>
-)}
+  );
+};
 
-
-export default aboutUS
+export default aboutUS;

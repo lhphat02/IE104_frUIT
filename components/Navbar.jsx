@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Context } from '../context/Context';
 import Button from './Button';
 import assets from '../assets';
-import Searchbar from './Searchbar'
+import Searchbar from './Searchbar';
 
 // ----------------------------------------------MenuItems-------------------------------------------
 const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
@@ -125,7 +125,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-10 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
+      className={`fixed z-20 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
         atTop
           ? 'shadow-lg'
           : 'filter backdrop-blur-lg bg-opacity-75 dark:filter dark:backdrop-blur-lg dark:bg-opacity-75  '
@@ -171,8 +171,6 @@ const Navbar = () => {
       </div>
 
       {/* ========================MenuItems======================== */}
-
-    
 
       {/* =========DarkMode Toggle========= */}
       <div className="flex p-1 mx-4 rounded-full shadow-md hover:cursor-pointer bg-gradient-to-br to-prim-blue from-prim-pink">
@@ -238,7 +236,7 @@ const Navbar = () => {
               </div>
               <div
                 className={`fixed flex w-full bottom-80 xs:bottom-40 justify-evenly ${
-                  atTop && 'sm:bottom-16'
+                  atTop && 'md:bottom-16'
                 }`}
               >
                 {[
