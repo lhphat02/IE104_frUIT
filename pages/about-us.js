@@ -68,7 +68,7 @@ const aboutUS = () => {
           <div className="flex flex-col items-center justify-center">
             <img
               className="mb-4 rounded-full"
-              src="https://chocanh.vn/wp-content/uploads/cho-ngu-nhat-the-gioi-1.jpg"
+              src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.15752-9/316592069_692462855739017_8427740169445731510_n.png?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=9g_W54lRWWkAX_UL9An&_nc_ht=scontent.fsgn5-2.fna&oh=03_AdQePT1E00bvge7Z0xhTUrTZrRel0A3aF1tU1qNTBPcyjA&oe=63BCFFC5"
               alt="Hoàng Tuấn Anh"
               width="50%"
             ></img>
