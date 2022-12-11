@@ -23,6 +23,7 @@ import loadingdark from './loadingdark.gif';
 import bg from './bg.jpg';
 import bg2 from './bg2.jpg';
 import bg3 from './bg3.jpg';
+import bg4 from './bg4.jpg';
 import img01 from './img01.png';
 export default {
   creator,
@@ -49,5 +50,6 @@ export default {
   bg,
   bg2,
   bg3,
+  bg4,
   img01,
 };
