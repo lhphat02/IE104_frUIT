@@ -3,9 +3,9 @@ import react from 'react';
 import assets from '../assets';
 
 const aboutUS = () => {
-  return (
-    <div className="mx-20">
-      <p className="my-10 text-3xl font-bold font-poppins">About US</p>
+    return(
+    <div>
+        <p className="my-10 text-3xl font-bold font-poppins">About US</p>
       <div className="relative w-full h-500">
         <Image
           className="rounded-lg"
