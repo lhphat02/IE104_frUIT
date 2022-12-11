@@ -34,7 +34,7 @@ const ListedNFT = () => {
     <>
       <div className="relative w-full h-80 sm:h-48">
         <Image
-          src={assets.bg2}
+          src={assets.bg4}
           className="w-full "
           layout="fill"
           objectFit="cover"
