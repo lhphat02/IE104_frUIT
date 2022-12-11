@@ -50,7 +50,7 @@ const aboutUS = () => {
             ></img>
             <div>
               <p className="mb-2 text-xl font-semibold">Lưu Huỳnh Phát</p>
-              <p>Backend Dev</p>
+              <p>Fullstack Dev</p>
             </div>
           </div>
           <div className="flex flex-col items-center justify-center">
