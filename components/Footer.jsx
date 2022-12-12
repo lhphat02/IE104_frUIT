@@ -23,7 +23,7 @@ const Footer = () => {
               alt="logo"
             />
 
-            <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
+              <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
               frUIT
             </p>
           </div>
