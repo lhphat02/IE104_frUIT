@@ -16,7 +16,6 @@ const NFTdetail = () => {
   const { theme } = useTheme();
   const [paymentModal, setPaymentModal] = useState(false);
   const [successModal, setSuccessModal] = useState(false);
-  // const [isLoading, setIsLoading] = useState(true);S
   const [nft, setNft] = useState({
     price: '',
     tokenId: '',
@@ -100,6 +99,7 @@ const NFTdetail = () => {
           <p className="text-lg font-semibold font-poppins dark:text-white text-prim-black-1 minlg:text-base">
             Creator
           </p>
+
           <div className="flex flex-row items-center mt-3">
             <div className="relative w-12 h-12 mr-2 minlg:w-20 minlg:h-20 ">
               <Image
@@ -108,6 +108,7 @@ const NFTdetail = () => {
                 className="rounded-full"
               />
             </div>
+
             <p className="text-sm font-semibold font-poppins minmd:text-lg">
               {shortenAddress(nft.seller)}
             </p>
