@@ -235,7 +235,7 @@ const Navbar = () => {
                 />
               </div>
               <div
-                className={`fixed flex w-full bottom-80 xs:bottom-40 justify-evenly ${
+                className={`fixed flex w-full bottom-80 xs:bottom-40 galaxyfold:bottom-10 justify-evenly ${
                   atTop && 'md:bottom-16'
                 }`}
               >

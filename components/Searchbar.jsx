@@ -19,7 +19,7 @@ const SearchBar = ({ placeholder, searchChange }) => {
       </div>
 
       <input
-        className="dark:bg-prim-black-1 bg-prim-gray-1 dark:border-prim-black-1 border-prim-gray-2 rounded-lg w-900 md:w-500
+        className="dark:bg-prim-black-1 bg-prim-gray-1 dark:border-prim-black-1 border-prim-gray-2 rounded-lg w-900 md:w-500 galaxyfold:w-200
                       outline-none font-poppins text-prim-gray-2 text-base mt-4 px-4 py-3 pl-12"
         placeholder={placeholder}
         onChange={searchChange}
