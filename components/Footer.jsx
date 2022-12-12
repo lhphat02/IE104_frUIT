@@ -23,7 +23,7 @@ const Footer = () => {
               alt="logo"
             />
 
-            <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
+              <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
               frUIT
             </p>
           </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <p className="footer-link">Explore</p>
               </Link>
               <a href='/how-its-work'>
-                <p className="footer-link">How its work</p>
+                <p className="footer-link">How it works</p>
               </a>
               <a href='/about-us'>
                 <p className="footer-link">About us</p>

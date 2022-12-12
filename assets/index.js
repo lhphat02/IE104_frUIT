@@ -25,6 +25,8 @@ import bg2 from './bg2.jpg';
 import bg3 from './bg3.jpg';
 import bg4 from './bg4.jpg';
 import img01 from './img01.png';
+import arrow from './arrow.png';
+
 export default {
   creator,
   creator1,
@@ -52,4 +54,5 @@ export default {
   bg3,
   bg4,
   img01,
+  arrow,
 };

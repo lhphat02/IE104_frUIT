@@ -19,6 +19,7 @@ const NFTCard = ({ nft, onCollectionPage }) => {
             className="duration-300 ease-in-out hover:scale-110"
           />
         </div>
+
         <div className="flex flex-col mt-3">
           <p className="overflow-hidden text-sm font-semibold font-poppins dark:text-white text-prim-black-1">
             {nft.name}
