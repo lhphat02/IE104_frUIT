@@ -60,7 +60,7 @@ const NFT_Collection = () => {
           </p>
         </div>
       </div>
-
+      {/*Searchbar*/}
       <div className="flex flex-col justify-center w-full p-10 mt-36 xs:p-6 minmd:px-60 pc:px-28">
           <p className="mb-10 text-3xl font-bold dark:text-white">Your NFTs</p>
           <div className='mb-10'>
