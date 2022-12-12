@@ -63,13 +63,13 @@ const NFTdetail = () => {
     <div className="flex justify-center my-8 md:flex-col">
       {/* =================Left Section================= */}
       <div
-        className={`relative flex justify-center flex-1 p-12 border-r sm:px-4 md:border-r-0 md:border-b dark:border-prim-black-1 border-prim-gray-1
+        className={`relative flex justify-center flex-1 p-12 border-r sm:px-4 md:border-r-0  md:border-b dark:border-prim-black-1 border-prim-gray-1
                       ${paymentModal && 'opacity-20'}
                       ${successModal && 'opacity-20'} 
                     `}
       >
         {/* =================NFT Image================= */}
-        <div className="relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
+        <div className=" relative shadow-xl minmd:mx-28 minmd:w-700 minmd:h-700 w-500 sm:w-full sm:h-300 h-500">
           <Image
             src={nft.image}
             alt=""
@@ -82,25 +82,24 @@ const NFTdetail = () => {
 
       {/* =================Right Section================= */}
       <div
-        className={`justify-start flex-1 p-12 sm:px-4 sm:pb-4
+        className={ `justify-start flex-1 p-12 sm:px-4 sm:pb-4
                        ${paymentModal && 'opacity-20'}
                        ${successModal && 'opacity-20'} 
                     `}
       >
         {/* =================NFT Name================= */}
-        <div className="flex flex-row sm:flex-col">
-          <h2 className="h-10 overflow-hidden text-3xl font-bold w-500 sm:w-80 xs:w-56 font-poppins">
+        <div className="flex flex-row sm:flex-col ">
+          <h2 className="h-10  overflow-hidden text-3xl font-bold w-500 sm:w-80 xs:w-56 font-poppins">
             {nft.name}
           </h2>
         </div>
 
         {/* =================NFT Creator================= */}
         <div className="mt-10">
-          <p className="text-lg font-semibold font-poppins dark:text-white text-prim-black-1 minlg:text-base">
+          <p className="text-lg  font-semibold font-poppins dark:text-white text-prim-black-1 minlg:text-base">
             Creator
           </p>
-
-          <div className="flex flex-row items-center mt-3">
+          <div className="flex  flex-row items-center mt-3">
             <div className="relative w-12 h-12 mr-2 minlg:w-20 minlg:h-20 ">
               <Image
                 src={assets.creatornft}
@@ -109,16 +108,17 @@ const NFTdetail = () => {
               />
             </div>
 
-            <p className="text-sm font-semibold font-poppins minmd:text-lg">
+            <p className="text-sm  font-semibold font-poppins minmd:text-lg">
+
               {shortenAddress(nft.seller)}
             </p>
           </div>
         </div>
 
         {/* =================NFT Details================= */}
-        <div className="flex flex-col mt-10">
-          <div className="flex flex-row w-full border-b dark:border-prim-black-1 border-prim-gray-1">
-            <p className="mb-2 text-lg font-semibold font-poppins">Details</p>
+        <div className="flex  flex-col mt-10">
+          <div className="flex  flex-row w-full border-b dark:border-prim-black-1 border-prim-gray-1">
+            <p className="mb-2 text-lg font-medium font-poppins">Details</p>
           </div>
           <div className="mt-3">
             <p className="overflow-y-scroll text-base font-normal break-words h-200 pc:w-700 w-500 sm:w-80 font-poppins">

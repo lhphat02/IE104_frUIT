@@ -6,10 +6,10 @@ import assets from '../assets';
 const Loading = () => {
   const { theme } = useTheme();
   return (
-    <div className="flex flex-col items-center justify-center m-2">
-      <div className="relative flex justify-center">
+    <div className="flex flex-col  justify-center items-center  m-2">
+      <div className=" flex relative  justify-center">
         <Image
-          src={theme === 'light' ? assets.loadinglight : assets.loadingdark}
+          src={theme === 'dark' ?  assets.loadingdark :assets.loadinglight }
           alt=""
           width={300}
           height={300}
