@@ -9,8 +9,8 @@ const Modal = ({ header, body, footer, handleClose }) => {
   const { theme } = useTheme();
 
   // check if it is clicked outside of modalRef
-  const handleClickOutside = (e) => {
-    if (modalRef.current && !modalRef.current.contains(e.target)) {
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
       handleClose();
     }
   };
