@@ -30,7 +30,7 @@ const Intruction = () => {
                         height={100}
                         alt="arrow"
                         className={`hover:cursor-pointer ${
-                        theme === 'dark' && 'filter invert'
+                        theme === 'light' && 'filter invert'
                       }`}
                 />
             </div>
@@ -53,7 +53,7 @@ const Intruction = () => {
                         height={100}
                         alt="arrow"
                         className={`hover:cursor-pointer ${
-                        theme === 'dark' && 'filter invert'
+                        theme === 'light' && 'filter invert'
                       }`}
                 />
             </div>
@@ -76,7 +76,7 @@ const Intruction = () => {
                         height={100}
                         alt="arrow"
                         className={`hover:cursor-pointer ${
-                        theme === 'dark' && 'filter invert'
+                        theme === 'light' && 'filter invert'
                       }`}
                 />
             </div>
@@ -99,7 +99,7 @@ const Intruction = () => {
                         height={100}
                         alt="arrow"
                         className={`hover:cursor-pointer ${
-                        theme === 'dark' && 'filter invert'
+                        theme === 'light' && 'filter invert'
                       }`}
                 />
             </div>
