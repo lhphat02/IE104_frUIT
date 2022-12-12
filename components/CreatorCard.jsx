@@ -3,7 +3,7 @@ import Image from 'next/image';
 import images from '../assets';
 
 const CreatorCard = (props) => (
-  <div className="flex flex-col w-56 p-2 m-5 mx-1 shadow-md dark:hover:bg-prim-black-3 dark:bg-prim-black-1 bg-prim-gray-1 hover:shadow-xl hover:cursor-pointer rounded-2xl scroll md:w-60 sm:w-72">
+  <div className="flex flex-col w-56 p-2 m-5 mx-1 shadow-md dark:hover:bg-prim-black-3 dark:bg-prim-black-1 bg-prim-gray-1 hover:shadow-xl hover:cursor-pointer rounded-2xl scroll md:w-60 sm:w-72 galaxyfold:w-64">
     <div className="flex items-center justify-center w-8 h-8 p-1 mt-2 ml-2 rounded-full md:w-6 md:h-6 md:text-xs prim-gradient">
       <p className="font-semibold text-white">{props.number}</p>
     </div>

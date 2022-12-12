@@ -121,7 +121,7 @@ const NFTdetail = () => {
             <p className="mb-2 text-lg font-medium font-poppins">Details</p>
           </div>
           <div className="mt-3">
-            <p className="overflow-y-scroll text-base font-normal break-words h-200 pc:w-700 w-500 sm:w-80 font-poppins">
+            <p className="overflow-y-scroll text-base font-normal break-words h-200 pc:w-700 w-500 sm:w-80 galaxyfold:w-40 font-poppins">
               {nft.description}
             </p>
           </div>
@@ -154,7 +154,7 @@ const NFTdetail = () => {
               handleClick={() => setPaymentModal(true)}
             />
           )}
-        </div>/
+        </div>
       </div>
       {/* ==============================NFT-Detail Modal for Large Devices==================================== */}
 
@@ -176,8 +176,8 @@ const NFTdetail = () => {
                       width={120}
                       height={120}
                       alt="nft-image"
-                      objectFit="cover"
-                      layout="fill"
+                      // objectFit="cover"
+                      // layout="fill"
                     />
                     <div className="mt-2 ml-3">
                       <p className="mb-4 overflow-hidden text-lg font-semibold w-80">
@@ -231,8 +231,8 @@ const NFTdetail = () => {
                     width={220}
                     height={220}
                     alt="nft-image"
-                    objectFit="cover"
-                    layout="fill"
+                    // objectFit="cover"
+                    // layout="fill"
                   />
                 </div>
                 <p className="overflow-hidden text-center">
@@ -278,7 +278,7 @@ const NFTdetail = () => {
 
       {/* ----------------------------------Opening Payment Modal------------------------------------ */}
 
-      <div className="mobile:hidden">
+      <div className="mobile:hidden galaxyfold:hidden">
         {paymentModal && (
           <Modal
             header={<p className="font-bold">Check Out</p>}
@@ -295,8 +295,8 @@ const NFTdetail = () => {
                       width={100}
                       height={100}
                       alt="nft-image"
-                      objectFit="cover"
-                      layout="fill"
+                      // objectFit="cover"
+                      // layout="fill"
                     />
                     <div className="mt-6 ml-3">
                       <p className="font-medium">
@@ -347,8 +347,125 @@ const NFTdetail = () => {
                     width={140}
                     height={140}
                     alt="nft-image"
-                    objectFit="cover"
-                    layout="fill"
+                    // objectFit="cover"
+                    // layout="fill"
+                  />
+                </div>
+                <p className="text-center">
+                  You successfully purchased{' '}
+                  <strong>{shortenAddress(nft.name)}</strong> from{' '}
+                  <strong>{shortenAddress(nft.seller)}</strong>
+                </p>
+              </div>
+            }
+            footer={
+              <div className="flex flex-col">
+                <p className="flex justify-center mb-5 text-xl font-semibold sm:mb-3">
+                  Share
+                </p>
+                <div className="flex justify-evenly">
+                  {[
+                    assets.facebook,
+                    assets.instagram,
+                    assets.telegram,
+                    assets.twitter,
+                    assets.discord,
+                  ].map((image, i) => (
+                    <Image
+                      key={i}
+                      src={image}
+                      className={`hover:cursor-pointer ${
+                        theme === 'light' && 'filter invert'
+                      }`}
+                      objectFit="contain"
+                      width={20}
+                      height={20}
+                      alt="socialMedia"
+                    />
+                  ))}
+                </div>
+              </div>
+            }
+            handleClose={() => setSuccessModal(false)}
+          />
+        )}
+      </div>
+
+     {/* ==============================NFT-Detail Modal for Galaxy Fold==================================== */}
+
+      {/* ----------------------------------Opening Payment Modal------------------------------------ */}
+
+      <div className="duoscreen:hidden">
+        {paymentModal && (
+          <Modal
+            header={<p className="font-bold">Check Out</p>}
+            body={
+              <div className='flex flex-col'>
+                <div className="flex justify-between mb-5 font-semibold">
+                  <p>Item</p>
+                  <p>Subtotal</p>
+                </div>
+                <div className="flex justify-between mb-5">
+                  <div className="flex flex-row">
+                    <Image
+                      src={nft.image}
+                      width={80}
+                      height={30}
+                      alt="nft-image"
+                      // objectFit="cover"
+                      // layout="fill"
+                    />
+                    <div className="mt-6 ml-3">
+                      <p className="font-medium">
+                        {shortenAddress(nft.seller)}
+                      </p>
+                      <p className="w-10 h-5 overflow-y-scroll break-words">
+                        {nft.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex justify-between">
+                    <p className="font-semibold">Total</p>
+                    <p>{nft.price}</p>
+                  </div>
+                </div>
+              </div>
+            }
+            footer={
+              <div className="flex justify-evenly sm:pt-5">
+                <Button
+                  btnName={`Check out`}
+                  classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
+                  handleClick={checkout}
+                />
+                <Button
+                  btnName={`Cancel`}
+                  classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
+                  handleClick={() => setPaymentModal(false)}
+                  cancelBg
+                />
+              </div>
+            }
+            handleClose={() => setPaymentModal(false)}
+          />
+        )}
+
+        {/* ------------------------------After bought nft Opening Success Modal-----------------------------     */}
+        {successModal && (
+          <Modal
+            header={
+              <p className="font-bold font-poppins">Payment Successful</p>
+            }
+            body={
+              <div className="flex flex-col">
+                <div className="flex justify-center mb-7">
+                  <Image
+                    src={nft.image}
+                    width={100}
+                    height={100}
+                    alt="nft-image"
+                    // objectFit="cover"
+                    // layout="fill"
                   />
                 </div>
                 <p className="text-center">
