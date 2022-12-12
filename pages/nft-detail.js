@@ -154,7 +154,7 @@ const NFTdetail = () => {
               handleClick={() => setPaymentModal(true)}
             />
           )}
-        </div>
+        </div>/
       </div>
       {/* ==============================NFT-Detail Modal for Large Devices==================================== */}
 
@@ -176,6 +176,8 @@ const NFTdetail = () => {
                       width={120}
                       height={120}
                       alt="nft-image"
+                      objectFit="cover"
+                      layout="fill"
                     />
                     <div className="mt-2 ml-3">
                       <p className="mb-4 overflow-hidden text-lg font-semibold w-80">
@@ -229,6 +231,8 @@ const NFTdetail = () => {
                     width={220}
                     height={220}
                     alt="nft-image"
+                    objectFit="cover"
+                    layout="fill"
                   />
                 </div>
                 <p className="overflow-hidden text-center">
@@ -291,6 +295,8 @@ const NFTdetail = () => {
                       width={100}
                       height={100}
                       alt="nft-image"
+                      objectFit="cover"
+                      layout="fill"
                     />
                     <div className="mt-6 ml-3">
                       <p className="font-medium">
@@ -341,6 +347,8 @@ const NFTdetail = () => {
                     width={140}
                     height={140}
                     alt="nft-image"
+                    objectFit="cover"
+                    layout="fill"
                   />
                 </div>
                 <p className="text-center">
