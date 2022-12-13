@@ -24,6 +24,7 @@ module.exports = {
           30: '120px',
         },
         width: {
+          200: '200px',
           300: '300px',
           400: '400px',
           500: '500px',
@@ -43,7 +44,9 @@ module.exports = {
         md: { max: '1080px' },
         sm: { max: '600px' },
         xs: { max: '400px' },
+        galaxyfold: { max: '280px'},
         iphoneSE: { max: '375px' },
+        duoscreen: '300px',
         surfaceDuo: '540px',
         mobile: '600px',
         note: '800px',
