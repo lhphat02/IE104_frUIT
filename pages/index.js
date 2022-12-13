@@ -7,6 +7,7 @@ import CreatorCard from '../components/CreatorCard.jsx';
 import NFTCard from '../components/NFTCard';
 import Loading from '../components/Loading';
 import SearchBar from '../components/Searchbar';
+import Carousel from '../components/Carousel';
 
 const Home = () => {
   const { fetchExistingMarketItem, loading, setLoading } = useContext(Context);
@@ -38,6 +39,7 @@ const Home = () => {
           </p>
         </div>
       </div>
+      <Carousel />
 
       {/* =================Creators================= */}
       <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
