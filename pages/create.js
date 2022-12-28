@@ -9,8 +9,8 @@ import Input from '../components/Input';
 import { Context } from '../context/Context';
 
 // Connect Infura Dedicated Gateway
-const projectId = '2HzKZHh7OyLxfrib8uAOuZexRbD';
-const projectSecret = '525733ee30c91b97e669099d89600345';
+const projectId = 'youridhere';
+const projectSecret = 'yourkeyhere';
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString(
   'base64'
 )}`;
