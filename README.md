@@ -6,19 +6,7 @@
 
 ###
 
-<h2 align="left">🏆 Team 5 - IE104.N13 ( Semester I - 2022 )</h2>
-
-###
-
-<p align="left">🐧 Phat Luu<br>🐻 Chon Nguyen<br>🐸 Quan Nguyen<br>🦊 Khanh Nguyen<br>🦄 Anh Hoang</p>
-
-###
-
-<h2 align="left">🤖 Instructor</h2>
-
-###
-
-<p align="left">👨🏻‍💻 Mr. Khoa Vo</p>
+<h2 align="left"> IE104.N13 ( Semester I - 2022 )</h2>
 
 ###
 
@@ -45,11 +33,7 @@
   <p align="left">2. Import given accounts to wallet after create local nodes (20 accounts with 10000ETH)</p><br>
   <p align="left">3. Go to Setting => Advance => scroll down and turn on Show test net</p><br>
   <p align="left">4. Switch network to Localhost 8545</p><br>
-  <p align="left">5. Switch to imported accounts and connect to marketplace</p><br>
-  <p align="left">6. Enjoy ! </p><br>
-  <p align="left">P/s: Create an issue if there's any problem </p><br>
-                 
-                 
+  <p align="left">5. Switch to imported accounts and connect to marketplace</p><br>               
                   
   
 <p align="left">```<br>
@@ -66,12 +50,3 @@
   - npm run dev
   <br><br>```</p>
 
-###
-
-<h2 align="left">📃 Source</h2>
-
-###
-
-<p align="left">Figma source : https://ui8.net/astikayasa/products/cryptoket---nft-marketplace-ui-kit<br> > This repos is used for educational purpose only.</p>
-
-###
