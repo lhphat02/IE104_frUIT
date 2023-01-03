@@ -25,28 +25,33 @@
 ###
 
 <h2 align="left">🚀 For developing</h2>
+                ## Requirements For Initial Setup
+- Install [NodeJS](https://nodejs.org/en/)
+- Install [Hardhat](https://hardhat.org/)
 
-###
+## Setting Up
+### 1. Clone/Download the Repository
 
-  <h3 align="left">Require Metamask Wallet installed</h3><br>
-  <p align="left">1. Create Metamask Account</p><br>
-  <p align="left">2. Import given accounts to wallet after create local nodes (20 accounts with 10000ETH)</p><br>
-  <p align="left">3. Go to Setting => Advance => scroll down and turn on Show test net</p><br>
-  <p align="left">4. Switch network to Localhost 8545</p><br>
-  <p align="left">5. Switch to imported accounts and connect to marketplace</p><br>               
-                  
-  
-<p align="left">```<br>
-  <i>//create local nodes</i> <br>
-  - npx hardhat node 
-  <br><br>
-  <i>//deploy contracts</i> <br>
-  - npx hardhat run scripts/deploy.js --network localhost 
-  <br><br>
-  <i>//test</i> <br>
-  - npx hardhat test
-  <br><br>
-  <i>//develop</i> <br>
-  - npm run dev
-  <br><br>```</p>
+### 2. Install Dependencies:
+```
+$ npm install
+```
+### 3. Boot up local development blockchain
+```
+$ npx hardhat node
+```
 
+### 4. Connect development blockchain accounts to Metamask
+- Copy private key of the addresses and import to Metamask
+- Connect your metamask to hardhat blockchain, network 127.0.0.1:8545.
+- If you have not added hardhat to the list of networks on your metamask, open up a browser, click the fox icon, then click the top center dropdown button that lists all the available networks then click add networks. A form should pop up. For the "Network Name" field enter "Hardhat". For the "New RPC URL" field enter "http://127.0.0.1:8545". For the chain ID enter "31337" or "1337" if an tx error occurs. Then click save.  
+
+
+### 5. Migrate Smart Contracts
+`$ npx hardhat run scripts/deploy.js --network localhost`
+
+### 6. Run Tests
+`$ npx hardhat test`
+
+### 7. Launch Frontend
+`$ npm run dev`              
