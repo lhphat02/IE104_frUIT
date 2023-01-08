@@ -1,12 +1,8 @@
-<h1 align="left">IE104 - Final Project</h1>
+<h1 align="left">IE104.N13 - Final Project</h1>
 
 ###
 
 <p align="left">A simple NFT Marketplace Web3 for my class's project</p>
-
-###
-
-<h2 align="left"> IE104.N13 ( Semester I - 2022 )</h2>
 
 ###
 
