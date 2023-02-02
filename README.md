@@ -51,3 +51,6 @@ $ npx hardhat node
 
 ### 7. Launch Frontend
 `$ npm run dev`              
+
+### P/S:
+`Make sure to change the Infura API id, key and address in ./pages/create.js and ./next.config.js   
