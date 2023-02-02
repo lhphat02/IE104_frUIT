@@ -53,4 +53,5 @@ $ npx hardhat node
 `$ npm run dev`              
 
 ### P/S:
-Make sure to change the Infura API id, key and address in ./pages/create.js and ./next.config.js   
+- Make sure to change the Infura API id, key and address in ./pages/create.js and ./next.config.js
+- Or you can store them in an .env file and access with process.env
