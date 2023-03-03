@@ -100,7 +100,7 @@ const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  let render = 0;
+  const render = 0;
 
   useEffect(() => {
     checkActive(active, setActive, router);

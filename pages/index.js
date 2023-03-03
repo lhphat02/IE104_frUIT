@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 
+import * as dotenv from 'dotenv';
 import { Context } from '../context/Context';
 import images from '../assets';
 import CreatorCard from '../components/CreatorCard.jsx';
@@ -7,6 +8,7 @@ import NFTCard from '../components/NFTCard';
 import Loading from '../components/Loading';
 import SearchBar from '../components/Searchbar';
 
+dotenv.config();
 const Home = () => {
   const { fetchExistingMarketItem, loading, setLoading } = useContext(Context);
   const [nftItems, setNftItems] = useState([]);
