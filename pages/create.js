@@ -4,13 +4,12 @@ import { create as ipfsHttpClient } from 'ipfs-http-client';
 import { useRouter } from 'next/router';
 
 import Button from '../components/Button';
-import Loading from '../components/Loading';
 import Input from '../components/Input';
 import { Context } from '../context/Context';
 
 // Connect Infura Dedicated Gateway
-const projectId = 'youridhere';
-const projectSecret = 'yourkeyhere';
+const projectId = process.env.PROJECT_ID;
+const projectSecret = process.env.INFURA_KEY;
 const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString(
   'base64'
 )}`;
@@ -23,8 +22,10 @@ const options = {
 const client = ipfsHttpClient(options);
 const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 
+console.log(projectId, ' || ', projectSecret);
+
 const CreateNFT = () => {
-  const { createNFT, loading } = useContext(Context);
+  const { createNFT } = useContext(Context);
   const router = useRouter();
   const [fileUrl, setFileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
