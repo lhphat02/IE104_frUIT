@@ -8,9 +8,9 @@ import Input from '../components/Input';
 import { Context } from '../context/Context';
 
 // Connect Infura Dedicated Gateway
-const projectId = process.env.PROJECT_ID;
-const projectSecret = process.env.INFURA_KEY;
-const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString(
+const projectId = '2HzKZHh7OyLxfrib8uAOuZexRbD';
+const infuraKey = '525733ee30c91b97e669099d89600345';
+const auth = `Basic ${Buffer.from(`${projectId}:${infuraKey}`).toString(
   'base64'
 )}`;
 const options = {
@@ -22,7 +22,7 @@ const options = {
 const client = ipfsHttpClient(options);
 const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 
-console.log(projectId, ' || ', projectSecret);
+console.log(projectId, ' || ', infuraKey);
 
 const CreateNFT = () => {
   const { createNFT } = useContext(Context);
