@@ -1,5 +1,9 @@
 module.exports = {
-  content: ['./pages/**/*.{js,jsx}', './components/**/*.{js,jsx}'],
+  content: [
+    './pages/**/*.{js,jsx}',
+    './components/**/*.{js,jsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+  ],
   darkMode: 'class',
   theme: {
     extend: {
@@ -38,24 +42,24 @@ module.exports = {
         700: '700px',
         900: '900px',
       },
-    },
-    screens: {
-      lg: { max: '1800px' },
-      md: { max: '1080px' },
-      sm: { max: '600px' },
-      xs: { max: '400px' },
-      galaxyfold: { max: '280px' },
-      iphoneSE: { max: '375px' },
-      duoscreen: '300px',
-      surfaceDuo: '540px',
-      mobile: '600px',
-      note: '800px',
-      nestHub: '1024px',
-      tablet: '1080px',
-      laptop: '1230px',
-      pc: '1500px',
-      minmd: '1700px',
-      minlg: '2100px',
+      screens: {
+        lg: { max: '1800px' },
+        md: { max: '1080px' },
+        sm: { max: '600px' },
+        xs: { max: '400px' },
+        galaxyfold: { max: '280px' },
+        iphoneSE: { max: '375px' },
+        duoscreen: '300px',
+        surfaceDuo: '540px',
+        mobile: '600px',
+        note: '800px',
+        nestHub: '1024px',
+        tablet: '1080px',
+        laptop: '1230px',
+        pc: '1500px',
+        minmd: '1700px',
+        minlg: '2100px',
+      },
     },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
@@ -67,5 +71,6 @@ module.exports = {
       textColor: ['dark'],
     },
   },
-  plugins: [],
+  // eslint-disable-next-line global-require
+  plugins: [require('flowbite/plugin')],
 };
