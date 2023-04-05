@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { Context } from '../context/Context';
 import Button from './Button';
 import assets from '../assets';
-import Searchbar from './Searchbar';
 
 // ----------------------------------------------MenuItems-------------------------------------------
 const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
@@ -100,7 +99,6 @@ const Navbar = () => {
   const [atTop, setAtTop] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const render = 0;
 
   useEffect(() => {
     checkActive(active, setActive, router);
@@ -125,7 +123,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed z-20 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
+      className={`fixed z-50 flex flex-row items-center justify-between w-full p-4 bg-white border-b border-prim-gray-1 dark:border-prim-black-1 dark:bg-prim-dark ${
         atTop
           ? 'shadow-lg'
           : 'filter backdrop-blur-lg bg-opacity-75 dark:filter dark:backdrop-blur-lg dark:bg-opacity-75  '
@@ -238,27 +236,7 @@ const Navbar = () => {
                 className={`fixed flex w-full bottom-80 xs:bottom-40 galaxyfold:bottom-10 justify-evenly ${
                   atTop && 'md:bottom-16'
                 }`}
-              >
-                {[
-                  assets.facebook,
-                  assets.instagram,
-                  assets.telegram,
-                  assets.twitter,
-                  assets.discord,
-                ].map((image, i) => (
-                  <Image
-                    key={i}
-                    src={image}
-                    className={`hover:cursor-pointer ${
-                      theme === 'light' && 'filter invert'
-                    }`}
-                    objectFit="contain"
-                    width={20}
-                    height={20}
-                    alt="socialMedia"
-                  />
-                ))}
-              </div>
+              />
             </div>
           )}
         </div>
