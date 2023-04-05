@@ -6,9 +6,12 @@ import CreatorCard from '../components/CreatorCard.jsx';
 import NFTCard from '../components/NFTCard';
 import Loading from '../components/Loading';
 import SearchBar from '../components/Searchbar';
+import CarouselComp from '../components/CarouselComp';
+import ToastComp from '../components/Toast';
 
 const Home = () => {
-  const { fetchExistingMarketItem, loading, setLoading } = useContext(Context);
+  const { fetchExistingMarketItem, loading, logIn, setLoading } =
+    useContext(Context);
   const [nftItems, setNftItems] = useState([]);
   const [searchfield, setSearchfield] = useState('');
 
@@ -17,6 +20,10 @@ const Home = () => {
       setNftItems(items);
       setLoading(false);
     });
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = 'visible';
   }, []);
 
   const onSearchChange = (event) => {
@@ -28,15 +35,20 @@ const Home = () => {
   });
 
   return (
-    <div className="flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
-      {/* =================Banner================= */}
-      <div className="py-10">
-        <div className="flex items-center px-10 shadow-md prim-gradient h-72 sm:h-52 xs:h-48 rounded-3xl">
-          <p className="text-5xl font-bold text-white md:text-4xl sm:text-3xl xs:text-xl">
-            Discover, collect, and sell extraordinary NFTs
-          </p>
+    <div className="relative flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
+      {!logIn ? (
+        <div className="fixed bottom-0 z-50 right-10">
+          <ToastComp />{' '}
         </div>
+      ) : null}
+
+      {/* =================Banner================= */}
+      <div className="relative flex justify-center w-full">
+        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-48 xl:-bottom-72 minmd:-bottom-96">
+          Discover, create and buy extraordinary NFTs from UIT
+        </h1>
       </div>
+      <CarouselComp />
 
       {/* =================Creators================= */}
       <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
@@ -90,7 +102,7 @@ const Home = () => {
         <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
           Top NFTs
         </p>
-        <div className="sm:mb-5">
+        <div className="sm:mb-5 sm:flex sm:justify-center">
           <SearchBar
             placeholder="Search NFT here"
             searchChange={onSearchChange}
