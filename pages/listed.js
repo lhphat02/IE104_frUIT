@@ -9,9 +9,12 @@ import NFTCard from '../components/NFTCard';
 
 import Loading from '../components/Loading';
 import SearchBar from '../components/Searchbar';
+import Modal from '../components/Modal';
+import Button from '../components/Button';
 
 const ListedNFT = () => {
-  const { fetchCollectionOrListed, loading, setLoading } = useContext(Context);
+  const { fetchCollectionOrListed, logIn, loading, connectWallet, setLoading } =
+    useContext(Context);
   const [nftItems, setNftItems] = useState([]);
   const [searchfield, setSearchfield] = useState('');
 
@@ -21,6 +24,14 @@ const ListedNFT = () => {
       setLoading(false);
     });
   }, []);
+
+  useEffect(() => {
+    if (!logIn) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [logIn]);
 
   const onSearchChange = (event) => {
     setSearchfield(event.target.value);
@@ -70,6 +81,35 @@ const ListedNFT = () => {
           </h1>
         )}
       </div>
+      {!logIn && (
+        <Modal
+          closeBtn={false}
+          header={
+            <p className="my-2 font-bold">
+              Oops, can&#39;t find your collection 😥
+            </p>
+          }
+          body={
+            <div className="text-center">
+              <p className="text-lg font-poppins">
+                Please sign in to get access to your personal listing NFTs
+              </p>
+            </div>
+          }
+          footer={
+            <div className="flex justify-center ">
+              <Button
+                btnName="Connect now"
+                classStyles={`mx-2 rounded-xl active:scale-110 duration-100 `}
+                handleClick={() => {
+                  connectWallet();
+                }}
+              />
+            </div>
+          }
+          handleClose={() => {}}
+        />
+      )}
     </>
   );
 };

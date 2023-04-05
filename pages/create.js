@@ -1,9 +1,10 @@
-import { useCallback, useState, useContext } from 'react';
+import { useCallback, useState, useContext, useEffect } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
 import { useRouter } from 'next/router';
 
 import Button from '../components/Button';
+import Modal from '../components/Modal';
 import Input from '../components/Input';
 import { Context } from '../context/Context';
 
@@ -25,7 +26,7 @@ const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 console.log(projectId, ' || ', infuraKey);
 
 const CreateNFT = () => {
-  const { createNFT } = useContext(Context);
+  const { createNFT, logIn, connectWallet } = useContext(Context);
   const router = useRouter();
   const [fileUrl, setFileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
@@ -33,6 +34,14 @@ const CreateNFT = () => {
     description: '',
     price: '',
   });
+
+  useEffect(() => {
+    if (!logIn) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'visible';
+    }
+  }, [logIn]);
 
   const createMarketItem = async () => {
     const { name, description, price } = formInput;
@@ -144,6 +153,32 @@ const CreateNFT = () => {
           handleClick={createMarketItem}
         />
       </div>
+      {!logIn && (
+        <Modal
+          closeBtn={false}
+          header={
+            <p className="my-2 font-bold">Need Metamask Wallet connected 🦊</p>
+          }
+          body={
+            <div className="text-center">
+              <p className="text-lg font-poppins">
+                Please connect your Metamask Wallet to be able to mint your NFT
+              </p>
+            </div>
+          }
+          footer={
+            <div className="flex justify-center ">
+              <Button
+                btnName="Connect now"
+                classStyles={`mx-2 rounded-xl active:scale-110 duration-100 `}
+                handleClick={() => {
+                  connectWallet();
+                }}
+              />
+            </div>
+          }
+        />
+      )}
     </div>
   );
 };
