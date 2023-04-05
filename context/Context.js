@@ -13,6 +13,7 @@ const fetchContract = (signerOrProvider) =>
 export const ContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
   const [loading, setLoading] = useState(false);
+  const [logIn, setLogIn] = useState(false);
 
   // Connect MetaMask
   const connectWallet = async () => {
@@ -40,8 +41,9 @@ export const ContextProvider = ({ children }) => {
 
     if (accounts.length) {
       setCurrentAccount(accounts[0]);
+      setLogIn(true);
     } else {
-      console.log('No accounts found');
+      setLogIn(false);
     }
   };
 
@@ -180,6 +182,7 @@ export const ContextProvider = ({ children }) => {
         buyNFT,
         loading,
         setLoading,
+        logIn,
       }}
     >
       {children}
