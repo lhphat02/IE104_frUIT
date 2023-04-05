@@ -23,7 +23,7 @@ const Footer = () => {
               alt="logo"
             />
 
-              <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
+            <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
               frUIT
             </p>
           </div>
@@ -55,13 +55,13 @@ const Footer = () => {
               <h3 className="mb-6 text-lg font-semibold font-poppins ">
                 frUIT
               </h3>
-              <Link href={'/'}>
+              <Link href="/">
                 <p className="footer-link">Explore</p>
               </Link>
-              <a href='/how-its-work'>
+              <a href="/instruction">
                 <p className="footer-link">How it works</p>
               </a>
-              <a href='/about-us'>
+              <a href="/about-us">
                 <p className="footer-link">About us</p>
               </a>
               <a href="https://us18.list-manage.com/contact-form?u=1713bdfdd6cff262d36cd4f15&form_id=68cf768a10ebb33ba3c222070887a47d">
