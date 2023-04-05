@@ -1,33 +1,34 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const Input = ({ inputType, title, placeholder, handleClick }) => (
-  <div className="mt-10 w-full">
+  <div className="w-full mt-10">
     <div>
-      <p className="font-poppins text-xl minlg:text-4xl font-semibold sm:mb-4">
+      <p className="text-xl font-semibold font-poppins minlg:text-4xl sm:mb-4">
         {title}
       </p>
     </div>
 
     {inputType === 'number' ? (
-      <div className="dark:bg-prim-black-1 bg-white border dark:border-prim-black-1 border-prim-gray-2 rounded-lg w-full outline-none font-poppins mt-4 px-4 py-3 flex flex-row">
+      <div className="flex flex-row w-full px-4 py-3 mt-4 bg-white border rounded-lg outline-none dark:bg-prim-black-1 dark:border-prim-black-1 border-prim-gray-2 font-poppins ">
         <input
-          className="flex w-full dark:bg-prim-black-1 bg-white outline-none text-prim-gray-2 text-base  "
+          className="flex w-full text-base bg-white border-none rounded-sm dark:bg-prim-black-1 text-prim-gray-2 dark:focus:outline-white"
           type="number"
           placeholder={placeholder}
           onChange={handleClick}
         />
-        <p className="font-poppins text-xl font-semibold">ETH</p>
+        <p className="ml-4 text-xl font-semibold font-poppins">ETH</p>
       </div>
     ) : inputType === 'textarea' ? (
       <textarea
-        className="dark:bg-prim-black-1 bg-white border dark:border-prim-black-1 border-prim-gray-2 rounded-lg w-full outline-none font-poppins text-prim-gray-2 text-base mt-4 px-4 py-3"
+        className="w-full px-4 py-3 mt-4 text-base bg-white border rounded-lg outline-none dark:bg-prim-black-1 dark:border-prim-black-1 border-prim-gray-2 font-poppins text-prim-gray-2 dark:focus:outline-white"
         rows={10}
         placeholder={placeholder}
         onChange={handleClick}
       />
     ) : (
       <input
-        className="dark:bg-prim-black-1 bg-white border dark:border-prim-black-1 border-prim-gray-2 rounded-lg w-full outline-none font-poppins text-prim-gray-2 text-base mt-4 px-4 py-3"
+        className="w-full px-4 py-3 mt-4 text-base bg-white border rounded-lg focus:outline-blue-600 dark:bg-prim-black-1 dark:border-prim-black-1 border-prim-gray-2 font-poppins text-prim-gray-2"
         placeholder={placeholder}
         onChange={handleClick}
       />
