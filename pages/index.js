@@ -37,14 +37,14 @@ const Home = () => {
   return (
     <div className="relative flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
       {!logIn ? (
-        <div className="fixed bottom-0 z-50 right-10">
+        <div className="fixed bottom-0 z-50 md:right-12 right-8 ">
           <ToastComp />{' '}
         </div>
       ) : null}
 
       {/* =================Banner================= */}
       <div className="relative flex justify-center w-full">
-        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-48 xl:-bottom-72 minmd:-bottom-96">
+        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-36 duoscreen:-bottom-44 laptop:-bottom-60 xl:-bottom-72 minmd:-bottom-96 sm:font-bold">
           Discover, create and buy extraordinary NFTs from UIT
         </h1>
       </div>
@@ -52,14 +52,14 @@ const Home = () => {
 
       {/* =================Creators================= */}
       <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
-        Top Creators
+        Top Creators ( Beta )
       </p>
       <div className="flex justify-between md:justify-evenly">
         <div>
           <CreatorCard
             imageCard={images.creator1}
             number="1"
-            name="Phat Luu"
+            name="UIT NFT Creator 1"
             address="0x7p5r...8txn"
           />
         </div>
@@ -67,7 +67,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator2}
             number="2"
-            name="Quan Ngu"
+            name="UIT NFT Creator 2"
             address="0xefv1...tjy5"
           />
         </div>
@@ -75,7 +75,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator3}
             number="3"
-            name="Tuan Mai"
+            name="UIT NFT Creator 3"
             address="0xtdt3...nh0n"
           />
         </div>
@@ -83,7 +83,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator4}
             number="4"
-            name="Huy Ngo"
+            name="UIT NFT Creator 3"
             address="0xh2fg...asd7"
           />
         </div>
@@ -91,7 +91,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator5}
             number="5"
-            name="Khiem Chau"
+            name="UIT NFT Creator 3"
             address="0xqk8...bw9e"
           />
         </div>
