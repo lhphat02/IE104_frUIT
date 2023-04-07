@@ -3,10 +3,12 @@ import Link from 'next/link';
 
 const Intruction = () => {
   return (
-    <div className="py-10 mx-20">
-      <p className="my-10 text-4xl font-semibold text-center font-poppins">
-        Let&#39;s take the first step to create your NFTs
-      </p>
+    <div className="py-10 mx-20 md:mx-8">
+      <h1 className="my-10 text-4xl font-semibold text-center font-poppins md:text-2xl">
+        Let&#39;s take the first step to create your NFTs on
+        <br />
+        frUIT Marketplace
+      </h1>
       <div />
       <Accordion alwaysOpen className="my-20">
         <Accordion.Panel>
@@ -52,7 +54,11 @@ const Intruction = () => {
               This&#39;s a website that allows you to create/mint your NFT on
               Sepolia Testnet - a testnet on Ethereum Blockchain. Which using
               SepoliaETH as currency and store your NFTs on IPFS through Infura
-              Service.
+              Service. Turn on your Meatamask extention and swap your network to
+              Sepolia test network
+              <br />
+              P/s: Enable show testnet in Advanced setting if you can&#39;t find
+              Sepolia testnet.
               <br />
               More specific ? Check it out below 👇
             </p>
