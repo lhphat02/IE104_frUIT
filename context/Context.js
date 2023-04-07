@@ -121,7 +121,9 @@ export const ContextProvider = ({ children }) => {
     const transaction = await contract.buyMarketItem(nft.tokenId, {
       value: price,
     });
+    setLoading(true);
     await transaction.wait();
+    setLoading(false);
   };
 
   // Fetch all NFTs users have listed or owned (seller/owner: signer, signer side)
