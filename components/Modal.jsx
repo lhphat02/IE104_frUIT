@@ -45,7 +45,7 @@ const Modal = ({ header, body, footer, handleClose, closeBtn }) => {
             {header}
           </h2>
         </div>
-        <div className="p-10 border-t border-b sm:p-7 sm:px-4 dark:border-prim-gray-3 border-prim-gray-1 ">
+        <div className="p-10 border-t border-b sm:p-7 dark:border-prim-gray-3 border-prim-gray-1 ">
           {body}
         </div>
         <div className="p-7">{footer}</div>
