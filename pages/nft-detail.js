@@ -11,7 +11,7 @@ import Loading from '../components/Loading';
 import Modal from '../components/Modal';
 
 const NFTdetail = () => {
-  const { buyNFT, currentAccount } = useContext(Context);
+  const { buyNFT, currentAccount, loading, setLoading } = useContext(Context);
   const router = useRouter();
   const { theme } = useTheme();
   const [paymentModal, setPaymentModal] = useState(false);
@@ -54,7 +54,9 @@ const NFTdetail = () => {
   console.log(nft);
 
   const checkout = async () => {
+    setLoading(true);
     await buyNFT(nft);
+    setLoading(false);
     setPaymentModal(false);
     setSuccessModal(true);
   };
@@ -89,7 +91,7 @@ const NFTdetail = () => {
       >
         {/* =================NFT Name================= */}
         <div className="flex flex-row sm:flex-col ">
-          <h2 className="h-10 overflow-hidden text-3xl font-bold w-500 sm:w-80 xs:w-56 font-poppins">
+          <h2 className="w-full h-10 overflow-hidden text-3xl font-bold font-poppins">
             {nft.name}
           </h2>
         </div>
@@ -121,7 +123,7 @@ const NFTdetail = () => {
             <p className="mb-2 text-lg font-medium font-poppins">Details</p>
           </div>
           <div className="mt-3">
-            <p className="overflow-y-scroll text-base font-normal break-words h-200 pc:w-700 w-500 sm:w-400 galaxyfold:w-40 font-poppins">
+            <p className="w-full overflow-y-scroll text-base font-normal break-words h-200 pc:w-700 font-poppins">
               {nft.description}
             </p>
           </div>
@@ -132,7 +134,7 @@ const NFTdetail = () => {
           {currentAccount === nft.seller.toLowerCase() ? (
             // If already listed
             <p className="p-2 text-base font-normal border text-prim-gray-2 font-poppins border-prim-gray-2">
-              You can't buy your own NFT
+              You can&#39;t buy your own NFT
             </p>
           ) : currentAccount === nft.owner.toLowerCase() ? (
             // If already owned
@@ -165,42 +167,51 @@ const NFTdetail = () => {
           <Modal
             header={<p className="font-bold">Check Out</p>}
             body={
-              <div>
-                <div className="flex justify-between mb-5 font-semibold">
-                  <p>Item</p>
-                  <p>Subtotal</p>
-                </div>
-                <div className="flex justify-between mb-5">
-                  <div className="flex flex-row">
-                    <div className="relative w-40 h-40">
-                      <Image
-                        src={nft.image}
-                        alt="nft-image"
-                        // width={200}
-                        // height={200}
-                        objectFit="cover"
-                        layout="fill"
-                      />
-                    </div>
+              loading ? (
+                <>
+                  <Loading />
+                  <p className="text-xl font-semibold text-center font-poppins">
+                    Pending for transaction
+                  </p>
+                </>
+              ) : (
+                <div>
+                  <div className="flex justify-between mb-5 font-semibold">
+                    <p>Item</p>
+                    <p>Subtotal</p>
+                  </div>
+                  <div className="flex justify-between mb-5">
+                    <div className="flex flex-row">
+                      <div className="relative w-40 h-40">
+                        <Image
+                          src={nft.image}
+                          alt="nft-image"
+                          // width={200}
+                          // height={200}
+                          objectFit="cover"
+                          layout="fill"
+                        />
+                      </div>
 
-                    <div className="mt-2 ml-3">
-                      <p className="mb-4 overflow-hidden text-lg font-semibold w-80">
-                        {nft.name}
-                      </p>
-                      <p className="h-20 overflow-y-scroll break-words w-80">
-                        {nft.description}
-                      </p>
+                      <div className="mt-2 ml-3">
+                        <p className="mb-4 overflow-hidden text-lg font-semibold w-80">
+                          {nft.name}
+                        </p>
+                        <p className="h-20 overflow-y-scroll break-words w-80">
+                          {nft.description}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-2">
+                      <p>{nft.price}</p>
                     </div>
                   </div>
-                  <div className="mt-2">
-                    <p>{nft.price}</p>
+                  <div className="flex justify-between">
+                    <p className="font-semibold">Total</p>
+                    <p>{nft.price} ETH</p>
                   </div>
                 </div>
-                <div className="flex justify-between">
-                  <p className="font-semibold">Total</p>
-                  <p>{nft.price} ETH</p>
-                </div>
-              </div>
+              )
             }
             footer={
               <div className="flex justify-center">
