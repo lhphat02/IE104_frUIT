@@ -29,12 +29,12 @@ const Footer = () => {
           </div>
 
           {/* ===================Get Email=================== */}
-          <div className="flex flex-col mt-10 md:items-center md:w-full">
+          <div className="flex flex-col mt-10 md:px-5 md:items-center md:w-full">
             <p className="flex mb-5 text-lg font-semibold text-black font-poppins dark:text-prim-gray-1 md:ml-2">
               Get the latest updates
             </p>
 
-            <div className="md:w-96 sm:w-full w-80">
+            <div className="md:w-full sm:w-full w-80">
               <a
                 href="https://mailchi.mp/c69de8372463/fruit-marketplace"
                 className="w-full"
@@ -50,7 +50,7 @@ const Footer = () => {
 
         {/* ===================Right Column=================== */}
         <div className="flex justify-between md:flex-row md:mt-8">
-          <div className="text-sm dark:text-prim-gray-1 mr-36 laptop:mr-60 md:mr-0 md:ml-20 sm:ml-5">
+          <div className="text-sm dark:text-prim-gray-1 mr-36 laptop:mr-60 md:mr-auto md:ml-auto sm:ml-5">
             <div className="text-black sm:mx-4 dark:text-prim-gray-1">
               <h3 className="mb-6 text-lg font-semibold font-poppins ">
                 frUIT
@@ -59,7 +59,7 @@ const Footer = () => {
                 <p className="footer-link">Explore</p>
               </Link>
               <a href="/instruction">
-                <p className="footer-link">How it works</p>
+                <p className="footer-link">Get started</p>
               </a>
               <a href="/about-us">
                 <p className="footer-link">About us</p>
@@ -69,25 +69,31 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="text-sm mr-52 dark:text-prim-gray-1 md:mr-20 sm:mr-5">
+          <div className="text-sm mr-52 dark:text-prim-gray-1 md:mr-auto sm:mr-5">
             <div className="text-black sm:mx-4 dark:text-prim-gray-1">
               <h3 className="mb-6 text-lg font-semibold font-poppins ">
-                Team 5
+                My Info
               </h3>
-              <a href="https://www.facebook.com/phattruonglao/">
-                <p className="footer-link">Luu Huynh Phat</p>
+              <a
+                href="https://www.facebook.com/phattruonglao/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p className="footer-link">Facebook</p>
               </a>
-              <a href="https://www.facebook.com/chon.jeni">
-                <p className="footer-link">Nguyen Van Chon</p>
+              <a
+                href="https://github.com/lhphat02"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p className="footer-link">Github</p>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=100038721821613">
-                <p className="footer-link">Nguyen Minh Quan</p>
-              </a>
-              <a href="https://www.facebook.com/anh.hoangtuan.50999405">
-                <p className="footer-link">Hoang Tuan Anh</p>
-              </a>
-              <a href="https://www.facebook.com/profile.php?id=100064256781506">
-                <p className="footer-link">Nguyen Ngoc Mai Khanh</p>
+              <a
+                href="https://www.linkedin.com/in/phatluucodevippro/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <p className="footer-link">LinkedIn</p>
               </a>
             </div>
           </div>
