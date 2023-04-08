@@ -14,8 +14,8 @@ const MyApp = ({ Component, pageProps }) => (
         <link rel="icon" href="/logo.png" />
       </Head>
       <NextSeo
-        title="frUIT Marketplace, from UIT NFT Marketplace"
-        description="A NFT marketplace for NFTs from UIT"
+        title="frUIT NFT"
+        description="An NFT marketplace for NFTs from UIT"
       />
       <DefaultSeo
         title="frUIT Marketplace, from UIT NFT Marketplace"
@@ -24,7 +24,7 @@ const MyApp = ({ Component, pageProps }) => (
           type: 'website',
           locale: 'en_IE',
           url: 'https://www.fromuitnft.online/',
-          siteName: 'SiteName',
+          siteName: 'from UIT NFT Marketplace',
         }}
         twitter={{
           handle: '@handle',
