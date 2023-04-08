@@ -24,7 +24,6 @@ export const ContextProvider = ({ children }) => {
     const accounts = await window.ethereum.request({
       method: 'eth_requestAccounts',
     });
-    console.log(accounts);
 
     setCurrentAccount(accounts[0]);
     window.location.reload();
@@ -33,11 +32,10 @@ export const ContextProvider = ({ children }) => {
   // Check if connected before or not
   const checkWalletConnection = async () => {
     setLoading(true);
-    if (!window.ethereum) return alert('Please install MetaMask !');
+    if (!window.ethereum) return alert('Please install MetaMask 🥺👉👈');
 
     // Ask for available accounts without requesting
     const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-    console.log(accounts);
 
     if (accounts.length) {
       setCurrentAccount(accounts[0]);
@@ -178,6 +176,7 @@ export const ContextProvider = ({ children }) => {
       value={{
         connectWallet,
         currentAccount,
+        checkWalletConnection,
         createNFT,
         fetchExistingMarketItem,
         fetchCollectionOrListed,
