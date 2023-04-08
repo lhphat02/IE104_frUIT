@@ -76,8 +76,8 @@ const ButtonGroup = ({ isMobile }) => {
   );
 };
 
-const checkActive = (active, setActive, router) => {
-  switch (router.pathname) {
+const checkActive = (active, setActive, routing) => {
+  switch (routing.pathname) {
     case '/':
       active !== 'Explore' && setActive('Explore');
       break;
@@ -98,11 +98,11 @@ const Navbar = () => {
   const [active, setActive] = useState('Explore');
   const [atTop, setAtTop] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
+  const routerHook = useRouter();
 
   useEffect(() => {
     checkActive(active, setActive, router);
-  }, [router.pathname]);
+  }, [routerHook.pathname]);
 
   // check if on top of page
   useEffect(() => {
@@ -118,8 +118,6 @@ const Navbar = () => {
       document.body.style.overflow = 'visible';
     }
   }, [isOpen]);
-
-  console.log(theme);
 
   return (
     <nav
@@ -221,9 +219,6 @@ const Navbar = () => {
                   : 'filter backdrop-blur-lg bg-opacity-95 dark:bg-prim-dark'
               }`}
             >
-              <div className="flex justify-center mb-5 mt-28">
-                <ButtonGroup isMobile />
-              </div>
               <div className="flex justify-center">
                 <MenuItems
                   isMobile
@@ -231,6 +226,9 @@ const Navbar = () => {
                   setActive={setActive}
                   setIsOpen={setIsOpen}
                 />
+              </div>
+              <div className="flex justify-center mb-5 mt-28">
+                <ButtonGroup isMobile />
               </div>
               <div
                 className={`fixed flex w-full bottom-80 xs:bottom-40 galaxyfold:bottom-10 justify-evenly ${
