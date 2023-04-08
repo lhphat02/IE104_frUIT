@@ -102,29 +102,71 @@ const Footer = () => {
 
       {/* ===================Footer LowerSecTion=================== */}
       <div className="flex flex-row justify-between mt-3 border-t-2 tablet:mx-32 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
-        <p className="flex font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 md:ml-10 sm:ml-0">
+        <p className="flex font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 sm:ml-0">
           frUIT, Inc. All Rights Reserved
         </p>
 
         <div className="flex flex-row mr-10 sm:justify-center sm:mr-0 sm:mt-4">
-          {[
-            images.instagram,
-            images.twitter,
-            images.telegram,
-            images.discord,
-            images.facebook,
-          ].map((image, index) => (
-            <div key={index} className="mx-3 md:mx-2 hover:cursor-pointer">
-              <Image
-                src={image}
-                objectFit="contain"
-                width={25}
-                height={25}
-                alt="social"
-                className={`${theme === 'light' && 'filter invert'}`}
-              />
-            </div>
-          ))}
+          <a
+            href="https://www.instagram.com/phatluuuu/"
+            className="mx-3 md:mx-2 hover:cursor-pointer"
+          >
+            <Image
+              src={images.instagram}
+              width={25}
+              height={25}
+              alt="frUIT NFT Marketplace Instagram"
+              className={`${theme === 'light' && 'filter invert'}`}
+            />
+          </a>
+          <a
+            href="https://twitter.com/phatluu02"
+            className="mx-3 md:mx-2 hover:cursor-pointer"
+          >
+            <Image
+              src={images.twitter}
+              width={25}
+              height={25}
+              alt="frUIT NFT Marketplace Twitter"
+              className={`${theme === 'light' && 'filter invert'}`}
+            />
+          </a>
+          <a
+            href="https://t.me/+ggx7Z9U1anA5NGQ1"
+            className="mx-3 md:mx-2 hover:cursor-pointer"
+          >
+            <Image
+              src={images.telegram}
+              width={25}
+              height={25}
+              alt="frUIT NFT Marketplace Twitter"
+              className={`${theme === 'light' && 'filter invert'}`}
+            />
+          </a>
+          <a
+            href="https://discord.gg/UdJJU8rH"
+            className="mx-3 md:mx-2 hover:cursor-pointer"
+          >
+            <Image
+              src={images.discord}
+              width={25}
+              height={25}
+              alt="frUIT NFT Discord"
+              className={`${theme === 'light' && 'filter invert'}`}
+            />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100091419112406"
+            className="mx-3 md:mx-2 hover:cursor-pointer"
+          >
+            <Image
+              src={images.facebook}
+              width={25}
+              height={25}
+              alt="Fruit NFT Marketplace Facebook"
+              className={`${theme === 'light' && 'filter invert'}`}
+            />
+          </a>
         </div>
       </div>
     </footer>
