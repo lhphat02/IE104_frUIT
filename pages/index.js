@@ -51,16 +51,17 @@ const Home = () => {
       <CarouselComp />
 
       {/* =================Creators================= */}
-      <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
-        Top Creators ( Beta )
+      <p className="mb-2 text-3xl font-bold dark:text-white text-prim-black-3">
+        Top Creators
       </p>
+      <p className="mb-3">( On developing )</p>
       <div className="flex justify-between md:justify-evenly">
         <div>
           <CreatorCard
             imageCard={images.creator1}
             number="1"
             name="UIT NFT Creator 1"
-            address="0x7p5r...8txn"
+            address="0xFbF...825e"
           />
         </div>
         <div className="hidden mobile:flex">
@@ -83,7 +84,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator4}
             number="4"
-            name="UIT NFT Creator 3"
+            name="UIT NFT Creator 4"
             address="0xh2fg...asd7"
           />
         </div>
@@ -91,7 +92,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator5}
             number="5"
-            name="UIT NFT Creator 3"
+            name="UIT NFT Creator 5"
             address="0xqk8...bw9e"
           />
         </div>
