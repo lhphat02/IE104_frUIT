@@ -153,7 +153,11 @@ const NFTdetail = () => {
             <Button
               btnName={`Buy for ${nft.price} ETH`}
               classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
-              handleClick={() => setPaymentModal(true)}
+              handleClick={() =>
+                currentAccount !== ''
+                  ? setPaymentModal(true)
+                  : alert('Please connect your wallet to proceed tx 👀')
+              }
             />
           )}
         </div>
