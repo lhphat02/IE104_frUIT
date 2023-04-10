@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useTheme } from 'next-themes';
 
+import { Tooltip } from 'flowbite-react';
 import { shortenAddress } from '../utils/shortenAddress';
 import { Context } from '../context/Context';
 import assets from '../assets';
@@ -51,8 +52,6 @@ const NFTdetail = () => {
     }
   }, [successModal]);
 
-  console.log(nft);
-
   const checkout = async () => {
     setLoading(true);
     await buyNFT(nft);
@@ -79,6 +78,21 @@ const NFTdetail = () => {
             className="rounded-2xl"
             layout="fill"
           />
+          <a
+            className="absolute flex items-center justify-center w-10 h-10 pt-1 bg-opacity-50 cursor-pointer rounded-xl bg-slate-800 top-5 right-5 hover:bg-opacity-20"
+            href={nft.image}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Tooltip content="Full Image">
+              <Image
+                src={assets.Search}
+                width={25}
+                height={25}
+                objectFit="contain"
+              />
+            </Tooltip>
+          </a>
         </div>
       </div>
 
@@ -224,6 +238,7 @@ const NFTdetail = () => {
                   classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"
                   handleClick={checkout}
                 />
+
                 <Button
                   btnName="Cancel"
                   classStyles="mr-5 sm:mr-0 sm:mb-5 rounded-xl"

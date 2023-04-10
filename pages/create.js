@@ -79,7 +79,8 @@ const CreateNFT = () => {
     onDrop,
     multiple: false,
     accept: { 'image/jpeg': [], 'image/png': [] },
-    maxSize: 5000000,
+    maxSize: 3000000,
+    maxFiles: 1,
   });
 
   return (

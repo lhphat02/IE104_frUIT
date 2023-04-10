@@ -15,11 +15,11 @@ const MyApp = ({ Component, pageProps }) => (
       </Head>
       <NextSeo
         title="frUIT NFT"
-        description="An NFT marketplace for NFTs from UIT"
+        description="An NFT marketplace for NFTs created by students from UIT"
       />
       <DefaultSeo
         title="frUIT Marketplace, from UIT NFT Marketplace"
-        description="A NFT marketplace for NFTs from UIT"
+        description="An NFT marketplace for NFTs created by students from UIT"
         openGraph={{
           type: 'website',
           locale: 'en_IE',

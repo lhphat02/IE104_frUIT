@@ -1,97 +1,113 @@
-import Image from 'next/image';
-import react from 'react';
+import Image from 'next/legacy/image';
+import { Button } from 'flowbite-react';
+import { HiOutlineArrowRight, HiOutlineChevronUp } from 'react-icons/hi';
+import { useRef } from 'react';
+
 import assets from '../assets';
 
 const aboutUS = () => {
-    return(
-    <div>
-        <p className="my-10 text-3xl font-bold font-poppins">About US</p>
-      <div className="relative w-full h-500">
+  const slideOne = useRef(null);
+  const slideTwo = useRef(null);
+
+  const scrollToSlide = (slide) => {
+    slide.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'start',
+    });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div className="relative w-full scroll-smooth">
+      <div
+        className="fixed z-20 p-4 overflow-hidden duration-100 ease-in-out bg-white rounded-full right-10 bottom-10 md:right-5 md:bottom-5 ring ring-prim-black-1 dark:ring-white dark:bg-slate-600 dark:hover:bg-slate-700 hover:-translate-y-2"
+        onClick={() => scrollToTop()}
+      >
+        <HiOutlineChevronUp className="" />
+      </div>
+      <div className="bg-stack">
         <Image
-          className="rounded-lg"
-          src={assets.bg3}
-          alt="Chào mừng đến với nhóm 5"
+          src={assets.bg11}
           layout="fill"
           objectFit="cover"
-        ></Image>
-      </div>
-      <div className="my-10">
-        <div className="py-3 text-xl text-justify border-t-2 border-solid font-poppins border-prim-dark dark:border-white">
-          NHÓM 5
-          <p className="mt-5 mb-20 text-base">
-            Tất cả thành viên đều là sinh viên trường Đại học Công nghệ Thông
-            tin ĐHQG TP HCM, thuộc khoa Khoa học và Kỹ thuật Thông tin, lớp Công
-            nghệ Chất lượng cao định hướng Nhật Bản và có cùng định hướng về
-            Web. Trải nghiệm, áp dụng và thực hiện triển khai một Website trên
-            mạng Internet, ứng dụng vào thực tiễn là cơ hội để nhóm có thể tự
-            mình mày mò tìm hiểu, khai phá năng lực bản thân trong suốt quá
-            trình vừa học vừa xây dựng web.
+          className="opacity-20"
+        />
+        <div className="top-0 left-0 flex flex-col items-center justify-center w-full h-full opacity-95 ">
+          <h1 className="mb-10 text-5xl font-bold text-center opacity-95 font-poppins sm:text-xl md:text-3xl">
+            What&#39;s{' '}
+            <span className="text-6xl font-extrabold text-transparent md:text-3xl sm:text-xl bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300">
+              frUIT Marketplace
+            </span>{' '}
+            ?
+          </h1>
+          <p className="px-10 text-3xl font-medium text-center laptop:w-3/5 font-poppins sm:text-lg">
+            This is a website that allows you - especially students from UIT to
+            discover, create, collect and trade NFTs.
           </p>
+          <Button
+            color="light"
+            pill
+            className="mt-20 group"
+            // href="/instruction"
+            onClick={() => {
+              scrollToSlide(slideOne);
+            }}
+          >
+            Let&#39;s go
+            <HiOutlineArrowRight className="w-5 h-5 ml-2 duration-100 ease-in-out group-hover:ml-5" />
+          </Button>
         </div>
-        <div className="grid grid-cols-5 gap-5 py-16 text-center border-t-2 rounded-2xl border-prim-dark dark:border-white">
-          <div className="flex flex-col items-center justify-center">
-            <img
-              className="mb-5 rounded-full"
-              src="https://scontent-hkt1-2.xx.fbcdn.net/v/t39.30808-6/252938250_1469386416780461_5835384178997990174_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=fCywtA8RTeQAX--NhQP&_nc_ht=scontent-hkt1-2.xx&oh=00_AfCXXKbv3M2weyrTfKQk9GeOJyVyA00okVEVkNj2UMfOxw&oe=63995BD5"
-              alt="Nguyễn Văn Chọn"
-              width="50%"
-            ></img>
-            <div>
-              <p className="mb-2 text-xl font-semibold">Nguyễn Văn Chọn</p>
-              <p>Frontend Dev</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <img
-              className="mb-5 rounded-full"
-              src="https://media-exp1.licdn.com/dms/image/C4D03AQGWRNPFuE6aLA/profile-displayphoto-shrink_800_800/0/1656143891661?e=1676505600&v=beta&t=K-xwDY_2xVIlN4PkX9zPn_S4eVRFxVsZxgexNP30BbE"
-              alt="Lưu Huỳnh Phát"
-              width="50%"
-            ></img>
-            <div>
-              <p className="mb-2 text-xl font-semibold">Lưu Huỳnh Phát</p>
-              <p>Fullstack Dev</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <img
-              className="mb-5 rounded-full"
-              src="https://scontent-hkt1-2.xx.fbcdn.net/v/t39.30808-6/272880268_626817418618980_1573065678081878384_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=174925&_nc_ohc=LOGDesRQvYkAX_XJIU_&_nc_ht=scontent-hkt1-2.xx&oh=00_AfAC5B9a4S451Se_im4h0ce373WuuxHzXOdm_y652gZqqw&oe=639A9267"
-              alt="Nguyễn Minh Quân"
-              width="50%"
-            ></img>
-            <div>
-              <p className="mb-2 text-xl font-semibold">Nguyễn Minh Quân</p>
-              <p>Frontend Dev</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <img
-              className="mb-4 rounded-full"
-              src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.15752-9/316592069_692462855739017_8427740169445731510_n.png?_nc_cat=105&ccb=1-7&_nc_sid=ae9488&_nc_ohc=9g_W54lRWWkAX_UL9An&_nc_ht=scontent.fsgn5-2.fna&oh=03_AdQePT1E00bvge7Z0xhTUrTZrRel0A3aF1tU1qNTBPcyjA&oe=63BCFFC5"
-              alt="Hoàng Tuấn Anh"
-              width="50%"
-            ></img>
-            <div>
-              <p className="mb-2 text-xl font-semibold">Hoàng Tuấn Anh</p>
-              <p>Frontend Dev</p>
-            </div>
-          </div>
-          <div className="flex flex-col items-center justify-center">
-            <img
-              className="mb-5 rounded-full"
-              src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.6435-9/179992532_128598702625355_4405256090229406103_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=m73sky3Yv9UAX9BQCl-&_nc_ht=scontent-hkt1-2.xx&oh=00_AfCg38-EouikC6MjL-EFWXIikbdUUxpSDgFg9lxSZyraVQ&oe=63BC323C"
-              alt="Nguyễn Ngọc Mai Khanh"
-              width="50%"
-            ></img>
-            <div>
-              <p className="mb-2 text-xl font-semibold">
-                Nguyễn Ngọc Mai Khanh
-              </p>
-              <p>Frontend Dev</p>
-            </div>
-          </div>
+      </div>
+      <div className="bg-stack" ref={slideOne}>
+        <Image
+          src={assets.bg10}
+          layout="fill"
+          objectFit="cover"
+          className="opacity-30"
+        />
+        <div className="top-0 left-0 flex flex-col items-center justify-center w-full h-full opacity-95 ">
+          <h1 className="mb-10 text-5xl font-bold text-center opacity-95 font-poppins sm:text-2xl">
+            What&#39;s frUIT Marketplace ?
+          </h1>
+          <p className="px-10 text-3xl font-semibold text-center laptop:w-3/5 font-poppins sm:text-lg">
+            This is a website that allows you - especially students from UIT to
+            discover, create and trade NFTs.
+          </p>
+          <Button
+            color="light"
+            pill
+            className="mt-20 group"
+            // href="/instruction"
+            onClick={() => scrollToSlide(slideTwo)}
+          >
+            Get Started
+            <HiOutlineArrowRight className="w-5 h-5 ml-2 duration-100 ease-in-out group-hover:ml-5" />
+          </Button>
         </div>
+      </div>
+      <div className="bg-stack" ref={slideTwo}>
+        <Image
+          src={assets.bg12}
+          layout="fill"
+          objectFit="cover"
+          className="opacity-40"
+        />
+      </div>
+      <div className="bg-stack">
+        <Image
+          src={assets.bg13}
+          layout="fill"
+          objectFit="cover"
+          className="opacity-50"
+        />
       </div>
     </div>
   );

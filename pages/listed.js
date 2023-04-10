@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import assets from '../assets';
 
 import { Context } from '../context/Context';

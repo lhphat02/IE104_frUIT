@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import images from '../assets';
 
-const CreatorCard = (props) => (
+const CreatorCard = ({ number, imageCard, name, address }) => (
   <div className="flex flex-col w-56 p-2 m-5 mx-1 shadow-md dark:hover:bg-prim-black-3 dark:bg-prim-black-1 bg-prim-gray-1 hover:shadow-xl hover:cursor-pointer rounded-2xl scroll md:w-60 sm:w-72 galaxyfold:w-64">
     <div className="flex items-center justify-center w-8 h-8 p-1 mt-2 ml-2 rounded-full md:w-6 md:h-6 md:text-xs prim-gradient">
-      <p className="font-semibold text-white">{props.number}</p>
+      <p className="font-semibold text-white">{number}</p>
     </div>
 
     <div className="flex flex-col items-center ">
@@ -13,8 +13,8 @@ const CreatorCard = (props) => (
         <div className="relative w-20 h-20 bg-cover md:w-14 md:h-14">
           <Image
             className="rounded-full"
-            src={props.imageCard}
-            alt={props.name}
+            src={imageCard}
+            alt={name}
             objectFit="cover"
             layout="fill"
           />
@@ -25,9 +25,9 @@ const CreatorCard = (props) => (
       </div>
       <div className="flex flex-col items-center my-4 font-poppins md:text-sm">
         <p className="mb-2 text-lg font-semibold dark:text-white text-prim-black-3">
-          {props.name}
+          {name}
         </p>
-        <p className="dark:text-white text-prim-black-3">{props.address}</p>
+        <p className="dark:text-white text-prim-black-3">{address}</p>
       </div>
     </div>
   </div>

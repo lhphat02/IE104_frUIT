@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import router, { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 
 import { Context } from '../context/Context';

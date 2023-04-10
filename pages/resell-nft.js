@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import Button from '../components/Button';
 import Input from '../components/Input';

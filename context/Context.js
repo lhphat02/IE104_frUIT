@@ -14,7 +14,7 @@ export const ContextProvider = ({ children }) => {
   const [currentAccount, setCurrentAccount] = useState('');
   const [loading, setLoading] = useState(false);
   const [logIn, setLogIn] = useState(false);
-
+  const [hideContent, sethideContent] = useState(false);
   // Connect MetaMask
   const connectWallet = async () => {
     // Check if browser have installed metamask
@@ -184,6 +184,8 @@ export const ContextProvider = ({ children }) => {
         loading,
         setLoading,
         logIn,
+        hideContent,
+        sethideContent,
       }}
     >
       {children}

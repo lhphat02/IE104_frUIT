@@ -1,4 +1,4 @@
-import { Flowbite, Toast } from 'flowbite-react';
+import { Toast } from 'flowbite-react';
 import React from 'react';
 import Link from 'next/link';
 
