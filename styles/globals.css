@@ -27,7 +27,7 @@
   .footer-link {
     @apply my-4 font-normal hover:cursor-pointer font-poppins dark:text-prim-gray-1 dark:hover:text-prim-blue hover:text-prim-pink;
   }
-  .input-create {
-    @apply w-full px-4 py-3 mt-4 text-base bg-white border rounded-lg focus:outline-blue-600 dark:bg-prim-black-1 dark:border-prim-black-1 border-prim-gray-2 font-poppins text-prim-gray-2;
+  .bg-stack {
+    @apply sticky top-0 flex items-center justify-center w-full h-screen text-white bg-black;
   }
 }
