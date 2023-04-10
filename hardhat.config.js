@@ -2,7 +2,7 @@ require('@nomiclabs/hardhat-waffle');
 
 const ALCHEMY_API_KEY = 'EUyP2mxP_WIQVM4dvzyeN8YxpYa2JGmA';
 const SEPOLIA_PRIVATE_KEY =
-  '239908345ec889b15c5d2f6a7ce7bb21e5997749705cfcd7b86f66385c362dad';
+  'd10c60b1bdd6de06a05bdc3b3707a161b862707644e45d0d8d9884581ce4c6d9';
 
 module.exports = {
   networks: {
