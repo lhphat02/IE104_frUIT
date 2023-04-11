@@ -44,8 +44,8 @@ const Home = () => {
 
       {/* =================Banner================= */}
       <div className="relative flex justify-center w-full">
-        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-36 duoscreen:-bottom-44 laptop:-bottom-60 xl:-bottom-72 minmd:-bottom-96 sm:font-bold">
-          Discover, create and buy extraordinary NFTs from UIT
+        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white select-none font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-36 duoscreen:-bottom-44 laptop:-bottom-60 xl:-bottom-72 minmd:-bottom-96 sm:font-bold">
+          Discover, create and buy awesome NFTs from UIT
         </h1>
       </div>
       <CarouselComp />
