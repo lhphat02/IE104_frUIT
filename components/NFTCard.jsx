@@ -33,6 +33,7 @@ const NFTCard = ({ nft, onCollectionPage }) => {
               <p className="overflow-hidden text-xs font-semibold font-poppins">
                 {nft.price} <span className="font-normal">ETH</span>
               </p>
+
               <p className="text-xs font-semibold font-poppins ">
                 {shortenAddress(onCollectionPage ? nft.owner : nft.seller)}
               </p>
