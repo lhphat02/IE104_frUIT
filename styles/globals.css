@@ -34,6 +34,6 @@
     @apply absolute w-64 shadow-md md:w-28 md:h-40 md:top-1/4 h-80 shadow-slate-900 rounded-2xl hover:-translate-y-20 hover:duration-500;
   }
   .social-media-icon {
-    @apply w-10 h-10 md:w-5 md:h-5 filter invert hover:cursor-pointer;
+    @apply w-10 h-10 duration-200 ease-in-out md:w-5 md:h-5 filter invert hover:cursor-pointer hover:transition hover:scale-125;
   }
 }
