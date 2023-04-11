@@ -249,12 +249,14 @@ const aboutUS = () => {
           objectFit="cover"
           className="opacity-50"
         />
-        <div className="flex flex-col items-center justify-start w-full h-full pt-24">
+        <div
+          ref={refSlideFour}
+          className="flex flex-col items-center justify-start w-full h-full mt-40 md:mt-60"
+        >
           <h3
-            ref={refSlideFour}
             className={`mb-10 text-5xl font-bold text-center font-poppins sm:text-xl md:text-3xl filter blur-md -translate-x-10 opacity-95 ${
               inSlideFour
-                ? ' translate-x-0  blur-none duration-700 transition ease-in-out'
+                ? ' translate-x-0 blur-none duration-700 transition ease-in-out'
                 : null
             }`}
           >
@@ -265,24 +267,24 @@ const aboutUS = () => {
           </h3>
           <div className="flex flex-col items-center justify-center w-full">
             <div
-              className={`relative z-10 w-48 h-48 md:w-28 md:h-28 bg-white border-4 border-white rounded-full filter blur-md ${
+              className={`relative z-10 w-48 h-48 md:w-28 md:h-28 bg-white border-4 border-white rounded-full overflow-hidden filter blur-md ${
                 inSlideFour
-                  ? ' blur-none duration-700 transition ease-in-out'
+                  ? ' blur-none duration-700 delay-200 transition ease-in-out'
                   : null
               }`}
             >
               <Image
-                src={assets.creator6}
+                src={assets.leader}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-full"
+                className="object-left-top transition-transform duration-500 ease-in-out rounded-full hover:scale-150"
               />
             </div>
 
             <div
-              className={`absolute w-3/5 text-center bg-white bottom-28 md:bottom-48 h-72 md:h-64 opacity-95 rounded-2xl filter blur-md translate-y-20 ${
+              className={`absolute w-3/5 text-center bg-white bottom-28 md:bottom-40 h-72 md:h-64 opacity-95 border-white border-4 border-opacity-100 rounded-2xl filter blur-md translate-y-20 ${
                 inSlideFour
-                  ? ' -translate-y-0  blur-none duration-700 transition ease-in-out'
+                  ? ' -translate-y-0  blur-none duration-700 delay-300 transition ease-in-out'
                   : null
               }`}
             >
@@ -297,9 +299,9 @@ const aboutUS = () => {
                   <BsFacebook className="social-media-icon" />
                 </Link>
                 <Link href="https://t.me/lolio02">
-                  <BsTelegram className="social-media-icon" />
+                  <BsTelegram className=" social-media-icon" />
                 </Link>
-                <Link href="https://github.com/lhphat02">
+                <Link href="https://github.com/lhphat02" className="">
                   <BsGithub className="social-media-icon" />
                 </Link>
                 <Link href="https://www.instagram.com/phatluuuu/">
