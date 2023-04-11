@@ -35,6 +35,7 @@ import bg12 from './bg12.jpg';
 import bg13 from './bg13.jpg';
 import img01 from './img01.png';
 import arrow from './arrow.png';
+import blockchain from './blockchain.png';
 
 export default {
   creator,
@@ -73,4 +74,5 @@ export default {
   bg13,
   img01,
   arrow,
+  blockchain,
 };
