@@ -15,6 +15,7 @@
     "@openzeppelin/contracts": "^4.5.0",
     "alchemy-sdk": "^2.6.2",
     "axios": "^0.26.0",
+    "bootstrap-icons": "^1.10.4",
     "dotenv": "^16.0.3",
     "ethers": "^5.5.4",
     "flowbite": "^1.6.4",
