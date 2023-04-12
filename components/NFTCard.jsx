@@ -26,11 +26,11 @@ const NFTCard = ({ nft, onCollectionPage }) => {
             />
           </div>
           <div className="flex flex-col mt-3">
-            <p className="text-sm font-semibold font-poppins dark:text-white text-prim-black-1">
+            <p className="text-sm font-semibold font-poppins dark:text-white text-prim-black-1 line-clamp-1">
               {nft.name}
             </p>
             <div className="flex flex-row justify-between mt-1 xs:flex-col xs:items-start xs:mt-3">
-              <p className="overflow-hidden text-xs font-semibold font-poppins">
+              <p className="text-xs font-semibold line-clamp-1 font-poppins">
                 {nft.price} <span className="font-normal">ETH</span>
               </p>
 
