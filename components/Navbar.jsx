@@ -18,6 +18,8 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
         return '/listed';
       case 2:
         return '/collection';
+      case 3:
+        return '/about-us';
       default:
         return '/';
     }
@@ -25,7 +27,7 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
 
   return (
     <ul className={`list-none flex ${isMobile ? 'flex-col' : 'flex-row'}`}>
-      {['Explore', 'Listed', 'Collection'].map((item, i) => (
+      {['Explore', 'Listed NFTs', 'Collection', 'About Us'].map((item, i) => (
         <li
           key={i}
           onClick={() => {
@@ -82,10 +84,13 @@ const checkActive = (active, setActive, routing) => {
       active !== 'Explore' && setActive('Explore');
       break;
     case '/listed':
-      active !== 'Listed' && setActive('Listed');
+      active !== 'Listed NFTs' && setActive('Listed NFTs');
       break;
     case '/collection':
       active !== 'Collection' && setActive('Collection');
+      break;
+    case '/about-us':
+      active !== 'About Us' && setActive('About Us');
       break;
     default:
       setActive('');
