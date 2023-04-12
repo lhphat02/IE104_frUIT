@@ -36,12 +36,6 @@ const Home = () => {
 
   return (
     <div className="relative flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
-      {!logIn ? (
-        <div className="fixed bottom-0 z-50 md:right-12 right-8 ">
-          <ToastComp />{' '}
-        </div>
-      ) : null}
-
       {/* =================Banner================= */}
       <div className="relative flex justify-center w-full">
         <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white select-none font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-36 duoscreen:-bottom-44 laptop:-bottom-60 xl:-bottom-72 minmd:-bottom-96 sm:font-bold">
@@ -50,11 +44,17 @@ const Home = () => {
       </div>
       <CarouselComp />
 
+      {!logIn ? (
+        <div className="fixed bottom-0 z-50 md:right-12 right-8 ">
+          <ToastComp />{' '}
+        </div>
+      ) : null}
+
       {/* =================Creators================= */}
       <p className="mb-2 text-3xl font-bold dark:text-white text-prim-black-3">
         Top Creators
       </p>
-      <p className="mb-3">( On developing )</p>
+      <p className="mb-3">( Static - On developing )</p>
       <div className="flex justify-between md:justify-evenly">
         <div>
           <CreatorCard
@@ -101,7 +101,7 @@ const Home = () => {
       {/* =======================NFTs======================= */}
       <div className="flex flex-row justify-between my-4 sm:flex-col">
         <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
-          Top NFTs
+          UIT NFTs
         </p>
         <div className="sm:mb-5 sm:flex sm:justify-center">
           <SearchBar
