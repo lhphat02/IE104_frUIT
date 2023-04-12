@@ -119,9 +119,9 @@ const aboutUS = () => {
             <Button
               color="light"
               pill
-              className={`mt-20 md:mt-10 group opacity-95 filter blur-md translate-y-10 ${
+              className={`mt-20 md:mt-10 group opacity-95 filter blur-md  ${
                 inSlideTwo
-                  ? ' translate-y-0 delay-200 blur-none duration-700 transition ease-in-out'
+                  ? '-translate-y-10 delay-200 blur-none duration-500 transition ease-in-out'
                   : null
               }`}
               onClick={() => scrollToSlide(slideThree)}
@@ -192,10 +192,8 @@ const aboutUS = () => {
             className="relative w-3/5 mx-32 shadow-none md:mt-20 md:mb-5 h-96 rounded-2xl animate-pulse"
           >
             <Image
-              className={`transition duration-700 ease-in-out rounded-2xl hover:scale-75 hover:duration-300 filter blur-md scale-50  ${
-                inSlideThree
-                  ? ' scale-100 blur-none delay-200 transition ease-in-out'
-                  : null
+              className={`transition duration-700 ease-in-out rounded-2xl filter blur-md scale-50 delay-200 ${
+                inSlideThree ? ' !scale-100 blur-none ' : null
               }`}
               src={assets.blockchain}
               layout="fill"
@@ -251,7 +249,7 @@ const aboutUS = () => {
         />
         <div
           ref={refSlideFour}
-          className="flex flex-col items-center justify-start w-full h-full mt-40 md:mt-60 minmd:mt-60"
+          className="flex flex-col items-center justify-start w-full h-full mt-60"
         >
           <h3
             className={`mb-10 text-5xl font-bold text-center font-poppins sm:text-xl md:text-3xl filter blur-md -translate-x-10 opacity-95 ${
@@ -282,9 +280,9 @@ const aboutUS = () => {
             </div>
 
             <div
-              className={`absolute w-3/5 text-center bg-white bottom-28 md:bottom-40 minmd:bottom-52 h-72 md:h-64 opacity-95 border-white border-4 border-opacity-100 rounded-2xl filter blur-md translate-y-20 ${
+              className={`absolute w-3/5 text-center bg-white bottom-28 md:bottom-40 minmd:bottom-60 h-72 md:h-64 opacity-95 border-white border-4 border-opacity-100 rounded-2xl filter blur-md translate-y-20 ${
                 inSlideFour
-                  ? ' -translate-y-0  blur-none duration-700 delay-300 transition ease-in-out'
+                  ? ' !-translate-y-0  blur-none duration-700 delay-300 transition ease-in-out'
                   : null
               }`}
             >
