@@ -41,7 +41,7 @@ const aboutUS = () => {
     <div className="relative w-full scroll-smooth">
       {/* Scroll to top button */}
       <div
-        className="fixed z-20 p-4 overflow-hidden duration-100 ease-in-out bg-white rounded-full right-10 bottom-10 md:right-5 md:bottom-5 ring ring-prim-black-1 dark:ring-white dark:bg-slate-600 dark:hover:bg-slate-700 hover:-translate-y-2"
+        className="fixed z-20 p-4 overflow-hidden duration-100 ease-in-out bg-white rounded-full right-10 bottom-10 md:right-5 md:bottom-5 ring ring-slate-600 dark:ring-white dark:bg-slate-600 dark:hover:bg-slate-700 hover:-translate-y-2"
         onClick={() => scrollToTop()}
       >
         <HiOutlineChevronUp />
