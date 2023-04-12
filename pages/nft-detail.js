@@ -38,6 +38,12 @@ const NFTdetail = () => {
   }, [router.isReady]);
 
   useEffect(() => {
+    if (paymentModal || successModal === false) {
+      setLoading(false);
+    }
+  }, [paymentModal, successModal]);
+
+  useEffect(() => {
     if (paymentModal) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -207,8 +213,8 @@ const NFTdetail = () => {
                   <>
                     <Loading />
                     <p className="text-xl font-semibold text-center font-poppins">
-                      Pending for transaction. Please wait for MetaMask window
-                      to be opened
+                      Please wait for MetaMask window to be opened. The
+                      transaction is a little bit slow.
                     </p>
                   </>
                 ) : (

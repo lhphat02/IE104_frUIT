@@ -119,9 +119,9 @@ const aboutUS = () => {
             <Button
               color="light"
               pill
-              className={`mt-20 md:mt-10 group opacity-95 filter blur-md  ${
+              className={`mt-20 md:mt-10 group opacity-95 filter blur-md translate-y-20  ${
                 inSlideTwo
-                  ? '-translate-y-10 delay-200 blur-none duration-500 transition ease-in-out'
+                  ? '!translate-y-0 delay-200 blur-none duration-500 transition ease-in-out'
                   : null
               }`}
               onClick={() => scrollToSlide(slideThree)}
@@ -161,9 +161,9 @@ const aboutUS = () => {
               />
             </div>
             <div
-              className={`nft-image top-36 right-20 md:right-1/4 md:top-1/4  ${
+              className={`nft-image top-36 left-96 md:left-1/2 md:top-1/4  ${
                 inSlideTwo
-                  ? ' -translate-y-5 delay-200  -translate-x-10 md:translate-x-12 duration-700 transition ease-in-out rotate-12'
+                  ? ' -translate-y-5 delay-200  -translate-x-10 md:translate-x-5 duration-700 transition ease-in-out rotate-12'
                   : null
               }`}
             >
@@ -202,9 +202,9 @@ const aboutUS = () => {
           </div>
           <div className="flex flex-col items-center justify-center w-full md:mb-10">
             <h3
-              className={`mb-5  sm:mt-5 text-5xl font-bold text-center font-poppins   opacity-95 filter blur-md -translate-x-10 md:text-2xl px-10 ${
+              className={`mb-5  sm:mt-5 text-5xl font-bold text-center font-poppins opacity-95 filter blur-md -translate-x-10 md:text-2xl px-10 ${
                 inSlideThree
-                  ? ' translate-x-0 blur-none duration-700 transition ease-in-out'
+                  ? ' !translate-x-0 blur-none duration-700 transition ease-in-out'
                   : null
               }`}
             >
@@ -225,9 +225,9 @@ const aboutUS = () => {
             <Button
               color="light"
               pill
-              className={`mt-20 md:mt-10 group opacity-95 filter blur-md translate-y-10 ${
+              className={`mt-10 md:mb-10 group opacity-95 filter blur-md translate-y-10 ${
                 inSlideThree
-                  ? ' translate-y-0 delay-200 blur-none duration-500 transition ease-in-out'
+                  ? ' !-translate-y-0 delay-200 blur-none duration-500 transition ease-in-out'
                   : null
               }`}
               onClick={() => scrollToSlide(slideFour)}
@@ -249,7 +249,7 @@ const aboutUS = () => {
         />
         <div
           ref={refSlideFour}
-          className="flex flex-col items-center justify-start w-full h-full mt-60"
+          className="flex flex-col items-center justify-start w-full h-full md:pt-20 mt-60"
         >
           <h3
             className={`mb-10 text-5xl font-bold text-center font-poppins sm:text-xl md:text-3xl filter blur-md -translate-x-10 opacity-95 ${
@@ -259,7 +259,7 @@ const aboutUS = () => {
             }`}
           >
             Meet the{' '}
-            <span className="text-5xl font-extrabold text-transparent md:text-4xl sm:text-xl bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300">
+            <span className="text-5xl font-extrabold text-transparent md:px-5 bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300">
               developer
             </span>
           </h3>

@@ -31,7 +31,6 @@ export const ContextProvider = ({ children }) => {
 
   // Check if connected before or not
   const checkWalletConnection = async () => {
-    setLoading(true);
     if (!window.ethereum) return alert('Please install MetaMask 🥺👉👈');
 
     // Ask for available accounts without requesting
