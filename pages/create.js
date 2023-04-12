@@ -7,6 +7,7 @@ import Button from '../components/Button';
 import Modal from '../components/Modal';
 import Input from '../components/Input';
 import { Context } from '../context/Context';
+import Loading from '../components/Loading';
 
 // Connect Infura Dedicated Gateway
 const projectId = '2HzKZHh7OyLxfrib8uAOuZexRbD';
@@ -26,7 +27,8 @@ const dedicatedEndPoint = 'https://fruit-marketplace.infura-ipfs.io';
 console.log(projectId, ' || ', infuraKey);
 
 const CreateNFT = () => {
-  const { createNFT, logIn, connectWallet } = useContext(Context);
+  const { createNFT, logIn, connectWallet, loading, setLoading } =
+    useContext(Context);
   const router = useRouter();
   const [fileUrl, setFileUrl] = useState(null);
   const [formInput, setFormInput] = useState({
@@ -43,6 +45,10 @@ const CreateNFT = () => {
     }
   }, [logIn]);
 
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   const createMarketItem = async () => {
     const { name, description, price } = formInput;
 
@@ -52,7 +58,9 @@ const CreateNFT = () => {
     try {
       const added = await client.add(data);
       const url = `${dedicatedEndPoint}/ipfs/${added.path}`;
+      setLoading(true);
       await createNFT(url, price);
+      setLoading(false);
       router.push('/');
     } catch (error) {
       console.log('Error creating NFT:', error);
@@ -180,6 +188,25 @@ const CreateNFT = () => {
           }
         />
       )}
+      {loading ? (
+        <Modal
+          header={
+            <p className="my-2 font-bold">Please wait for MetaMask Window 🔓</p>
+          }
+          body={
+            <>
+              <Loading />
+              <div className="text-center">
+                <p className="text-lg font-poppins">
+                  The transaction might be a little bit slow. We&#39;ll redirect
+                  you after the transaction succeeded.
+                </p>
+              </div>
+            </>
+          }
+          handleClose={() => {}}
+        />
+      ) : null}
     </div>
   );
 };
