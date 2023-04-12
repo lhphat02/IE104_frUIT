@@ -95,7 +95,7 @@ const aboutUS = () => {
         >
           <div className="flex flex-col items-center justify-center flex-initial w-full ml-auto mr-auto">
             <h3
-              className={`mb-10  sm:mt-20 text-5xl font-bold text-center font-poppins  sm:text-xl opacity-95 filter blur-md -translate-x-10 md:text-3xl px-10 ${
+              className={`mb-10  sm:mt-32 text-5xl font-bold text-center font-poppins  sm:text-xl opacity-95 filter blur-md -translate-x-10 md:text-3xl px-10 ${
                 inSlideTwo
                   ? ' translate-x-0 blur-none duration-700 transition ease-in-out'
                   : null
@@ -141,7 +141,7 @@ const aboutUS = () => {
             >
               <Image
                 className="rounded-2xl"
-                src={assets.bg7}
+                src={assets.img02}
                 objectFit="cover"
                 layout="fill"
               />
@@ -155,7 +155,7 @@ const aboutUS = () => {
             >
               <Image
                 className="rounded-2xl"
-                src={assets.bg8}
+                src={assets.img03}
                 objectFit="cover"
                 layout="fill"
               />
@@ -169,7 +169,7 @@ const aboutUS = () => {
             >
               <Image
                 className="rounded-2xl"
-                src={assets.bg9}
+                src={assets.img04}
                 objectFit="cover"
                 layout="fill"
               />
@@ -251,7 +251,7 @@ const aboutUS = () => {
         />
         <div
           ref={refSlideFour}
-          className="flex flex-col items-center justify-start w-full h-full mt-40 md:mt-60"
+          className="flex flex-col items-center justify-start w-full h-full mt-40 md:mt-60 minmd:mt-60"
         >
           <h3
             className={`mb-10 text-5xl font-bold text-center font-poppins sm:text-xl md:text-3xl filter blur-md -translate-x-10 opacity-95 ${
@@ -261,11 +261,11 @@ const aboutUS = () => {
             }`}
           >
             Meet the{' '}
-            <span className="text-6xl font-extrabold text-transparent md:text-4xl sm:text-xl bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300">
-              Team
+            <span className="text-5xl font-extrabold text-transparent md:text-4xl sm:text-xl bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300">
+              developer
             </span>
           </h3>
-          <div className="flex flex-col items-center justify-center w-full">
+          <div className="flex flex-col items-center justify-center w-full minmd:pt-20">
             <div
               className={`relative z-10 w-48 h-48 md:w-28 md:h-28 bg-white border-4 border-white rounded-full overflow-hidden filter blur-md ${
                 inSlideFour
@@ -282,7 +282,7 @@ const aboutUS = () => {
             </div>
 
             <div
-              className={`absolute w-3/5 text-center bg-white bottom-28 md:bottom-40 h-72 md:h-64 opacity-95 border-white border-4 border-opacity-100 rounded-2xl filter blur-md translate-y-20 ${
+              className={`absolute w-3/5 text-center bg-white bottom-28 md:bottom-40 minmd:bottom-52 h-72 md:h-64 opacity-95 border-white border-4 border-opacity-100 rounded-2xl filter blur-md translate-y-20 ${
                 inSlideFour
                   ? ' -translate-y-0  blur-none duration-700 delay-300 transition ease-in-out'
                   : null
