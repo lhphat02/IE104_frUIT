@@ -34,6 +34,9 @@ import bg11 from './bg11.jpg';
 import bg12 from './bg12.jpg';
 import bg13 from './bg13.jpg';
 import img01 from './img01.png';
+import img02 from './img02.jpg';
+import img03 from './img03.jpg';
+import img04 from './img04.jpg';
 import arrow from './arrow.png';
 import blockchain from './blockchain.png';
 import leader from './leader.png';
@@ -74,6 +77,9 @@ export default {
   bg12,
   bg13,
   img01,
+  img02,
+  img03,
+  img04,
   arrow,
   blockchain,
   leader,
