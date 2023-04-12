@@ -123,7 +123,7 @@ const NFTdetail = () => {
         >
           {/* =================NFT Name================= */}
           <div className="flex flex-row sm:flex-col ">
-            <h2 className="w-full h-10 overflow-hidden text-3xl font-bold font-poppins">
+            <h2 className="w-full text-3xl font-bold line-clamp-1 font-poppins">
               {nft.name}
             </h2>
           </div>
@@ -229,7 +229,7 @@ const NFTdetail = () => {
                       </div>
 
                       <div className="flex flex-col">
-                        <p className="mb-4 overflow-hidden text-lg font-semibold w-80">
+                        <p className="mb-4 text-lg font-semibold w-80 line-clamp-1">
                           {nft.name}
                         </p>
                         <p className="h-20 overflow-y-scroll break-words w-80">
@@ -340,9 +340,11 @@ const NFTdetail = () => {
                       alt="nft-image"
                       className="rounded-lg"
                     />
-                    <div className="">
-                      <p className="h-5 mb-5 font-medium w-44">{nft.name}</p>
-                      <p className="w-40 h-10 overflow-y-scroll break-words">
+                    <div className=" w-44">
+                      <p className="mb-5 font-medium line-clamp-1">
+                        {nft.name}
+                      </p>
+                      <p className="h-12 overflow-y-scroll break-words">
                         {nft.description}
                       </p>
                     </div>
