@@ -36,31 +36,32 @@ const Home = () => {
 
   return (
     <div className="relative flex flex-col justify-center w-full p-10 xs:p-6 minmd:px-60 pc:px-28">
+      {/* =================Banner================= */}
+      <div className="relative flex justify-center w-full">
+        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white select-none font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-36 duoscreen:-bottom-44 laptop:-bottom-60 xl:-bottom-72 minmd:-bottom-96 sm:font-bold">
+          Discover, create and buy awesome NFTs from UIT
+        </h1>
+      </div>
+      <CarouselComp />
+
       {!logIn ? (
         <div className="fixed bottom-0 z-50 md:right-12 right-8 ">
           <ToastComp />{' '}
         </div>
       ) : null}
 
-      {/* =================Banner================= */}
-      <div className="relative flex justify-center w-full">
-        <h1 className="absolute z-20 w-4/5 py-3 text-6xl font-semibold text-center text-white font-poppins md:text-3xl sm:text-xl xs:text-lg -bottom-36 duoscreen:-bottom-44 laptop:-bottom-60 xl:-bottom-72 minmd:-bottom-96 sm:font-bold">
-          Discover, create and buy extraordinary NFTs from UIT
-        </h1>
-      </div>
-      <CarouselComp />
-
       {/* =================Creators================= */}
-      <p className="mb-6 text-3xl font-bold dark:text-white text-prim-black-3">
-        Top Creators ( Beta )
+      <p className="mb-2 text-3xl font-bold dark:text-white text-prim-black-3">
+        Top Creators
       </p>
+      <p className="mb-3">( Static - On developing )</p>
       <div className="flex justify-between md:justify-evenly">
         <div>
           <CreatorCard
             imageCard={images.creator1}
             number="1"
             name="UIT NFT Creator 1"
-            address="0x7p5r...8txn"
+            address="0xFbF...825e"
           />
         </div>
         <div className="hidden mobile:flex">
@@ -83,7 +84,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator4}
             number="4"
-            name="UIT NFT Creator 3"
+            name="UIT NFT Creator 4"
             address="0xh2fg...asd7"
           />
         </div>
@@ -91,7 +92,7 @@ const Home = () => {
           <CreatorCard
             imageCard={images.creator5}
             number="5"
-            name="UIT NFT Creator 3"
+            name="UIT NFT Creator 5"
             address="0xqk8...bw9e"
           />
         </div>
@@ -100,7 +101,7 @@ const Home = () => {
       {/* =======================NFTs======================= */}
       <div className="flex flex-row justify-between my-4 sm:flex-col">
         <p className="my-6 text-3xl font-bold dark:text-white text-prim-black-3">
-          Top NFTs
+          UIT NFTs
         </p>
         <div className="sm:mb-5 sm:flex sm:justify-center">
           <SearchBar

@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'next-themes';
 import Head from 'next/head';
-import { DefaultSeo, NextSeo } from 'next-seo';
+import { DefaultSeo } from 'next-seo';
 
 import { ContextProvider } from '../context/Context';
 import Footer from '../components/Footer';
@@ -13,18 +13,40 @@ const MyApp = ({ Component, pageProps }) => (
       <Head>
         <link rel="icon" href="/logo.png" />
       </Head>
-      <NextSeo
-        title="frUIT Marketplace, from UIT NFT Marketplace"
-        description="A NFT marketplace for NFTs from UIT"
-      />
       <DefaultSeo
-        title="frUIT Marketplace, from UIT NFT Marketplace"
-        description="A NFT marketplace for NFTs from UIT"
+        robotsProps={{
+          nosnippet: true,
+          notranslate: true,
+          noimageindex: true,
+          noarchive: true,
+          maxSnippet: -1,
+          maxImagePreview: 'none',
+          maxVideoPreview: -1,
+        }}
+        title="frUIT, NFT marketplace from UIT"
+        description="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs. Be the pioneers to the Web3 Universe, UITers fly together."
+        canonical="https://www.fromuitnft.online/"
         openGraph={{
           type: 'website',
           locale: 'en_IE',
           url: 'https://www.fromuitnft.online/',
-          siteName: 'SiteName',
+          images: [
+            {
+              url: 'https://cdn-icons-png.flaticon.com/512/1139/1139100.png',
+              width: 800,
+              height: 800,
+              alt: 'frUIT NFT Logo 1',
+              type: 'image/jpeg/png',
+            },
+            {
+              url: 'https://cdn-icons-png.flaticon.com/512/1139/1139100.png',
+              width: 600,
+              height: 600,
+              alt: 'frUIT NFT Logo 2',
+              type: 'image/jpeg/png',
+            },
+          ],
+          siteName: 'frUIT, NFT marketplace from UIT',
         }}
         twitter={{
           handle: '@handle',

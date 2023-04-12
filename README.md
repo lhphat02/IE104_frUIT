@@ -20,7 +20,7 @@
 
 ###
 
-<h2 align="left">🚀 For developing (in local)</h2>
+<h2 align="left">🚀 For developing (Local)</h2>
                 ## Requirements For Initial Setup
 - Install [NodeJS](https://nodejs.org/en/)
 - Install [Hardhat](https://hardhat.org/)
@@ -51,6 +51,8 @@ $ npx hardhat node
 
 `$ npx hardhat run scripts/deploy.js --network localhost`
 
+- If you deploy your contract to localhost, remember to change the ABI address and add new contract ABI file in folder 'context'.
+
 ### 6. Run Tests
 
 `$ npx hardhat test`
@@ -59,4 +61,5 @@ $ npx hardhat node
 
 `$ npm run dev`
 
-### P/S:
+<h2 align="left">LICENSE</h2>
+- MIT

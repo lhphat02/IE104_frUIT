@@ -21,12 +21,7 @@ const Intruction = () => {
               <br />A cryptocurrency wallet is a software application that
               allows users to securely store, manage, and transfer their digital
               currencies such as Bitcoin, Ethereum, and other cryptocurrencies.
-              It stores the private keys necessary for accessing and managing
-              one&#39;s cryptocurrency holdings, and enables transactions
-              between different wallet addresses. Crypto wallets come in various
-              forms, including desktop, mobile, hardware, and online/web-based
-              wallets. We highly recommend using Metamask Wallet on this
-              website.
+              We highly recommend using MetaMask Wallet on this website.
             </p>
             <p className="text-gray-500 dark:text-gray-400">
               Create your MetaMask Wallet
@@ -54,7 +49,7 @@ const Intruction = () => {
               This&#39;s a website that allows you to create/mint your NFT on
               Sepolia Testnet - a testnet on Ethereum Blockchain. Which using
               SepoliaETH as currency and store your NFTs on IPFS through Infura
-              Service. Turn on your Meatamask extention and swap your network to
+              Service. Turn on your MetaMask extention and swap your network to
               Sepolia test network
               <br />
               P/s: Enable show testnet in Advanced setting if you can&#39;t find

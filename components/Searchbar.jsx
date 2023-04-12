@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { useTheme } from 'next-themes';
 
 import assets from '../assets';

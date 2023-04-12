@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 
 import { Context } from '../context/Context';
 import { shortenAddress } from '../utils/shortenAddress';
@@ -12,7 +12,7 @@ import Modal from '../components/Modal';
 import Button from '../components/Button';
 
 // hàm kiểm tra trước khi đưa dữ liệu cho trang Collection hay trang Listed
-const NFT_Collection = () => {
+const NFTCollection = () => {
   const { fetchCollectionOrListed, currentAccount, connectWallet, logIn } =
     useContext(Context);
   const [nftItems, setNftItems] = useState([]);
@@ -91,13 +91,13 @@ const NFT_Collection = () => {
         <Modal
           closeBtn={false}
           header={
-            <p className="font-bold my-2">
+            <p className="my-2 font-bold">
               Oops, can&#39;t find your collection 😥
             </p>
           }
           body={
             <div className="text-center">
-              <p className="font-poppins text-lg">
+              <p className="text-lg font-poppins">
                 Please sign in to get access to your personal NFT collection
               </p>
             </div>
@@ -119,4 +119,4 @@ const NFT_Collection = () => {
   );
 };
 
-export default NFT_Collection;
+export default NFTCollection;
