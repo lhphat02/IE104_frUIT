@@ -38,7 +38,7 @@ const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
           hover:text-prim-black-4 dark:hover:text-white mx-3 text-prim-gray-2 
           ${
             active === item
-              ? 'text-prim-black-4 dark:text-white'
+              ? 'text-prim-black-2 dark:text-white'
               : 'text-prim-gray-2'
           }
           ${isMobile && 'my-3 text-2xl'}
