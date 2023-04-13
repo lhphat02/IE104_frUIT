@@ -12,6 +12,10 @@ const MyApp = ({ Component, pageProps }) => (
     <ThemeProvider attribute="class">
       <Head>
         <link rel="icon" href="/logo.png" />
+        <meta
+          name="google-site-verification"
+          content="ucjOWH8YbEHaElZ781nK1KEgdES3YGtCGts-wfnW7s8"
+        />
       </Head>
       <DefaultSeo
         robotsProps={{
