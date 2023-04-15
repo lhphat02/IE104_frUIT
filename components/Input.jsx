@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ inputType, title, placeholder, handleClick }) => (
+const Input = ({ inputType, title, placeholder, handleClick, nftPrice }) => (
   <div className="w-full mt-10">
     <div>
       <p className="text-xl font-semibold font-poppins minlg:text-4xl sm:mb-4">
@@ -9,7 +9,11 @@ const Input = ({ inputType, title, placeholder, handleClick }) => (
     </div>
 
     {inputType === 'number' ? (
-      <div className="flex flex-row w-full px-4 py-3 mt-4 bg-white border rounded-lg outline-none dark:bg-prim-black-1 dark:border-prim-black-1 border-prim-gray-2 font-poppins">
+      <div
+        className={`flex flex-row w-full px-4 py-3 mt-4 bg-white border rounded-lg outline-none dark:bg-prim-black-1 dark:border-prim-black-1 border-prim-gray-2 font-poppins ${
+          nftPrice > 3 ? 'outline-red-600' : null
+        }`}
+      >
         <input
           className="flex w-full text-base bg-white border-none rounded-sm dark:bg-prim-black-1 text-prim-gray-2 dark:focus:outline-white"
           type="number"

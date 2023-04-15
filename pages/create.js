@@ -52,7 +52,7 @@ const CreateNFT = () => {
   const createMarketItem = async () => {
     const { name, description, price } = formInput;
 
-    if (!fileUrl || !name || !description || !price) return;
+    if (!fileUrl || !name || !description || !price || price > 3) return;
 
     const data = JSON.stringify({ name, description, image: fileUrl });
     try {
@@ -150,7 +150,8 @@ const CreateNFT = () => {
       <Input
         inputType="number"
         title="Price"
-        placeholder="NFT Price"
+        placeholder="NFT Price (Max: 3.0 ETH)"
+        nftPrice={formInput.price}
         handleClick={(e) =>
           setFormInput({ ...formInput, price: e.target.value })
         }
