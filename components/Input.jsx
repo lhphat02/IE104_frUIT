@@ -13,6 +13,7 @@ const Input = ({ inputType, title, placeholder, handleClick }) => (
         <input
           className="flex w-full text-base bg-white border-none rounded-sm dark:bg-prim-black-1 text-prim-gray-2 dark:focus:outline-white"
           type="number"
+          max={3}
           placeholder={placeholder}
           onChange={handleClick}
           required
