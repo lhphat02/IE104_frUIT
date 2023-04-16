@@ -40,53 +40,37 @@ const Intruction = () => {
         </Accordion.Panel>
         <Accordion.Panel>
           <Accordion.Title>
-            Step 2. What&#39;s Web3? NFT? Ethereum?
+            Step 2. Switch to the Sepolia Testnet
           </Accordion.Title>
           <Accordion.Content>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
-              Well yes, our website can be called a &quot;web3&quot;.
+              Our website is deploy on Sepolia Testnet so that you have to
+              switch your network (Ethereum Mainnet by default).
               <br />
-              This&#39;s a website that allows you to create/mint your NFT on
-              Sepolia Testnet - a testnet on Ethereum Blockchain. Which using
-              SepoliaETH as currency and store your NFTs on IPFS through Infura
-              Service. Turn on your MetaMask extention and swap your network to
-              Sepolia test network
+              On MetaMask window, click network toggle at the top and switch
+              your network to Sepolia Testnet.
               <br />
-              P/s: Enable show testnet in Advanced setting if you can&#39;t find
-              Sepolia testnet.
-              <br />
-              More specific ? Check it out below 👇
+              Don&#39;t see Sepolia Testnet ? Don&#39;t worry, be patient and
+              follow my steps 👇
             </p>
             <ul className="pl-5 text-gray-500 list-disc dark:text-gray-400">
               <li>
-                <a
-                  href="https://ethereum.org/en/what-is-ethereum/"
-                  target="_blank"
-                  className="text-blue-600 hover:underline dark:text-blue-500"
-                  rel="noreferrer"
-                >
-                  Ethereum
-                </a>
+                <p>
+                  Open MetaMask window and click to your avatar at top right
+                  corner.
+                </p>
               </li>
               <li>
-                <a
-                  href="https://opensea.io/learn/what-are-nfts"
-                  rel="nofollow noreferrer"
-                  target="_blank"
-                  className="text-blue-600 hover:underline dark:text-blue-500"
-                >
-                  NFT
-                </a>
+                <p>Click Settings at the bottom, then click Advanced.</p>
               </li>
               <li>
-                <a
-                  href="https://hbr.org/2022/05/what-is-web3"
-                  rel="nofollow noreferrer"
-                  target="_blank"
-                  className="text-blue-600 hover:underline dark:text-blue-500"
-                >
-                  Web3
-                </a>
+                <p>
+                  Scroll down a little bit, at Show test networks section, turn
+                  it on.{' '}
+                </p>
+              </li>
+              <li>
+                <p>Now you can access to Sepolia Testnet. Cheers !</p>
               </li>
             </ul>
           </Accordion.Content>
@@ -110,9 +94,7 @@ const Intruction = () => {
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               After you have Signed in your Alchemy account and paste in your
               Wallet public key, it will send you 1 SepoliaETH. Did&#39;t
-              recieve ? Chill, the transaction is a lil bit slow, you can check
-              it by open the metamask extention and watch your pending
-              transaction at the bottom.
+              recieve ? Chill, the transaction is a little bit slow..
             </p>
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               Got your SepoliaETH ? Great! Now it&#39;s time to create your
