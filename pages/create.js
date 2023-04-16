@@ -157,7 +157,7 @@ const CreateNFT = () => {
         }
       />
       <div className="flex justify-end mt-10">
-        <Button
+        <Button 
           btnName="Create NFT"
           classStyles="rounded-lg text-lg active:scale-110 duration-100"
           handleClick={createMarketItem}
