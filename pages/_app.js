@@ -16,6 +16,7 @@ const MyApp = ({ Component, pageProps }) => (
           name="google-site-verification"
           content="ucjOWH8YbEHaElZ781nK1KEgdES3YGtCGts-wfnW7s8"
         />
+        <meta name="keywords" content="UIT, NFT, NFT Marketplace" />
       </Head>
       <DefaultSeo
         robotsProps={{
@@ -28,7 +29,7 @@ const MyApp = ({ Component, pageProps }) => (
           maxVideoPreview: -1,
         }}
         title="frUIT, NFT marketplace from UIT"
-        description="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs. Be the pioneers to the Web3 Universe, UITers fly together."
+        description="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs."
         canonical="https://www.fromuitnft.online/"
         openGraph={{
           type: 'website',
@@ -37,15 +38,15 @@ const MyApp = ({ Component, pageProps }) => (
           images: [
             {
               url: 'https://cdn-icons-png.flaticon.com/512/1139/1139100.png',
-              width: 800,
-              height: 800,
+              width: 500,
+              height: 500,
               alt: 'frUIT NFT Logo 1',
               type: 'image/jpeg/png',
             },
             {
               url: 'https://cdn-icons-png.flaticon.com/512/1139/1139100.png',
-              width: 600,
-              height: 600,
+              width: 800,
+              height: 800,
               alt: 'frUIT NFT Logo 2',
               type: 'image/jpeg/png',
             },
