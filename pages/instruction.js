@@ -4,11 +4,12 @@ import Link from 'next/link';
 const Intruction = () => {
   return (
     <div className="py-10 mx-20 md:mx-8">
-      <h1 className="my-10 text-4xl font-semibold text-center font-poppins md:text-2xl">
-        Let&#39;s take the first step to create your NFTs on
-        <br />
-        frUIT Marketplace
-      </h1>
+      <h3 className="mt-10 text-4xl font-semibold text-center font-poppins md:text-2xl">
+        5 Minutes Set Up <br />
+      </h3>
+      <p className="mb-10 text-2xl font-medium text-center font-poppins md:text-lg">
+        ( Be Patient ✋)
+      </p>
       <div />
       <Accordion alwaysOpen className="my-20">
         <Accordion.Panel>
@@ -99,6 +100,9 @@ const Intruction = () => {
             <p className="mb-2 text-gray-500 dark:text-gray-400">
               Got your SepoliaETH ? Great! Now it&#39;s time to create your
               first NFT
+              <br />
+              P/s: There&#39;s 0.25 SepETH mint fee for each NFT
+              minting/listing.
             </p>
             <ul className="pl-5 text-gray-500 list-disc dark:text-gray-400">
               <li>
