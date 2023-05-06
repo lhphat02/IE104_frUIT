@@ -144,7 +144,7 @@ const Navbar = () => {
               alt="logo"
             />
             <p className="flex flex-row dark:text-white text-prim-black-1 font-bold font-poppins text-lg ml-2 mt-1.5">
-              frUIT
+              Fromuit
             </p>
           </div>
         </Link>
@@ -165,7 +165,7 @@ const Navbar = () => {
               alt="logo"
             />
             <p className="flex flex-row dark:text-white text-prim-black-1 font-bold font-poppins text-sm ml-2 mt-1.5">
-              frUIT
+              Fromuit
             </p>
           </div>
         </Link>

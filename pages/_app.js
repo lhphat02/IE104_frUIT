@@ -17,6 +17,10 @@ const MyApp = ({ Component, pageProps }) => (
           content="ucjOWH8YbEHaElZ781nK1KEgdES3YGtCGts-wfnW7s8"
         />
         <meta name="keywords" content="UIT, NFT, NFT Marketplace" />
+        <meta
+          name="description"
+          content="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs."
+        />
       </Head>
       <DefaultSeo
         robotsProps={{
@@ -28,7 +32,7 @@ const MyApp = ({ Component, pageProps }) => (
           maxImagePreview: 'none',
           maxVideoPreview: -1,
         }}
-        title="frUIT, NFT marketplace from UIT"
+        title="Fromuit, NFT marketplace from UIT"
         description="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs."
         canonical="https://www.fromuitnft.online/"
         openGraph={{
@@ -51,7 +55,7 @@ const MyApp = ({ Component, pageProps }) => (
               type: 'image/jpeg/png',
             },
           ],
-          siteName: 'frUIT, NFT marketplace from UIT',
+          siteName: 'Fromuit, NFT marketplace from UIT',
         }}
         twitter={{
           handle: '@handle',

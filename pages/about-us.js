@@ -59,7 +59,7 @@ const aboutUS = () => {
           <h1 className="mb-10 text-5xl font-bold text-center opacity-95 font-poppins sm:text-xl md:text-3xl">
             Welcome to{' '}
             <div className="text-6xl font-extrabold text-transparent md:text-4xl sm:text-xl bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300">
-              frUIT Marketplace
+              Fromuit Marketplace
             </div>
           </h1>
           <p className="px-10 text-3xl font-medium text-center laptop:w-3/5 font-poppins md:text-lg">
