@@ -17,6 +17,10 @@ const MyApp = ({ Component, pageProps }) => (
           content="ucjOWH8YbEHaElZ781nK1KEgdES3YGtCGts-wfnW7s8"
         />
         <meta name="keywords" content="UIT, NFT, NFT Marketplace" />
+        <meta
+          name="description"
+          content="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs."
+        />
       </Head>
       <DefaultSeo
         robotsProps={{
