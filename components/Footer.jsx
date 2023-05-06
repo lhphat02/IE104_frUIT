@@ -24,7 +24,7 @@ const Footer = () => {
             />
 
             <p className="ml-2 text-lg font-bold text-black dark:text-prim-gray-1">
-              frUIT
+              Fromuit
             </p>
           </div>
 
@@ -53,7 +53,7 @@ const Footer = () => {
           <div className="text-sm dark:text-prim-gray-1 mr-36 laptop:mr-60 md:mr-auto md:ml-auto sm:ml-5">
             <div className="text-black sm:mx-4 dark:text-prim-gray-1">
               <h3 className="mb-6 text-lg font-semibold font-poppins ">
-                frUIT
+                Fromuit
               </h3>
               <Link href="/">
                 <p className="footer-link">Explore</p>
@@ -103,7 +103,7 @@ const Footer = () => {
       {/* ===================Footer LowerSecTion=================== */}
       <div className="flex flex-row justify-between mt-3 border-t-2 tablet:mx-32 sm:flex-col dark:bg-prim-dark pt-7 dark:border-prim-black-3">
         <p className="flex font-semibold text-black sm:justify-center font-poppins text-md sm:text-xs dark:text-prim-gray-1 sm:ml-0">
-          frUIT, Inc. All Rights Reserved
+          Fromuit, Inc. All Rights Reserved
         </p>
 
         <div className="flex flex-row mr-10 sm:justify-center sm:mr-0 sm:mt-4">
@@ -115,7 +115,7 @@ const Footer = () => {
               src={images.instagram}
               width={25}
               height={25}
-              alt="frUIT NFT Marketplace Instagram"
+              alt="Fromuit NFT Marketplace Instagram"
               className={`${theme === 'light' && 'filter invert'}`}
             />
           </a>
@@ -127,7 +127,7 @@ const Footer = () => {
               src={images.twitter}
               width={25}
               height={25}
-              alt="frUIT NFT Marketplace Twitter"
+              alt="Fromuit NFT Marketplace Twitter"
               className={`${theme === 'light' && 'filter invert'}`}
             />
           </a>
@@ -139,7 +139,7 @@ const Footer = () => {
               src={images.telegram}
               width={25}
               height={25}
-              alt="frUIT NFT Marketplace Twitter"
+              alt="Fromuit NFT Marketplace Twitter"
               className={`${theme === 'light' && 'filter invert'}`}
             />
           </a>
@@ -151,7 +151,7 @@ const Footer = () => {
               src={images.discord}
               width={25}
               height={25}
-              alt="frUIT NFT Discord"
+              alt="Fromuit NFT Discord"
               className={`${theme === 'light' && 'filter invert'}`}
             />
           </a>
@@ -163,7 +163,7 @@ const Footer = () => {
               src={images.facebook}
               width={25}
               height={25}
-              alt="Fruit NFT Marketplace Facebook"
+              alt="Fromuit NFT Marketplace Facebook"
               className={`${theme === 'light' && 'filter invert'}`}
             />
           </a>
