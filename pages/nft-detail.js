@@ -129,9 +129,9 @@ const NFTdetail = () => {
         >
           {/* =================NFT Name================= */}
           <div className="flex flex-row sm:flex-col ">
-            <h2 className="w-full text-3xl font-bold line-clamp-1 font-poppins">
+            <h1 className="w-full text-3xl font-bold line-clamp-1 font-poppins">
               {nft.name}
-            </h2>
+            </h1>
           </div>
 
           {/* =================NFT Creator================= */}
