@@ -19,7 +19,7 @@ const MyApp = ({ Component, pageProps }) => (
         <meta name="keywords" content="UIT, NFT, NFT Marketplace" />
         <meta
           name="description"
-          content="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs."
+          content="An NFT marketplace for UIT students to explore, create, collect and trade NFTs."
         />
       </Head>
       <DefaultSeo
@@ -33,7 +33,7 @@ const MyApp = ({ Component, pageProps }) => (
           maxVideoPreview: -1,
         }}
         title="Fromuit, NFT marketplace from UIT"
-        description="An NFT marketplace for UIT students to connect, explore, create, collect and trade NFTs."
+        description="An NFT marketplace for UIT students to explore, collect and create NFTs."
         canonical="https://www.fromuitnft.online/"
         openGraph={{
           type: 'website',

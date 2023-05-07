@@ -140,10 +140,11 @@ const aboutUS = () => {
               }`}
             >
               <Image
-                className="rounded-2xl"
+                className="rounded-2xl bg-slate-400"
                 src={assets.img02}
                 objectFit="cover"
                 layout="fill"
+                placeholder="blur"
               />
             </div>
             <div
@@ -154,10 +155,11 @@ const aboutUS = () => {
               }`}
             >
               <Image
-                className="rounded-2xl"
+                className="rounded-2xl bg-slate-400"
                 src={assets.img03}
                 objectFit="cover"
                 layout="fill"
+                placeholder="blur"
               />
             </div>
             <div
@@ -168,10 +170,11 @@ const aboutUS = () => {
               }`}
             >
               <Image
-                className="rounded-2xl"
+                className="rounded-2xl bg-slate-400"
                 src={assets.img04}
                 objectFit="cover"
                 layout="fill"
+                placeholder="blur"
               />
             </div>
           </div>
