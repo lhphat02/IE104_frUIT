@@ -4,9 +4,9 @@ import Link from 'next/link';
 const Intruction = () => {
   return (
     <div className="py-10 mx-20 md:mx-8">
-      <h3 className="mt-10 text-4xl font-semibold text-center font-poppins md:text-2xl">
+      <h1 className="mt-10 text-4xl font-semibold text-center font-poppins md:text-2xl">
         5 Minutes Set Up <br />
-      </h3>
+      </h1>
       <p className="mb-10 text-2xl font-medium text-center font-poppins md:text-lg">
         ( Be Patient ✋)
       </p>
