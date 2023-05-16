@@ -82,9 +82,9 @@ const NFTCollection = () => {
             ))}
           </div>
         ) : (
-          <h1 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
+          <h2 className="mt-5 text-3xl font-normal text-prim-gray-2 font-poppins minmd:text-4xl xs:ml-0">
             There is no NFT in your collection
-          </h1>
+          </h2>
         )}
       </div>
       {!logIn && (
