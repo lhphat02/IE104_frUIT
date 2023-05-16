@@ -57,9 +57,9 @@ const ListedNFT = () => {
         </div>
       </div>
       <div className="flex flex-col justify-center w-full p-10 mt-10 mb-60 xs:p-6 minmd:px-60 pc:px-28">
-        <h1 className="mb-10 text-3xl font-bold dark:text-white">
+        <h2 className="mb-10 text-3xl font-bold dark:text-white">
           Your listed NFTs
-        </h1>
+        </h2>
         <div className="mb-10">
           <SearchBar
             placeholder="Search NFT here"
