@@ -6,6 +6,7 @@ import { ContextProvider } from '../context/Context';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import '../styles/globals.css';
+import Script from 'next/script';
 
 const MyApp = ({ Component, pageProps }) => (
   <ContextProvider>
@@ -22,6 +23,19 @@ const MyApp = ({ Component, pageProps }) => (
           content="An NFT marketplace for UIT students to explore, create, collect and trade NFTs."
         />
       </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-C0Y7H3HPKH"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-C0Y7H3HPKH');
+        `}
+      </Script>
       <DefaultSeo
         robotsProps={{
           nosnippet: true,
