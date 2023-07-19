@@ -53,6 +53,8 @@ const aboutUS = () => {
           src={assets.bg11}
           layout="fill"
           objectFit="cover"
+          placeholder="blur"
+          loading="lazy"
           className="opacity-20"
         />
         <div className="top-0 left-0 flex flex-col items-center justify-center w-full h-full opacity-95 ">
@@ -88,6 +90,8 @@ const aboutUS = () => {
           layout="fill"
           objectFit="cover"
           className="opacity-30"
+          placeholder="blur"
+          loading="lazy"
         />
         <div
           ref={refSlideTwo}
@@ -145,6 +149,7 @@ const aboutUS = () => {
                 objectFit="cover"
                 layout="fill"
                 placeholder="blur"
+                loading="lazy"
               />
             </div>
             <div
@@ -160,6 +165,7 @@ const aboutUS = () => {
                 objectFit="cover"
                 layout="fill"
                 placeholder="blur"
+                loading="lazy"
               />
             </div>
             <div
@@ -175,6 +181,7 @@ const aboutUS = () => {
                 objectFit="cover"
                 layout="fill"
                 placeholder="blur"
+                loading="lazy"
               />
             </div>
           </div>
@@ -188,6 +195,8 @@ const aboutUS = () => {
           layout="fill"
           objectFit="cover"
           className="opacity-40"
+          placeholder="blur"
+          loading="lazy"
         />
         <div className="flex flex-row items-center justify-between w-full h-full md:flex-col">
           <div
@@ -201,6 +210,8 @@ const aboutUS = () => {
               src={assets.blockchain}
               layout="fill"
               objectFit="contain"
+              placeholder="blur"
+              loading="lazy"
             />
           </div>
           <div className="flex flex-col items-center justify-center w-full md:mb-10">
@@ -249,6 +260,8 @@ const aboutUS = () => {
           layout="fill"
           objectFit="cover"
           className="opacity-50"
+          placeholder="blur"
+          loading="lazy"
         />
         <div
           ref={refSlideFour}
@@ -279,6 +292,8 @@ const aboutUS = () => {
                 layout="fill"
                 objectFit="cover"
                 className="object-left-top transition-transform duration-500 ease-in-out rounded-full hover:scale-150"
+                placeholder="blur"
+                loading="lazy"
               />
             </div>
 
